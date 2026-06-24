@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "LEVIRDet: A Million-Scale 159-Category Dataset and Foundation Model for Universal Remote Sensing Object Detection"
+message: "If you use LEVIRDet or LEVIRDetNet, please cite the final paper. This provisional citation will be updated with the camera-ready metadata."
+type: article
+authors:
+  - family-names: "Yang"
+    given-names: "Qinzhe"
+repository-code: "https://github.com/QinzheYang/LEVIRDet"
+url: "https://qinzheyang.github.io/LEVIRDet/"
+abstract: "LEVIRDet-159 is a million-scale 159-category remote sensing object detection dataset with approximately 2.56 million bounding boxes and approximately 700k fine-grained annotations. LEVIRDetNet is a scale-hierarchy-aware detection foundation model for universal remote sensing object detection."
+

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Local data and checkpoints
+data/
+datasets/
+checkpoints/
+weights/
+outputs/
+runs/
+wandb/
+
+# Large archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
