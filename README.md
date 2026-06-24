@@ -83,6 +83,8 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
 ![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.png)
 
+![LEVIRDet remote sensing gallery](assets/figures/class.jpg)
+
 LEVIRDet-159 covers 30 common parent categories and 159 category types across
 global regions, diverse imaging conditions, multiple sensors, and a broad range
 of object sizes.
