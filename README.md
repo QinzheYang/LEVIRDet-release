@@ -9,10 +9,10 @@
 
 > **Release notice.** The full image tiles, annotations, source-license
 > manifest, code, and trained models will be released in a versioned project
-> repository at <https://qinzheyang.github.io/LEVIRDet-Website/>, accompanying
+> repository at <https://qinzheyang.github.io/LEVIRDet/>, accompanying
 > the final paper.
 
-![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.jpg)
+
 
 ## Overview and Performance
 
@@ -21,6 +21,24 @@
 LEVIRDet-159 reaches the largest scale across 18 dataset dimensions, while
 LEVIRDetNet achieves the best average primary AP on 9 external benchmarks
 without target-domain training or fine-tuning.
+
+Under stringent evaluation settings, LEVIRDetNet demonstrates strong
+cross-domain generalization. Even without target-domain training or fine-tuning,
+it achieves state-of-the-art detection performance on 9 external benchmarks,
+improving the strongest fully supervised competing methods by **5.02 mAP** on
+average under each benchmark's primary metric. It also remains strongest in
+score-threshold comparisons with open-set and grounding models, maintaining
+stable precision and recall at practical confidence thresholds.
+
+## Demo
+
+Try the interactive web demo:
+
+- [Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+- [Fine-grained Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+- [Ultra-Wide Area Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+
+![LEVIRDet demo gallery](assets/figures/demo-gallery.jpg)
 
 ## Overview
 
@@ -58,6 +76,31 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
   benchmarks.
 - **Interactive demonstrations.** The project page includes object detection,
   fine-grained detection, and ultra-wide-area detection demos.
+
+
+
+## Dataset Scale
+
+![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.png)
+
+LEVIRDet-159 covers 30 common parent categories and 159 category types across
+global regions, diverse imaging conditions, multiple sensors, and a broad range
+of object sizes.
+
+## LEVIRDetNet
+
+![LEVIRDetNet method overview](assets/figures/levirdetnet-method.jpg)
+
+LEVIRDetNet is a scale-hierarchy-aware detection foundation model for universal
+remote sensing object detection. It combines three key components:
+
+1. **Online GSD predictor** for estimating visual ground sampling distance from
+   input imagery.
+2. **GSD-guided query embedding and selection** for dynamic query modulation and
+   allocation under varying spatial resolutions.
+3. **Hierarchy-aware detection head** for mixed-granularity supervision and
+   category-system transfer.
+
 
 ## Target-Training-Free Benchmark Results
 
@@ -143,49 +186,7 @@ AP<sub>bbox</sub>.
 
 Additional tables are available in [docs/results.md](docs/results.md).
 
-## Dataset Scale
 
-![LEVIRDet-159 dataset-scale comparison](assets/figures/dataset-scale-comparison.jpg)
-
-LEVIRDet-159 covers 30 common parent categories and 159 category types across
-global regions, diverse imaging conditions, multiple sensors, and a broad range
-of object sizes.
-
-## LEVIRDetNet
-
-![LEVIRDetNet method overview](assets/figures/levirdetnet-method.jpg)
-
-LEVIRDetNet is a scale-hierarchy-aware detection foundation model for universal
-remote sensing object detection. It combines three key components:
-
-1. **Online GSD predictor** for estimating visual ground sampling distance from
-   input imagery.
-2. **GSD-guided query embedding and selection** for dynamic query modulation and
-   allocation under varying spatial resolutions.
-3. **Hierarchy-aware detection head** for mixed-granularity supervision and
-   category-system transfer.
-
-## Results
-
-![LEVIRDetNet benchmark results](assets/figures/benchmark-results.jpg)
-
-Under stringent evaluation settings, LEVIRDetNet demonstrates strong
-cross-domain generalization. Even without target-domain training or fine-tuning,
-it achieves state-of-the-art detection performance on 9 external benchmarks,
-improving the strongest fully supervised competing methods by **5.02 mAP** on
-average under each benchmark's primary metric. It also remains strongest in
-score-threshold comparisons with open-set and grounding models, maintaining
-stable precision and recall at practical confidence thresholds.
-
-## Demo
-
-Try the interactive web demo:
-
-- [Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-- [Fine-grained Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-- [Ultra-Wide Area Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-
-![LEVIRDet demo gallery](assets/figures/demo-gallery.jpg)
 
 ## Repository Layout
 
