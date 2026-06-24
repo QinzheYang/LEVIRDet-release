@@ -14,6 +14,14 @@
 
 ![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.jpg)
 
+## Overview and Performance
+
+![LEVIRDet dataset scale and performance overview](assets/figures/overview-performance.jpg)
+
+LEVIRDet-159 reaches the largest scale across 18 dataset dimensions, while
+LEVIRDetNet achieves the best average primary AP on 9 external benchmarks
+without target-domain training or fine-tuning.
+
 ## Overview
 
 Remote sensing object detection has advanced rapidly with the development of
@@ -50,6 +58,90 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
   benchmarks.
 - **Interactive demonstrations.** The project page includes object detection,
   fine-grained detection, and ultra-wide-area detection demos.
+
+## Target-Training-Free Benchmark Results
+
+<div align="center">
+<table style="min-width: 80%; border: 2px solid #ddd; border-collapse: collapse">
+  <thead>
+    <tr>
+      <th style="border-right: 2px solid #ddd; padding: 12px 20px">Model</th>
+      <th style="text-align: center; padding: 12px 20px">ADCOS</th>
+      <th style="text-align: center; padding: 12px 20px">UCAS-AOD</th>
+      <th style="text-align: center; padding: 12px 20px">HRPlane-v2</th>
+      <th style="text-align: center; padding: 12px 20px">CORS-ADD</th>
+      <th style="text-align: center; padding: 12px 20px">SkyFusion-plane</th>
+      <th style="text-align: center; padding: 12px 20px">VHRV</th>
+      <th style="text-align: center; padding: 12px 20px">SkyFusion-ship</th>
+      <th style="text-align: center; padding: 12px 20px">NWPU</th>
+      <th style="text-align: center; padding: 12px 20px">CarPK</th>
+      <th style="text-align: center; padding: 12px 20px">Avg.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-right: 2px solid #ddd; padding: 10px 20px">DynamicVis-L</td>
+      <td style="text-align: center; padding: 10px 20px">77.10</td>
+      <td style="text-align: center; padding: 10px 20px">69.90</td>
+      <td style="text-align: center; padding: 10px 20px">75.00</td>
+      <td style="text-align: center; padding: 10px 20px">64.60</td>
+      <td style="text-align: center; padding: 10px 20px">92.70</td>
+      <td style="text-align: center; padding: 10px 20px">62.10</td>
+      <td style="text-align: center; padding: 10px 20px">45.50</td>
+      <td style="text-align: center; padding: 10px 20px">69.10</td>
+      <td style="text-align: center; padding: 10px 20px">78.70</td>
+      <td style="text-align: center; padding: 10px 20px">70.52</td>
+    </tr>
+    <tr>
+      <td style="border-right: 2px solid #ddd; padding: 10px 20px">YOLOv12x</td>
+      <td style="text-align: center; padding: 10px 20px">78.72</td>
+      <td style="text-align: center; padding: 10px 20px">74.67</td>
+      <td style="text-align: center; padding: 10px 20px">78.51</td>
+      <td style="text-align: center; padding: 10px 20px">71.70</td>
+      <td style="text-align: center; padding: 10px 20px">94.52</td>
+      <td style="text-align: center; padding: 10px 20px">72.58</td>
+      <td style="text-align: center; padding: 10px 20px">43.56</td>
+      <td style="text-align: center; padding: 10px 20px">65.01</td>
+      <td style="text-align: center; padding: 10px 20px">97.29</td>
+      <td style="text-align: center; padding: 10px 20px">75.17</td>
+    </tr>
+    <tr>
+      <td style="border-right: 2px solid #ddd; padding: 10px 20px">DEIMv2 (DINOv3)</td>
+      <td style="text-align: center; padding: 10px 20px">77.79</td>
+      <td style="text-align: center; padding: 10px 20px">75.38</td>
+      <td style="text-align: center; padding: 10px 20px">78.87</td>
+      <td style="text-align: center; padding: 10px 20px">68.26</td>
+      <td style="text-align: center; padding: 10px 20px">97.58</td>
+      <td style="text-align: center; padding: 10px 20px">67.58</td>
+      <td style="text-align: center; padding: 10px 20px">44.10</td>
+      <td style="text-align: center; padding: 10px 20px">73.60</td>
+      <td style="text-align: center; padding: 10px 20px">96.74</td>
+      <td style="text-align: center; padding: 10px 20px">75.54</td>
+    </tr>
+    <tr style="border-top: 2px solid #b19c9cff">
+      <td style="border-right: 2px solid #ddd; padding: 10px 20px"><strong>LEVIRDetNet</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>83.60</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>80.40</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>81.92</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>72.06</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>98.27</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>73.55</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>60.39</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>76.04</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>98.79</strong></td>
+      <td style="text-align: center; padding: 10px 20px"><strong>80.56</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #777;">
+Values are primary AP metrics from the paper. SkyFusion-plane, SkyFusion-ship,
+and CarPK use AP<sub>50</sub>; NWPU uses mAP; the remaining datasets use
+AP<sub>bbox</sub>.
+</p>
+</div>
+
+Additional tables are available in [docs/results.md](docs/results.md).
 
 ## Dataset Scale
 
@@ -99,20 +191,21 @@ Try the interactive web demo:
 
 ```text
 LEVIRDet-release/
-├── README.md
-├── assets/
-│   ├── demo_samples/
-│   └── figures/
-├── docs/
-│   ├── dataset.md
-│   ├── model.md
-│   └── release_plan.md
-├── examples/
-│   └── README.md
-├── CITATION.cff
-├── CONTRIBUTING.md
-├── LICENSE.md
-└── NOTICE.md
+|-- README.md
+|-- assets/
+|   |-- demo_samples/
+|   `-- figures/
+|-- docs/
+|   |-- dataset.md
+|   |-- model.md
+|   |-- release_plan.md
+|   `-- results.md
+|-- examples/
+|   `-- README.md
+|-- CITATION.cff
+|-- CONTRIBUTING.md
+|-- LICENSE.md
+`-- NOTICE.md
 ```
 
 ## Release Status
@@ -156,4 +249,3 @@ and will be updated with the camera-ready metadata.
 The code, dataset, annotations, and trained models are not yet released. Their
 licenses will be specified with the versioned release. See [LICENSE.md](LICENSE.md)
 and [NOTICE.md](NOTICE.md) for the current pre-release notice.
-
