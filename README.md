@@ -247,6 +247,18 @@ If you find this project useful, please cite the final paper once it is
 available. A provisional citation file is provided in [CITATION.cff](CITATION.cff)
 and will be updated with the camera-ready metadata.
 
+```bash
+@misc{yang2026levirdetmillionscale159categorydataset,
+      title={LEVIRDet: A Million-Scale 159-Category Dataset and Foundation Model for Universal Remote Sensing Object Detection}, 
+      author={Qinzhe Yang and Dongyu Wang and Haohan Niu and Jia Xu and Zhenwei Shi and Zhengxia Zou},
+      year={2026},
+      eprint={2606.25312},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.25312}, 
+}
+```
+
 ## License
 
 The code, dataset, annotations, and trained models are not yet released. Their
