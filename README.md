@@ -4,12 +4,12 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-0b3d91)](https://qinzheyang.github.io/LEVIRDet/)
 [![Interactive Demo](https://img.shields.io/badge/Interactive-Demo-0b3d91)](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-[![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-lightgrey)](https://arxiv.org/pdf/2606.25312)
+[![Paper](https://img.shields.io/badge/Arxiv%20Soon-lightgrey)](https://arxiv.org/pdf/2606.25312)
 [![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Planned-orange)](#release-status)
 
 > **Release notice.** The full image tiles, annotations, source-license
 > manifest, code, and trained models will be released in a versioned project
-> repository at <https://qinzheyang.github.io/LEVIRDet/>, accompanying
+> repository at <https://qinzheyang.github.io/LEVIRDet/> and <https://github.com/QinzheYang/LEVIRDet-release>, accompanying
 > the final paper.
 
 
@@ -226,7 +226,7 @@ artifacts are planned for release with the final paper:
 
 The full image tiles, annotations, source-license manifest, code, and trained
 models will be released in a versioned project repository at
-<https://qinzheyang.github.io/LEVIRDet-Website/>, accompanying the final paper.
+<https://qinzheyang.github.io/LEVIRDet/>, accompanying the final paper.
 
 ## Getting Started
 
