@@ -78,6 +78,16 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
   fine-grained detection, and ultra-wide-area detection demos.
 
 
+## Update Log
+
+🌟 **2026.10.02** 
+
+We received reviewers' comments two days ago and are now actively preparing the release.
+
+These preparations include converting the dataset into a more storage-efficient format to reduce download size, creating a Docker image to make it easier to run the model, and organizing the pre-trained weights, usage instructions, and training logs. We are also preparing the baseline models and corresponding weights used in our paper, updating the project homepage, and adding more convenient download options.
+
+While completing all of these preparations will take some time, we can confirm that the dataset will be released within the next week. The pre-trained LEVIRDetNet weights and associated model resources may take slightly longer to finalize. We will share release updates and access instructions on our GitHub page as they become available.
+
 
 ## Dataset Scale
 
