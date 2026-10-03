@@ -80,7 +80,9 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
 ## Update Log
 
-🌟 **2026.10.03** We are currently updating the user manual. We have completed the creation of Docker and are currently packaging the dataset.
+🌟 **2026.10.03** 
+
+We are currently updating the user manual. We have completed the creation of Docker and are currently packaging the dataset.
 
 🌟 **2026.10.02** 
 
