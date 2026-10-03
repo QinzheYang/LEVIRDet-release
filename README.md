@@ -281,6 +281,8 @@ We recommend using Miniconda for installation. The following command will create
 
 Note: If you have experience with PyTorch and have already installed it, you can skip to the next section. Otherwise, you can follow these steps to prepare.
 
+Note2: If you don't want to configure the environment, you can skip to the [next section](#Use-Environment-Docker-Directly) and use the docker that we have configured.
+
 <details open>
 
 **Step 0**: Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html).
@@ -365,6 +367,52 @@ _, keep = nms(boxes, scores, 0.5)
 assert keep.cpu().tolist() == [0]
 print("MMCV CUDA NMS: passed")
 PY
+```
+
+</details>
+
+### Use Environment Docker Directly
+
+We have set up a Docker configuration to ensure that the same results as on Linux can be achieved on Windows. If you are using the Windows environment, or if you don't want to set up Conda separately, or if you want to quickly try out the inference demo, you can download our pre-configured Docker.
+
+<details open>
+
+**Step 1**: Download the prepared Docker image.
+
+Download **`levir-train-cuda121-torch231.tar`** from either mirror:
+
+| Mirror | Download | Access code |
+| --- | --- | --- |
+| Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1o34wKHJEy7mUhm6Gpnapag?pwd=pzic) | `pzic` |
+| Google Drive | [Download Docker image](https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=sharing) | — |
+
+The archive is **10,017,927,168 bytes** (about 9.33 GiB). Its expected SHA256 is:
+
+```text
+3f673ae0700176eb6f103b8a8946bf893adf9a49fab0f3b25ce2a6a93531203d
+```
+
+The image runs on **Linux x86_64** and is tagged
+`levir-train:cuda121-torch231`. Python, PyTorch, CUDA libraries, MMCV, and the
+build-time model source are already installed. There is no need to rebuild the
+image or run the manual Python installation steps.
+
+**Step 2**: Select the Docker environment.
+
+
+```bash
+export LEVRUN_ROOT="$HOME/levir_docker"
+mkdir -p "$LEVRUN_ROOT/outputs" "$LEVRUN_ROOT/levirdetnet-release/work_dirs"
+docker load -i "$LEVRUN_ROOT/levir-train-cuda121-torch231.tar"
+
+docker run --rm -it --init --pull never --gpus all --shm-size=16g \
+  --workdir /workspace/levirdetnet \
+  -e LEVIR_DATA_ROOT=/data \
+  -e NO_ALBUMENTATIONS_UPDATE=1 \
+  --mount "type=bind,source=$LEVRUN_ROOT/levirdetnet-release,target=/workspace/levirdetnet,readonly" \
+  --mount "type=bind,source=$LEVRUN_ROOT/02_release,target=/data,readonly" \
+  --mount "type=bind,source=$LEVRUN_ROOT/outputs,target=/workspace/levirdetnet/work_dirs" \
+  levir-train:cuda121-torch231 bash
 ```
 
 </details>
