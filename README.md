@@ -251,6 +251,120 @@ cd LEVIRDet
 # Dataset download and checkpoint download commands will be versioned.
 ```
 
+## Installation
+
+This is the alternative setup for users who prefer a local Conda environment.
+
+### Dependencies
+
+| Dependency | Reference version |
+| --- | --- |
+| Python | 3.11.8 |
+| PyTorch / TorchVision / TorchAudio | 2.3.1 / 0.18.1 / 2.3.1 |
+| CUDA runtime used by PyTorch | 12.1 |
+| MMCV, including CUDA operators | 2.2.0 |
+| MMEngine | 0.10.4 |
+| NumPy | 1.26.4 |
+| Triton, on Linux | 2.3.1 |
+
+**Compatibility notes.** LEVIRDetNet uses a
+modified MMDetection codebase that supports MMCV. The model code need come
+from the project release rather than an independent `pip install mmdet`.
+
+### Environment Installation
+
+We recommend using Miniconda for installation. The following command will create a virtual environment named `levirdet` and install PyTorch and MMCV.
+
+Note: If you have experience with PyTorch and have already installed it, you can skip to the next section. Otherwise, you can follow these steps to prepare.
+
+<details open>
+
+**Step 0**: Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html).
+
+**Step 1**: Create a virtual environment named `levirdet` and activate it.
+
+```bash
+conda create -n levirdet python=3.11.8 pip=24.0 -y
+conda activate levirdet
+
+python -m pip install setuptools==60.2.0 wheel==0.43.0 \
+  numpy==1.26.4 pillow==10.2.0 opencv-python==4.10.0.84
+```
+
+**Step 2**: Install [PyTorch 2.3.1 with CUDA 12.1](https://pytorch.org/get-started/previous-versions/#v231).
+
+```bash
+python -m pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 \
+  --index-url https://download.pytorch.org/whl/cu121
+```
+
+On Linux, this PyTorch version depends on `triton==2.3.1`. Keep that version when
+installing additional packages.
+
+**Step 3**: Install [MMEngine and the matching MMCV binary wheel](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
+
+```bash
+python -m pip install mmengine==0.10.4 yapf==0.40.2
+python -m pip install mmcv==2.2.0 --only-binary=mmcv \
+  -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
+```
+
+**Step 4**: Install other dependencies.
+
+```bash
+python -m pip install numpy==1.26.4 matplotlib==3.9.1 scipy==1.14.0 \
+  pycocotools==2.0.8 shapely==2.0.5 six==1.16.0 \
+  terminaltables==3.1.10 tqdm==4.67.1
+
+# Required by the standalone GSD training and evaluation scripts.
+python -m pip install pyarrow==21.0.0
+```
+
+**Step 5**: [Optional] Install DeepSpeed.
+
+If you want to use DeepSpeed to train the model, you need to install DeepSpeed. The installation method of DeepSpeed can refer to the [DeepSpeed official document](https://github.com/microsoft/DeepSpeed).
+
+```bash
+sudo apt-get install -y build-essential
+# Replace this path with the actual location of your CUDA 12.1 toolkit.
+export CUDA_HOME=/usr/local/cuda-12.1
+export PATH="$CUDA_HOME/bin:$PATH"
+nvcc --version
+
+DS_BUILD_OPS=0 python -m pip install --no-build-isolation \
+  deepspeed==0.14.4 torch==2.3.1 numpy==1.26.4 \
+  triton==2.3.1 pydantic==2.8.2 ninja==1.11.1.1
+```
+
+Note: The support for DeepSpeed under the Windows system is not perfect yet, we recommend that you use DeepSpeed under the Linux system. Our docker do not have DeepSpeed.
+
+**Step 6**: [Optional] Verify PyTorch and the MMCV CUDA operators.
+
+```bash
+python - <<'PY'
+import numpy as np
+import torch
+import torchvision
+import mmcv
+import mmengine
+from mmcv.ops import nms
+
+print("NumPy:", np.__version__)
+print("PyTorch:", torch.__version__, "TorchVision:", torchvision.__version__)
+print("CUDA runtime:", torch.version.cuda)
+print("MMCV:", mmcv.__version__, "MMEngine:", mmengine.__version__)
+assert torch.cuda.is_available(), "A CUDA-enabled GPU is required."
+print("GPU:", torch.cuda.get_device_name(0))
+boxes = torch.tensor([[0., 0., 10., 10.], [1., 1., 9., 9.]], device="cuda")
+scores = torch.tensor([0.9, 0.8], device="cuda")
+_, keep = nms(boxes, scores, 0.5)
+assert keep.cpu().tolist() == [0]
+print("MMCV CUDA NMS: passed")
+PY
+```
+
+</details>
+
 ## Citation
 
 If you find this project useful, please cite the final paper once it is
