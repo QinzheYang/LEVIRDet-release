@@ -365,6 +365,21 @@ PY
 
 </details>
 
+## Dataset Preparation
+
+### Download LEVIRDet-159
+
+Two versions will be provided. Each includes the same train/test split and both
+the hierarchical and 30-category annotation sets, with filenames matched to its
+own image files.
+
+| Version | Image format | Hugging Face | ModelScope | Baidu Netdisk | Access code | Google Drive | Size |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Original-image release | Original image bytes; seven-digit filenames | — | — | — | — | — | ~ 130G |
+| Lightweight release | JPEG quality 95; unchanged dimensions | — | — | — | — | — | ~ 50G |
+
+
+
 ## Citation
 
 If you find this project useful, please cite the final paper once it is
