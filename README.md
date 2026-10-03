@@ -378,6 +378,84 @@ own image files.
 | Original-image release | Original image bytes; seven-digit filenames | — | — | — | — | — | ~ 130G |
 | Lightweight release | JPEG quality 95; unchanged dimensions | — | — | — | — | — | ~ 50G |
 
+## Model Training
+
+### LEVIRDetNet Model
+
+#### Config File and Main Parameter Parsing
+
+We provide the configuration files of the LEVIRDetNet models used in the paper, which can be found in the `configs/levirdetnet` folder. The Config file is completely consistent with the API interface and usage method of MMDetection. Below we provide an analysis of some of the main parameters. If you want to know more about the meaning of the parameters, you can refer to the [MMDetection documentation](https://mmdetection.readthedocs.io/zh-cn/latest/user_guides/config.html).
+
+<details open>
+
+**Parameter Parsing**:
+
+- `work_dir`: The output path of model training, which generally does not need to be modified.
+- `default_hooks-CheckpointHook`: Checkpoint saving configuration during model training, which generally does not need to be modified.
+- `default_hooks-visualization`: Visualization configuration during model training, **comment out during training and uncomment during testing**.
+- `vis_backends-WandbVisBackend`: Configuration of network-side visualization tools, **after opening the comment, you need to register an account on the `wandb` official website, and you can view the visualization results during training in the web browser**.
+- `num_classes`: The number of categories in the dataset, **which needs to be modified according to the number of categories in the dataset**.
+- `dataset_type`: The type of dataset, **which needs to be modified according to the type of dataset**.
+- `code_root`: Code root directory, **modify to the absolute path of the root directory of this project**.
+- `data_root`: Dataset root directory, **modify to the absolute path of the dataset root directory**.
+- `batch_size_per_gpu`: Batch size per card, **which needs to be modified according to the memory size**.
+- `resume`: Whether to resume training, which generally does not need to be modified.
+- `load_from`: Checkpoint path of the model's pre-training, which generally does not need to be modified.
+- `max_epochs`: The maximum number of training rounds, which generally does not need to be modified.
+- `runner_type`: The type of trainer needs to be consistent with the type of `optim_wrapper` and `strategy`, which generally does not need to be modified.
+
+</details>
+
+#### Single Card Training
+
+```shell
+python tools/train.py configs/levirdetnet/xxx.py  # xxx.py is the configuration file you want to use, for example, levirdetnet_30class.py
+```
+
+#### Multi-card Training
+
+```shell
+bash tools/dist_train.sh configs/levirdetnet/xxx.py 8  # xxx.py is the configuration file you want to use, for example, levirdetnet_30class.py
+```
+
+### Other Detection Models
+
+<details open>
+
+If you want to use other instance segmentation models, you can refer to [MMDetection](https://github.com/open-mmlab/mmdetection/tree/main) to train the models, or you can put their Config files in the `configs` folder of this project, and then train them according to the above methods.
+
+</details>
+
+## Model Testing
+
+#### Single Card Testing:
+
+```shell
+python tools/test.py configs/levirdetnet/xxx.py ${CHECKPOINT_FILE}  # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use
+```
+
+#### Multi-card Testing:
+
+```shell
+bash tools/dist_train.sh configs/levirdetnet/xxx.py ${CHECKPOINT_FILE} ${GPU_NUM}  # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, GPU_NUM is the number of GPUs used
+```
+
+**Note**: If you need to get the visualization results, you can uncomment `default_hooks-visualization` in the Config file.
+
+
+## Image Prediction
+
+#### Single Image Prediction:
+
+```shell
+python demo/image_demo.py ${IMAGE_FILE}  configs/levirdetnet/xxx.py --weights ${CHECKPOINT_FILE} --out-dir ${OUTPUT_DIR}  # IMAGE_FILE is the image file you want to predict, xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, OUTPUT_DIR is the output path of the prediction result
+```
+
+#### Multi-image Prediction:
+
+```shell
+python demo/image_demo.py ${IMAGE_DIR}  configs/levirdetnet/xxx.py --weights ${CHECKPOINT_FILE} --out-dir ${OUTPUT_DIR}  # IMAGE_DIR is the image folder you want to predict, xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, OUTPUT_DIR is the output path of the prediction result
+```
 
 
 ## Citation
