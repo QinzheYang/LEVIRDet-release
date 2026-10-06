@@ -1,4 +1,4 @@
-# LEVIRDet
+# LEVIRDet-release
 
 **A Million-Scale 159-Category Dataset and Foundation Model for Universal Remote Sensing Object Detection**
 
