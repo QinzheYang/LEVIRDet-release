@@ -1,4 +1,4 @@
-# LEVIRDet
+# LEVIRDet-release
 
 **A Million-Scale 159-Category Dataset and Foundation Model for Universal Remote Sensing Object Detection**
 
@@ -7,10 +7,8 @@
 [![Paper](https://img.shields.io/badge/Arxiv%20Paper-red)](https://arxiv.org/abs/2606.25312)
 [![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Planned-orange)](#release-status)
 
-> **Release notice.** The full image tiles, annotations, source-license
-> manifest, code, and trained models will be released in a versioned project
-> repository at <https://qinzheyang.github.io/LEVIRDet/> and <https://github.com/QinzheYang/LEVIRDet-release>, accompanying
-> the final paper.
+> **Release notice.**
+> 🌟🌟🌟 The LEVIRDet dataset, trained models and their weights, as well as the Docker, are now fully available.
 
 
 
