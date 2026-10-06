@@ -4,15 +4,15 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-0b3d91)](https://qinzheyang.github.io/LEVIRDet/)
 [![Interactive Demo](https://img.shields.io/badge/Interactive-Demo-0b3d91)](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-[![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-lightgrey)](https://www.sciengine.com/cfs/files/pdfs/view/1674-733X/6E3CAFCF2A464C9BBC0BE785B15D8300-mark.pdf)
+[![Paper](https://img.shields.io/badge/Arxiv%20Paper-red)](https://arxiv.org/abs/2606.25312)
 [![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Planned-orange)](#release-status)
 
 > **Release notice.** The full image tiles, annotations, source-license
 > manifest, code, and trained models will be released in a versioned project
-> repository at <https://qinzheyang.github.io/LEVIRDet-Website/>, accompanying
+> repository at <https://qinzheyang.github.io/LEVIRDet/> and <https://github.com/QinzheYang/LEVIRDet-release>, accompanying
 > the final paper.
 
-![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.jpg)
+
 
 ## Overview and Performance
 
@@ -21,6 +21,24 @@
 LEVIRDet-159 reaches the largest scale across 18 dataset dimensions, while
 LEVIRDetNet achieves the best average primary AP on 9 external benchmarks
 without target-domain training or fine-tuning.
+
+Under stringent evaluation settings, LEVIRDetNet demonstrates strong
+cross-domain generalization. Even without target-domain training or fine-tuning,
+it achieves state-of-the-art detection performance on 9 external benchmarks,
+improving the strongest fully supervised competing methods by **5.02 mAP** on
+average under each benchmark's primary metric. It also remains strongest in
+score-threshold comparisons with open-set and grounding models, maintaining
+stable precision and recall at practical confidence thresholds.
+
+## Demo
+
+Try the interactive web demo:
+
+- [Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+- [Fine-grained Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+- [Ultra-Wide Area Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
+
+![LEVIRDet demo gallery](assets/figures/demo-gallery.jpg)
 
 ## Overview
 
@@ -58,6 +76,47 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
   benchmarks.
 - **Interactive demonstrations.** The project page includes object detection,
   fine-grained detection, and ultra-wide-area detection demos.
+
+
+## Update Log
+
+🌟 **2026.10.03** 
+
+We are currently updating the user manual. We have uploaded Docker and are now uploading the dataset.
+
+🌟 **2026.10.02** 
+
+We received reviewers' comments two days ago and are now actively preparing the release.
+
+These preparations include converting the dataset into a more storage-efficient format to reduce download size, creating a Docker image to make it easier to run the model, and organizing the pre-trained weights, usage instructions, and training logs. We are also preparing the baseline models and corresponding weights used in our paper, updating the project homepage, and adding more convenient download options.
+
+While completing all of these preparations will take some time, we can confirm that the dataset will be released within the next week. The pre-trained LEVIRDetNet weights and associated model resources may take slightly longer to finalize. We will share release updates and access instructions on our GitHub page as they become available.
+
+
+## Dataset Scale
+
+![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.png)
+
+![LEVIRDet remote sensing gallery](assets/figures/class.jpg)
+
+LEVIRDet-159 covers 30 common parent categories and 159 category types across
+global regions, diverse imaging conditions, multiple sensors, and a broad range
+of object sizes.
+
+## LEVIRDetNet
+
+![LEVIRDetNet method overview](assets/figures/levirdetnet-method.jpg)
+
+LEVIRDetNet is a scale-hierarchy-aware detection foundation model for universal
+remote sensing object detection. It combines three key components:
+
+1. **Online GSD predictor** for estimating visual ground sampling distance from
+   input imagery.
+2. **GSD-guided query embedding and selection** for dynamic query modulation and
+   allocation under varying spatial resolutions.
+3. **Hierarchy-aware detection head** for mixed-granularity supervision and
+   category-system transfer.
+
 
 ## Target-Training-Free Benchmark Results
 
@@ -143,49 +202,7 @@ AP<sub>bbox</sub>.
 
 Additional tables are available in [docs/results.md](docs/results.md).
 
-## Dataset Scale
 
-![LEVIRDet-159 dataset-scale comparison](assets/figures/dataset-scale-comparison.jpg)
-
-LEVIRDet-159 covers 30 common parent categories and 159 category types across
-global regions, diverse imaging conditions, multiple sensors, and a broad range
-of object sizes.
-
-## LEVIRDetNet
-
-![LEVIRDetNet method overview](assets/figures/levirdetnet-method.jpg)
-
-LEVIRDetNet is a scale-hierarchy-aware detection foundation model for universal
-remote sensing object detection. It combines three key components:
-
-1. **Online GSD predictor** for estimating visual ground sampling distance from
-   input imagery.
-2. **GSD-guided query embedding and selection** for dynamic query modulation and
-   allocation under varying spatial resolutions.
-3. **Hierarchy-aware detection head** for mixed-granularity supervision and
-   category-system transfer.
-
-## Results
-
-![LEVIRDetNet benchmark results](assets/figures/benchmark-results.jpg)
-
-Under stringent evaluation settings, LEVIRDetNet demonstrates strong
-cross-domain generalization. Even without target-domain training or fine-tuning,
-it achieves state-of-the-art detection performance on 9 external benchmarks,
-improving the strongest fully supervised competing methods by **5.02 mAP** on
-average under each benchmark's primary metric. It also remains strongest in
-score-threshold comparisons with open-set and grounding models, maintaining
-stable precision and recall at practical confidence thresholds.
-
-## Demo
-
-Try the interactive web demo:
-
-- [Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-- [Fine-grained Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-- [Ultra-Wide Area Object Detection](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
-
-![LEVIRDet demo gallery](assets/figures/demo-gallery.jpg)
 
 ## Repository Layout
 
@@ -223,7 +240,7 @@ artifacts are planned for release with the final paper:
 
 The full image tiles, annotations, source-license manifest, code, and trained
 models will be released in a versioned project repository at
-<https://qinzheyang.github.io/LEVIRDet-Website/>, accompanying the final paper.
+<https://qinzheyang.github.io/LEVIRDet/>, accompanying the final paper.
 
 ## Getting Started
 
@@ -238,11 +255,278 @@ cd LEVIRDet
 # Dataset download and checkpoint download commands will be versioned.
 ```
 
+## Installation
+
+This is the alternative setup for users who prefer a local Conda environment.
+
+### Dependencies
+
+| Dependency | Reference version |
+| --- | --- |
+| Python | 3.11.8 |
+| PyTorch / TorchVision / TorchAudio | 2.3.1 / 0.18.1 / 2.3.1 |
+| CUDA runtime used by PyTorch | 12.1 |
+| MMCV, including CUDA operators | 2.2.0 |
+| MMEngine | 0.10.4 |
+| NumPy | 1.26.4 |
+| Triton, on Linux | 2.3.1 |
+
+**Compatibility notes.** LEVIRDetNet uses a
+modified MMDetection codebase that supports MMCV. The model code need come
+from the project release rather than an independent `pip install mmdet`.
+
+### Environment Installation
+
+We recommend using Miniconda for installation. The following command will create a virtual environment named `levirdet` and install PyTorch and MMCV.
+
+Note: If you have experience with PyTorch and have already installed it, you can skip to the next section. Otherwise, you can follow these steps to prepare.
+
+Note2: If you don't want to configure the environment, you can skip to the [next section](#Use-Environment-Docker-Directly) and use the docker that we have configured.
+
+<details open>
+
+**Step 0**: Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html).
+
+**Step 1**: Create a virtual environment named `levirdet` and activate it.
+
+```bash
+conda create -n levirdet python=3.11.8 pip=24.0 -y
+conda activate levirdet
+
+python -m pip install setuptools==60.2.0 wheel==0.43.0 \
+  numpy==1.26.4 pillow==10.2.0 opencv-python==4.10.0.84
+```
+
+**Step 2**: Install [PyTorch 2.3.1 with CUDA 12.1](https://pytorch.org/get-started/previous-versions/#v231).
+
+```bash
+python -m pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 \
+  --index-url https://download.pytorch.org/whl/cu121
+```
+
+On Linux, this PyTorch version depends on `triton==2.3.1`. Keep that version when
+installing additional packages.
+
+**Step 3**: Install [MMEngine and the matching MMCV binary wheel](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
+
+```bash
+python -m pip install mmengine==0.10.4 yapf==0.40.2
+python -m pip install mmcv==2.2.0 --only-binary=mmcv \
+  -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
+```
+
+**Step 4**: Install other dependencies.
+
+```bash
+python -m pip install numpy==1.26.4 matplotlib==3.9.1 scipy==1.14.0 \
+  pycocotools==2.0.8 shapely==2.0.5 six==1.16.0 \
+  terminaltables==3.1.10 tqdm==4.67.1
+
+# Required by the standalone GSD training and evaluation scripts.
+python -m pip install pyarrow==21.0.0
+```
+
+**Step 5**: [Optional] Install DeepSpeed.
+
+If you want to use DeepSpeed to train the model, you need to install DeepSpeed. The installation method of DeepSpeed can refer to the [DeepSpeed official document](https://github.com/microsoft/DeepSpeed).
+
+```bash
+sudo apt-get install -y build-essential
+# Replace this path with the actual location of your CUDA 12.1 toolkit.
+export CUDA_HOME=/usr/local/cuda-12.1
+export PATH="$CUDA_HOME/bin:$PATH"
+nvcc --version
+
+DS_BUILD_OPS=0 python -m pip install --no-build-isolation \
+  deepspeed==0.14.4 torch==2.3.1 numpy==1.26.4 \
+  triton==2.3.1 pydantic==2.8.2 ninja==1.11.1.1
+```
+
+Note: The support for DeepSpeed under the Windows system is not perfect yet, we recommend that you use DeepSpeed under the Linux system. Our docker do not have DeepSpeed.
+
+**Step 6**: [Optional] Verify PyTorch and the MMCV CUDA operators.
+
+```bash
+python - <<'PY'
+import numpy as np
+import torch
+import torchvision
+import mmcv
+import mmengine
+from mmcv.ops import nms
+
+print("NumPy:", np.__version__)
+print("PyTorch:", torch.__version__, "TorchVision:", torchvision.__version__)
+print("CUDA runtime:", torch.version.cuda)
+print("MMCV:", mmcv.__version__, "MMEngine:", mmengine.__version__)
+assert torch.cuda.is_available(), "A CUDA-enabled GPU is required."
+print("GPU:", torch.cuda.get_device_name(0))
+boxes = torch.tensor([[0., 0., 10., 10.], [1., 1., 9., 9.]], device="cuda")
+scores = torch.tensor([0.9, 0.8], device="cuda")
+_, keep = nms(boxes, scores, 0.5)
+assert keep.cpu().tolist() == [0]
+print("MMCV CUDA NMS: passed")
+PY
+```
+
+</details>
+
+### Use Environment Docker Directly
+
+We have set up a Docker configuration to ensure that the same results as on Linux can be achieved on Windows. If you are using the Windows environment, or if you don't want to set up Conda separately, or if you want to quickly try out the inference demo, you can download our pre-configured Docker.
+
+<details open>
+
+**Step 1**: Download the prepared Docker image.
+
+Download **`levir-train-cuda121-torch231.tar`** from either mirror:
+
+| Mirror | Download | Access code |
+| --- | --- | --- |
+| Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1o34wKHJEy7mUhm6Gpnapag?pwd=pzic) | `pzic` |
+| Google Drive | [Download Docker image](https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=sharing) | — |
+
+The archive is **10,017,927,168 bytes** (about 9.33 GiB). Its expected SHA256 is:
+
+```text
+3f673ae0700176eb6f103b8a8946bf893adf9a49fab0f3b25ce2a6a93531203d
+```
+
+The image runs on **Linux x86_64** and is tagged
+`levir-train:cuda121-torch231`. Python, PyTorch, CUDA libraries, MMCV, and the
+build-time model source are already installed. There is no need to rebuild the
+image or run the manual Python installation steps.
+
+**Step 2**: Select the Docker environment.
+
+
+```bash
+export LEVRUN_ROOT="$HOME/levir_docker"
+mkdir -p "$LEVRUN_ROOT/outputs" "$LEVRUN_ROOT/levirdetnet-release/work_dirs"
+docker load -i "$LEVRUN_ROOT/levir-train-cuda121-torch231.tar"
+
+docker run --rm -it --init --pull never --gpus all --shm-size=16g \
+  --workdir /workspace/levirdetnet \
+  -e LEVIR_DATA_ROOT=/data \
+  -e NO_ALBUMENTATIONS_UPDATE=1 \
+  --mount "type=bind,source=$LEVRUN_ROOT/levirdetnet-release,target=/workspace/levirdetnet,readonly" \
+  --mount "type=bind,source=$LEVRUN_ROOT/02_release,target=/data,readonly" \
+  --mount "type=bind,source=$LEVRUN_ROOT/outputs,target=/workspace/levirdetnet/work_dirs" \
+  levir-train:cuda121-torch231 bash
+```
+
+</details>
+
+## Dataset Preparation
+
+### Download LEVIRDet-159
+
+Two versions will be provided. Each includes the same train/test split and both
+the hierarchical and 30-category annotation sets, with filenames matched to its
+own image files.
+
+| Version | Image format | Hugging Face | ModelScope | Baidu Netdisk | Access code | Google Drive | Size |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Original-image release | Original image bytes; seven-digit filenames | — | — |  [Download Docker image](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
+| Lightweight release | JPEG quality 95; unchanged dimensions | — | — | [Download Docker image](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
+
+## Model Training
+
+### LEVIRDetNet Model
+
+#### Config File and Main Parameter Parsing
+
+We provide the configuration files of the LEVIRDetNet models used in the paper, which can be found in the `configs/levirdetnet` folder. The Config file is completely consistent with the API interface and usage method of MMDetection. Below we provide an analysis of some of the main parameters. If you want to know more about the meaning of the parameters, you can refer to the [MMDetection documentation](https://mmdetection.readthedocs.io/zh-cn/latest/user_guides/config.html).
+
+<details open>
+
+**Parameter Parsing**:
+
+- `work_dir`: The output path of model training, which generally does not need to be modified.
+- `default_hooks-CheckpointHook`: Checkpoint saving configuration during model training, which generally does not need to be modified.
+- `default_hooks-visualization`: Visualization configuration during model training, **comment out during training and uncomment during testing**.
+- `vis_backends-WandbVisBackend`: Configuration of network-side visualization tools, **after opening the comment, you need to register an account on the `wandb` official website, and you can view the visualization results during training in the web browser**.
+- `num_classes`: The number of categories in the dataset, **which needs to be modified according to the number of categories in the dataset**.
+- `dataset_type`: The type of dataset, **which needs to be modified according to the type of dataset**.
+- `code_root`: Code root directory, **modify to the absolute path of the root directory of this project**.
+- `data_root`: Dataset root directory, **modify to the absolute path of the dataset root directory**.
+- `batch_size_per_gpu`: Batch size per card, **which needs to be modified according to the memory size**.
+- `resume`: Whether to resume training, which generally does not need to be modified.
+- `load_from`: Checkpoint path of the model's pre-training, which generally does not need to be modified.
+- `max_epochs`: The maximum number of training rounds, which generally does not need to be modified.
+- `runner_type`: The type of trainer needs to be consistent with the type of `optim_wrapper` and `strategy`, which generally does not need to be modified.
+
+</details>
+
+#### Single Card Training
+
+```shell
+python tools/train.py configs/levirdetnet/xxx.py  # xxx.py is the configuration file you want to use, for example, levirdetnet_30class.py
+```
+
+#### Multi-card Training
+
+```shell
+bash tools/dist_train.sh configs/levirdetnet/xxx.py 8  # xxx.py is the configuration file you want to use, for example, levirdetnet_30class.py
+```
+
+### Other Detection Models
+
+<details open>
+
+If you want to use other instance segmentation models, you can refer to [MMDetection](https://github.com/open-mmlab/mmdetection/tree/main) to train the models, or you can put their Config files in the `configs` folder of this project, and then train them according to the above methods.
+
+</details>
+
+## Model Testing
+
+#### Single Card Testing:
+
+```shell
+python tools/test.py configs/levirdetnet/xxx.py ${CHECKPOINT_FILE}  # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use
+```
+
+#### Multi-card Testing:
+
+```shell
+bash tools/dist_train.sh configs/levirdetnet/xxx.py ${CHECKPOINT_FILE} ${GPU_NUM}  # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, GPU_NUM is the number of GPUs used
+```
+
+**Note**: If you need to get the visualization results, you can uncomment `default_hooks-visualization` in the Config file.
+
+
+## Image Prediction
+
+#### Single Image Prediction:
+
+```shell
+python demo/image_demo.py ${IMAGE_FILE}  configs/levirdetnet/xxx.py --weights ${CHECKPOINT_FILE} --out-dir ${OUTPUT_DIR}  # IMAGE_FILE is the image file you want to predict, xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, OUTPUT_DIR is the output path of the prediction result
+```
+
+#### Multi-image Prediction:
+
+```shell
+python demo/image_demo.py ${IMAGE_DIR}  configs/levirdetnet/xxx.py --weights ${CHECKPOINT_FILE} --out-dir ${OUTPUT_DIR}  # IMAGE_DIR is the image folder you want to predict, xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, OUTPUT_DIR is the output path of the prediction result
+```
+
+
 ## Citation
 
 If you find this project useful, please cite the final paper once it is
 available. A provisional citation file is provided in [CITATION.cff](CITATION.cff)
 and will be updated with the camera-ready metadata.
+
+```bash
+@misc{yang2026levirdetmillionscale159categorydataset,
+      title={LEVIRDet: A Million-Scale 159-Category Dataset and Foundation Model for Universal Remote Sensing Object Detection}, 
+      author={Qinzhe Yang and Dongyu Wang and Haohan Niu and Jia Xu and Zhenwei Shi and Zhengxia Zou},
+      year={2026},
+      eprint={2606.25312},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.25312}, 
+}
+```
 
 ## License
 
