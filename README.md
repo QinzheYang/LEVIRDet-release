@@ -275,19 +275,26 @@ This is the alternative setup for users who prefer a local Conda environment.
 modified MMDetection codebase that supports MMCV. The model code need come
 from the project release rather than an independent `pip install mmdet`.
 
+
 ### Environment Installation
 
-We recommend using Miniconda for installation. The following command will create a virtual environment named `levirdet` and install PyTorch and MMCV.
+Choose either a Linux GPU Conda environment or the
+[preconfigured Docker environment](#use-environment-docker-directly). Both use
+the same project source, configuration files, and standard MMDetection training
+and inference commands. Docker users can skip the manual installation below.
 
-Note: If you have experience with PyTorch and have already installed it, you can skip to the next section. Otherwise, you can follow these steps to prepare.
-
-Note2: If you don't want to configure the environment, you can skip to the [next section](#Use-Environment-Docker-Directly) and use the docker that we have configured.
+For a new Conda environment, follow Steps 0–6, then register the project in
+Step 7. If you already have a compatible environment, go directly to Step 7
+and run the verification commands. Use the reference versions in the table
+above; install this project's modified source instead of a separate upstream
+`mmdet` package.
 
 <details open>
+<summary>Set up a Linux GPU Conda environment</summary>
 
 **Step 0**: Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html).
 
-**Step 1**: Create a virtual environment named `levirdet` and activate it.
+**Step 1**: Create and activate the environment.
 
 ```bash
 conda create -n levirdet python=3.11.8 pip=24.0 -y
@@ -304,8 +311,8 @@ python -m pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 \
   --index-url https://download.pytorch.org/whl/cu121
 ```
 
-On Linux, this PyTorch version depends on `triton==2.3.1`. Keep that version when
-installing additional packages.
+On Linux, this PyTorch version depends on `triton==2.3.1`. Keep that version
+when installing additional packages.
 
 **Step 3**: Install [MMEngine and the matching MMCV binary wheel](https://mmcv.readthedocs.io/en/latest/get_started/installation.html).
 
@@ -315,7 +322,7 @@ python -m pip install mmcv==2.2.0 --only-binary=mmcv \
   -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
 ```
 
-**Step 4**: Install other dependencies.
+**Step 4**: Install the runtime dependencies.
 
 ```bash
 python -m pip install numpy==1.26.4 matplotlib==3.9.1 scipy==1.14.0 \
@@ -328,11 +335,15 @@ python -m pip install pyarrow==21.0.0
 
 **Step 5**: [Optional] Install DeepSpeed.
 
-If you want to use DeepSpeed to train the model, you need to install DeepSpeed. The installation method of DeepSpeed can refer to the [DeepSpeed official document](https://github.com/microsoft/DeepSpeed).
+The released configurations use the ordinary MMDetection optimizer wrapper
+and do not require DeepSpeed. Install it only if you plan to configure a
+DeepSpeed training strategy separately. See
+the [DeepSpeed installation documentation](https://www.deepspeed.ai/tutorials/advanced-install/)
+for build requirements.
 
 ```bash
 sudo apt-get install -y build-essential
-# Replace this path with the actual location of your CUDA 12.1 toolkit.
+# Replace this path with your installed CUDA 12.1 toolkit.
 export CUDA_HOME=/usr/local/cuda-12.1
 export PATH="$CUDA_HOME/bin:$PATH"
 nvcc --version
@@ -342,9 +353,10 @@ DS_BUILD_OPS=0 python -m pip install --no-build-isolation \
   triton==2.3.1 pydantic==2.8.2 ninja==1.11.1.1
 ```
 
-Note: The support for DeepSpeed under the Windows system is not perfect yet, we recommend that you use DeepSpeed under the Linux system. Our docker do not have DeepSpeed.
+Use Linux for this manual setup. The supplied Docker image already includes
+DeepSpeed; do not repeat these installation commands inside the container.
 
-**Step 6**: [Optional] Verify PyTorch and the MMCV CUDA operators.
+**Step 6**: Verify PyTorch and the MMCV CUDA operators.
 
 ```bash
 python - <<'PY'
@@ -369,13 +381,45 @@ print("MMCV CUDA NMS: passed")
 PY
 ```
 
+**Step 7**: Register the same release project in your Conda environment.
+
+Use the [directory layout below](#use-environment-docker-directly), omitting
+the image tar if you only use Conda. Activate your environment, then enter the
+project root:
+
+```bash
+conda activate YOUR_ENV
+cd "$HOME/levir_docker/levirdetnet-release"
+python -m pip install --no-deps --no-build-isolation -e .
+export LEVIR_DATA_ROOT="$HOME/levir_docker/02_release"
+export NO_ALBUMENTATIONS_UPDATE=1
+mkdir -p work_dirs
+
+which python
+python -c "import torch, mmdet; print(torch.__version__, torch.version.cuda); print(torch.cuda.is_available()); print(mmdet.__file__)"
+
+python - <<'PY'
+from mmdet.utils import register_all_modules
+from mmdet.registry import MODELS
+
+register_all_modules()
+assert MODELS.get('DEIMV2GSDGuided') is not None
+assert MODELS.get('DINOv3STAs') is not None
+print('LEVIRDetNet model registration: passed')
+PY
+```
+
 </details>
 
 ### Use Environment Docker Directly
 
-We have set up a Docker configuration to ensure that the same results as on Linux can be achieved on Windows. If you are using the Windows environment, or if you don't want to set up Conda separately, or if you want to quickly try out the inference demo, you can download our pre-configured Docker.
+Our docker provides the Linux GPU environment used for the
+verified inference runs. It can run on a Linux NVIDIA GPU host or through
+Docker Desktop's Linux containers on Windows. You do not need to install the
+Python dependencies manually or run `conda activate` inside the container.
 
 <details open>
+<summary>Prepare the files, enter Docker, and run the standard commands</summary>
 
 **Step 1**: Download the prepared Docker image.
 
@@ -394,11 +438,68 @@ The archive is **10,017,927,168 bytes** (about 9.33 GiB). Its expected SHA256 is
 
 The image runs on **Linux x86_64** and is tagged
 `levir-train:cuda121-torch231`. Python, PyTorch, CUDA libraries, MMCV, and the
-build-time model source are already installed. There is no need to rebuild the
-image or run the manual Python installation steps.
+build-time source are already installed.
 
-**Step 2**: Select the Docker environment.
+**Step 2**: Arrange the project, data, and checkpoints.
 
+The following example uses `~/levir_docker` on the host. Adjust the root path
+to your download location. Keep the complete updated release project together,
+including its `demo`, `mmdet`, `configs`, and `tools` directories.
+
+```text
+~/levir_docker/
+├── levir-train-cuda121-torch231.tar
+├── levirdetnet-release/
+│   ├── demo/image_demo.py
+│   ├── mmdet/                         # Includes apis/levir_image_demo.py
+│   ├── configs/
+│   │   ├── _base_/levirdetnet.py
+│   │   └── levirdetnet/
+│   │       ├── levirdetnet-30class.py
+│   │       └── levirdetnet-159class.py
+│   ├── tools/
+│   ├── docker/
+│   ├── gsd_pred/                      # Standalone GSD scripts
+│   ├── epoch_117.pth                  # Verified 30-class detector
+│   ├── best_coco_weighted_bbox_mAP_epoch_110_159class.pth
+│   │                                  # Verified strict 159-class detector
+│   ├── epoch_117_hierarchy_pretrain.pth # Legacy training initializer; see below
+│   ├── dinov3_vits16plus_pretrain_lvd1689m-4057cbaa.pth
+│   ├── gsd_fft/best.pt
+│   └── work_dirs/                     # May initially be empty
+├── 02_release/
+│   ├── train/images/...
+│   ├── test/images/...
+│   └── annotations/
+│       ├── train_159.json
+│       ├── test_159.json
+│       ├── train_30.json
+│       └── test_30.json
+└── outputs/
+```
+
+For image inference, a complete detector checkpoint and input images are
+sufficient; annotations and separate DINO/GSD initialization checkpoints are
+not required. Training needs the corresponding images, annotations, and any
+initialization weights selected by the training configuration. Always pair
+images with the annotation JSON from the same dataset release.
+
+Use `epoch_117.pth` with `levirdetnet-30class.py`, and the checkpoint ending in
+`_110_159class.pth` with `levirdetnet-159class.py`. The legacy
+`epoch_117_hierarchy_pretrain.pth` is a training initializer, not the trained
+159-class detector shown here.
+
+**Step 3**: Enable GPU containers and start the environment.
+
+On Linux, install Docker, the NVIDIA driver, and GPU container support using
+the [NVIDIA Container Toolkit installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+On Windows, use Docker Desktop with its WSL 2 backend and a compatible NVIDIA
+driver; see [Docker Desktop GPU support](https://docs.docker.com/desktop/features/gpu/).
+
+Run the following commands in **host-side Bash**: a Linux terminal, or a WSL 2
+distribution with Docker Desktop integration enabled. These are not PowerShell
+commands. In WSL, set `LEVRUN_ROOT` to a WSL-visible path containing the layout
+above, such as a directory under `/mnt/e` when the files are on the Windows E drive.
 
 ```bash
 export LEVRUN_ROOT="$HOME/levir_docker"
@@ -414,6 +515,49 @@ docker run --rm -it --init --pull never --gpus all --shm-size=16g \
   --mount "type=bind,source=$LEVRUN_ROOT/outputs,target=/workspace/levirdetnet/work_dirs" \
   levir-train:cuda121-torch231 bash
 ```
+
+Mount the **complete project** at `/workspace/levirdetnet`. The image's Python
+import path already points there, so the demo, `mmdet`, and configurations all
+come from the same updated source tree. The project and dataset are read-only;
+`work_dirs` is a separate writable mount. Results saved there persist in the
+host's `outputs` directory after the container exits.
+
+For inference only, `--shm-size=4g` is sufficient for the tested examples.
+The tar can be stored elsewhere: pass its actual location to
+[`docker load -i`](https://docs.docker.com/reference/cli/docker/image/load/),
+which imports the image and its tag. Import it once, then reuse `docker run`.
+
+**Step 4**: Check the environment inside the container.
+
+```bash
+which python
+python -c "import torch, mmdet; print(torch.__version__, torch.version.cuda); print(torch.cuda.is_available()); print(mmdet.__file__)"
+```
+
+Python should be `/mnt/user/share/conda_envs/cuda121torch23/bin/python`, and
+`mmdet` should import from `/workspace/levirdetnet/mmdet`. The CUDA availability
+check should print `True`. No Conda activation or editable installation is
+needed inside this image.
+
+**Step 5**: Use the same MMDetection commands in Docker or Conda.
+
+Run from the project root. For example, infer a single release image with the
+strict 159-class checkpoint:
+
+```bash
+python demo/image_demo.py \
+  "$LEVIR_DATA_ROOT/test/images/0143685.jpg" \
+  configs/levirdetnet/levirdetnet-159class.py \
+  --weights best_coco_weighted_bbox_mAP_epoch_110_159class.pth \
+  --out-dir work_dirs/infer_159
+```
+
+**Detail**: Replace the image path with your own file, or a directory for batch processing.
+Use a fresh output subdirectory for each run. In Docker, the example writes
+visualizations and prediction JSONs under the host's `outputs/infer_159`;
+in Conda, it writes to the project's `work_dirs/infer_159`. For 30-class
+inference, replace the configuration with `levirdetnet-30class.py` and the
+checkpoint with `epoch_117.pth`. Type `exit` to leave the container.
 
 </details>
 
