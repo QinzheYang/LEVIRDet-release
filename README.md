@@ -409,24 +409,11 @@ print('LEVIRDetNet model registration: passed')
 PY
 ```
 
-Replace `YOUR_ENV` with the environment name or absolute environment path
-(for the environment created above, use `levirdet`). The editable installation
-registers the local project; `--no-deps` does not install missing dependencies.
-`mmdet.__file__` should point into this release's `mmdet` directory.
-
-The commands below use `LEVIR_DATA_ROOT` to locate input images. It does not
-automatically rewrite paths inside the current training configurations; see
-the training-path note at the end of the Docker section. Conda outputs written
-to `work_dirs` remain under the project directory.
-
-The Docker environment has been tested on this machine. A fresh independent
-Conda installation has not been tested end to end with these instructions.
-
 </details>
 
 ### Use Environment Docker Directly
 
-The preconfigured image provides the Linux GPU environment used for the
+Our docker provides the Linux GPU environment used for the
 verified inference runs. It can run on a Linux NVIDIA GPU host or through
 Docker Desktop's Linux containers on Windows. You do not need to install the
 Python dependencies manually or run `conda activate` inside the container.
@@ -498,8 +485,7 @@ initialization weights selected by the training configuration. Always pair
 images with the annotation JSON from the same dataset release.
 
 Use `epoch_117.pth` with `levirdetnet-30class.py`, and the checkpoint ending in
-`_110_159class.pth` with `levirdetnet-159class.py`. The original epoch 110 file
-without the `_159class` suffix has a 160-class head. The legacy
+`_110_159class.pth` with `levirdetnet-159class.py`. The legacy
 `epoch_117_hierarchy_pretrain.pth` is a training initializer, not the trained
 159-class detector shown here.
 
@@ -541,11 +527,6 @@ The tar can be stored elsewhere: pass its actual location to
 [`docker load -i`](https://docs.docker.com/reference/cli/docker/image/load/),
 which imports the image and its tag. Import it once, then reuse `docker run`.
 
-The existing tar has not been rewritten. The updated standard demo entry point
-is distributed with the project and becomes available through the project
-mount; rebuilding the image is unnecessary. Future builds from the updated
-`docker/Dockerfile.condapack` also include the demo scripts.
-
 **Step 4**: Check the environment inside the container.
 
 ```bash
@@ -571,32 +552,12 @@ python demo/image_demo.py \
   --out-dir work_dirs/infer_159
 ```
 
-Replace the image path with your own file, or a directory for batch processing.
+**Detail**: Replace the image path with your own file, or a directory for batch processing.
 Use a fresh output subdirectory for each run. In Docker, the example writes
 visualizations and prediction JSONs under the host's `outputs/infer_159`;
 in Conda, it writes to the project's `work_dirs/infer_159`. For 30-class
 inference, replace the configuration with `levirdetnet-30class.py` and the
 checkpoint with `epoch_117.pth`. Type `exit` to leave the container.
-
-Training still uses `python tools/train.py` or `bash tools/dist_train.sh` as
-described in [Model Training](#model-training). **Before training or dataset
-evaluation**, update the chosen configuration's original server paths,
-including the nested train/validation/test dataset roots, annotation filenames,
-image prefixes, and DINO/GSD initialization paths. Also update
-`val_evaluator.ann_file` and `test_evaluator.ann_file` in the 30-class
-configuration; the 159-class evaluator uses `ann_file=None` to obtain ground
-truth from the dataset. When using Docker, edit the configuration on the host
-before entering the container, since the project mount is read-only.
-The release data layout uses
-`annotations/train_159.json`, `annotations/test_159.json`, `train/images/`, and
-`test/images/` (use the `_30.json` files for the 30-class configuration).
-
-`LEVIR_DATA_ROOT` in the shell examples does **not** automatically override the
-current `configs/levirdetnet/*.py` files. Set the appropriate configuration
-fields directly or pass MMDetection's `--cfg-options`. Set a writable output
-with `--work-dir work_dirs/<run_name>`, use `resume=False` for a new training
-run, and choose a checkpoint whose category definitions match the selected
-configuration when setting `load_from`.
 
 </details>
 
