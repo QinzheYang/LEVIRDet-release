@@ -1,0 +1,27 @@
+{
+  "id": "3670c77125b24760903b074eb01351c8",
+  "model": "30",
+  "threshold": 0.3,
+  "status": "done",
+  "stage": "Inference complete",
+  "completed": 1,
+  "total": 1,
+  "files": [
+    {
+      "id": "000001",
+      "index": 0,
+      "name": "7.tif",
+      "relative_path": "7.tif",
+      "size": 27241286,
+      "stored_name": "000001.tif",
+      "uploaded": true,
+      "status": "done",
+      "input_url": "/api/jobs/3670c77125b24760903b074eb01351c8/files/000001/input",
+      "visualization_url": "/api/jobs/3670c77125b24760903b074eb01351c8/files/000001/visualization",
+      "prediction_url": "/api/jobs/3670c77125b24760903b074eb01351c8/files/000001/prediction"
+    }
+  ],
+  "error": null,
+  "output_dir": "E:\\levirdetnet-release\\fast_demo_outputs\\20261006_134445_30class_3670c771",
+  "created_at": "2026-10-06T13:44:45"
+}

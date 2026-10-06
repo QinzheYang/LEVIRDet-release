@@ -1,0 +1,8 @@
+{
+  "name": "levirdetnet-fast-demo",
+  "productName": "LEVIRDetNet",
+  "version": "1.0.0",
+  "description": "Local desktop inference for LEVIRDetNet",
+  "main": "main.cjs",
+  "private": true
+}

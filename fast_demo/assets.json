@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "url": "https://github.com/QinzheYang/LEVIRDet-release",
+    "archive_url": "https://codeload.github.com/QinzheYang/LEVIRDet-release/zip/refs/heads/main",
+    "branch": "main"
+  },
+  "docker_image": "levir-train:cuda121-torch231",
+  "assets": [
+    {
+      "id": "docker",
+      "path": "docker/levir-train-cuda121-torch231.tar",
+      "url": "https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=drive_link",
+      "drive_id": "1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei",
+      "size": 10017927168,
+      "sha256": "3f673ae0700176eb6f103b8a8946bf893adf9a49fab0f3b25ce2a6a93531203d"
+    },
+    {
+      "id": "weights30",
+      "path": "epoch_117.pth",
+      "url": "https://drive.google.com/file/d/1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde/view?usp=drive_link",
+      "drive_id": "1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde",
+      "size": 2377858580,
+      "sha256": "9149cd5f894865e57d7e2694b8969716df8ac83eeedc957a89d3fd0f91e54174"
+    },
+    {
+      "id": "weights159",
+      "path": "best_coco_weighted_bbox_mAP_epoch_110_159class.pth",
+      "url": "https://drive.google.com/file/d/1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG/view?usp=drive_link",
+      "drive_id": "1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG",
+      "size": 1704129664,
+      "sha256": "e59ac416702ec464f10683fae6da18faaa92d91e832d1f058b6ff1a05111b968"
+    }
+  ],
+  "models": [
+    {
+      "id": "30", "label": "30 classes", "num_classes": 30,
+      "config": "configs/levirdetnet/levirdetnet-30class.py", "asset": "weights30"
+    },
+    {
+      "id": "159", "label": "159 classes", "num_classes": 159,
+      "config": "configs/levirdetnet/levirdetnet-159class.py", "asset": "weights159"
+    }
+  ],
+  "default_model": "30",
+  "desktop_runtime": {
+    "version": "44.5.1",
+    "win32-x64": {
+      "url": "https://github.com/electron/electron/releases/download/v44.5.1/electron-v44.5.1-win32-x64.zip",
+      "size": 157998329,
+      "sha256": "9b382492dcfee91f8f9e92c91f7972550a1b95d2299cac72279dab33a600d7db",
+      "archive": "electron-v44.5.1-win32-x64.zip", "executable": "electron.exe"
+    },
+    "linux-x64": {
+      "url": "https://github.com/electron/electron/releases/download/v44.5.1/electron-v44.5.1-linux-x64.zip",
+      "size": 122932200,
+      "sha256": "5bcd217611d6843ececd6c9e9c1fcd1da3ab066c43d8b1a9e4b44689a1fba6f5",
+      "archive": "electron-v44.5.1-linux-x64.zip", "executable": "electron"
+    }
+  }
+}

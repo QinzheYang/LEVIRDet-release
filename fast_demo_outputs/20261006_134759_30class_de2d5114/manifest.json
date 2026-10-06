@@ -1,0 +1,27 @@
+{
+  "id": "de2d5114de4a43cbb2357f93b2e77d87",
+  "model": "30",
+  "threshold": 0.3,
+  "status": "done",
+  "stage": "Inference complete",
+  "completed": 1,
+  "total": 1,
+  "files": [
+    {
+      "id": "000001",
+      "index": 0,
+      "name": "0a286fb15.jpg",
+      "relative_path": "0a286fb15.jpg",
+      "size": 115344,
+      "stored_name": "000001.jpg",
+      "uploaded": true,
+      "status": "done",
+      "input_url": "/api/jobs/de2d5114de4a43cbb2357f93b2e77d87/files/000001/input",
+      "visualization_url": "/api/jobs/de2d5114de4a43cbb2357f93b2e77d87/files/000001/visualization",
+      "prediction_url": "/api/jobs/de2d5114de4a43cbb2357f93b2e77d87/files/000001/prediction"
+    }
+  ],
+  "error": null,
+  "output_dir": "E:\\levirdetnet-release\\fast_demo_outputs\\20261006_134759_30class_de2d5114",
+  "created_at": "2026-10-06T13:47:59"
+}

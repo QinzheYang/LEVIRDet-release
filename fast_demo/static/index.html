@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>LEVIRDetNet</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wordmark" aria-label="LEVIRDetNet">LEVIRDetNet<span class="wordmark-dot" aria-hidden="true">.</span></div>
+    <div class="header-title"><span class="eyebrow">REMOTE SENSING OBJECT DETECTION</span><span>Fast Demo</span></div>
+    <div id="connection" class="connection" role="status"><span class="status-dot" aria-hidden="true"></span><span id="connection-text">Connecting</span></div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">FROM IMAGE TO DETECTION</p><h1 id="page-title">Explore your images.</h1><p class="intro-description">Choose images or a folder. Compare the originals with model predictions.</p></div>
+      <div class="local-note"><span aria-hidden="true" class="local-icon">↳</span><span>Runs locally on your GPU<br><span class="muted">Images stay on this computer.</span></span></div>
+    </section>
+
+    <section class="workspace" aria-label="Image comparison">
+      <div class="workspace-heading">
+        <div class="panel-heading"><span class="panel-number">01</span><h2>Input</h2><span id="input-count" class="count-tag">No images</span></div>
+        <div class="panel-heading output-heading"><span class="panel-number">02</span><h2>Output</h2><span id="output-count" class="count-tag">No predictions</span></div>
+      </div>
+      <div class="comparison">
+        <section class="image-panel" aria-label="Original image">
+          <div id="input-empty" class="empty-state">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="7" width="34" height="34" rx="4"/><circle cx="17" cy="17" r="3"/><path d="m8 34 10-10 8 8 6-6 9 10"/></svg>
+            <p id="input-empty-title">please choose input</p>
+            <span id="input-empty-detail">An image, a selection, or an entire folder</span>
+          </div>
+          <img id="input-image" alt="Selected original image" hidden>
+          <span id="input-badge" class="image-badge" hidden>ORIGINAL</span>
+        </section>
+        <section class="image-panel output-panel" aria-label="Visualization of model predictions">
+          <div id="output-empty" class="empty-state">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 7H7v10M31 7h10v10M7 31v10h10M41 31v10H31"/><rect x="17" y="17" width="14" height="14" rx="1"/><path d="M24 12v5M24 31v5M12 24h5M31 24h5"/></svg>
+            <p id="output-empty-title">Visualization will appear here</p>
+            <span id="output-empty-detail">Confirm your input to start inference</span>
+          </div>
+          <img id="output-image" alt="Object detection visualization" hidden>
+          <span id="output-badge" class="image-badge accent-badge" hidden>DETECTIONS</span>
+        </section>
+      </div>
+      <div class="viewer-toolbar">
+        <div class="file-detail"><span class="eyebrow">CURRENT IMAGE</span><span id="filename" title="">No image selected</span></div>
+        <nav class="pagination" aria-label="Image navigation">
+          <button id="previous" class="icon-button" type="button" aria-label="Previous image (left arrow)" disabled>←</button>
+          <span id="page-count" aria-live="polite">0 / 0</span>
+          <button id="next" class="icon-button" type="button" aria-label="Next image (right arrow)" disabled>→</button>
+        </nav>
+        <div class="result-actions"><button id="save-json" class="text-button" type="button" disabled>Save JSON <span aria-hidden="true">↓</span></button></div>
+      </div>
+    </section>
+
+    <section class="control-card" aria-labelledby="controls-title">
+      <h2 id="controls-title" class="sr-only">Inference controls</h2>
+      <div class="input-controls"><span class="field-label">SELECT INPUT</span><div class="button-pair"><button id="choose-images" class="button secondary" type="button"><span aria-hidden="true">＋</span> Choose images</button><button id="choose-folder" class="button secondary" type="button">Choose folder</button></div><input id="image-picker" type="file" accept=".jpg,.jpeg,.png,.bmp,.tif,.tiff,.webp,.ppm,.pgm" multiple hidden><input id="folder-picker" type="file" webkitdirectory multiple hidden></div>
+      <div class="model-control"><label class="field-label" for="model">MODEL</label><select id="model"><option value="30" selected>30 classes</option><option value="159">159 classes</option></select></div>
+      <div class="threshold-control"><label class="field-label" for="threshold">DISPLAY THRESHOLD <output id="threshold-value" for="threshold">0.30</output></label><input id="threshold" type="range" min="0.05" max="0.95" step="0.05" value="0.30" aria-describedby="threshold-help"><span id="threshold-help" class="field-hint">Visualization only</span></div>
+      <button id="confirm" class="button primary" type="button" disabled>Confirm &amp; run <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section class="run-status" aria-label="Inference status">
+      <div class="run-status-heading"><div><span id="run-dot" class="run-dot" aria-hidden="true"></span><span id="status-text" role="status" aria-live="polite">Connecting to the local demo…</span></div><span id="progress-label"></span></div>
+      <progress id="progress" max="100" value="0" aria-label="Inference progress" hidden></progress>
+      <div id="notice" class="notice" role="alert" hidden><span id="notice-text"></span><button id="retry-connect" class="text-button" type="button" hidden>Try again</button></div>
+      <div class="output-location"><span class="field-label">SAVED TO</span><code id="output-path">Waiting for the local demo</code><button id="open-output" class="text-button" type="button" hidden disabled>Open folder ↗</button><button id="copy-path" class="text-button" type="button" disabled>Copy path</button></div>
+      <p class="save-note">Visualizations and prediction JSON files are saved automatically. Use the arrows to browse both views together.</p>
+    </section>
+  </main>
+  <footer><span>LEVIRDetNet</span><span>Local inference · 1024 × 1024 input</span><span id="footer-model">30-class model</span></footer>
+</body>
+</html>
