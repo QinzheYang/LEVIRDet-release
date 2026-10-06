@@ -1,0 +1,75 @@
+_base_ = './tridentnet_r50-caffe_1x_coco.py'
+
+# Dataset settings
+classes = ('ship',)
+num_classes = len(classes)
+metainfo = dict(classes=classes)
+work_dir='/mnt/dataset/share/yangqinzhe/yqz-det/ckpt/skyfusion-ship/tridentnet'
+dataset_type = 'CocoDataset'
+data_root = '/mnt/user/share/yangqinzhe/yqz-det/skyfusion-ship/'
+backend_args = None
+optim_wrapper = dict(
+    optimizer=dict(lr=0.002, momentum=0.9, type='SGD', weight_decay=0.0001),
+    type='OptimWrapper')
+# Update model head class count
+model = dict(roi_head=dict(bbox_head=dict(num_classes=num_classes)))
+param_scheduler = [
+    dict(
+        begin=0, by_epoch=False, end=500, start_factor=0.001, type='LinearLR'),
+    dict(
+        begin=0,
+        by_epoch=True,
+        end=120,
+        gamma=0.1,
+        milestones=[
+            80,
+            110,
+        ],
+        type='MultiStepLR'),
+]
+train_dataloader = dict(
+    dataset=dict(
+        metainfo=metainfo,
+        data_root=data_root,
+        ann_file='train.json',
+        data_prefix=dict(img='train/'),
+        filter_cfg=dict(filter_empty_gt=False),
+        backend_args=backend_args))
+
+val_dataloader = dict(
+    dataset=dict(
+        metainfo=metainfo,
+        data_root=data_root,
+        ann_file='val.json',
+        data_prefix=dict(img='val/'),
+        backend_args=backend_args))
+test_dataloader = dict(
+    dataset=dict(
+        metainfo=metainfo,
+        data_root=data_root,
+        ann_file='test.json',
+        data_prefix=dict(img='test/'),
+        backend_args=backend_args))
+
+val_evaluator = dict(
+    ann_file=data_root + 'val.json',
+    metric='bbox',
+    backend_args=backend_args)
+test_evaluator = dict(
+    ann_file=data_root + 'test.json',
+    metric='bbox',
+    backend_args=backend_args)
+
+
+# Validate every 10 epochs
+#resume=True
+
+train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=120, val_interval=10)
+# Save after validation, keep at most 5 checkpoints, save best
+default_hooks = dict(
+    checkpoint=dict(
+        type='CheckpointAfterValHook',
+        interval=1,
+        max_keep_ckpts=5,
+        save_best='coco/bbox_mAP',
+        rule='greater'))

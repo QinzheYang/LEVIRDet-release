@@ -1,0 +1,63 @@
+_base_ = './dino-4scale_r50_8xb2-36e_coco.py'
+
+# Dataset settings
+classes = ('ship', )
+num_classes = len(classes)
+metainfo = dict(classes=classes)
+
+work_dir = '/mnt/dataset/share/yangqinzhe/yqz-det/ckpt/vrhv/dino-4scale_r50_8xb2-36e_vrhv'
+dataset_type = 'CocoDataset'
+data_root = '/mnt/dataset/share/yangqinzhe/yqz-det/vrhv/'
+backend_args = None
+
+# Update model head class count
+model = dict(bbox_head=dict(num_classes=num_classes))
+
+train_dataloader = dict(
+    dataset=dict(
+        metainfo=metainfo,
+        data_root=data_root,
+        ann_file='train.json',
+        data_prefix=dict(img='train/'),
+        filter_cfg=dict(filter_empty_gt=False),
+        backend_args=backend_args))
+
+val_dataloader = dict(
+    dataset=dict(
+        metainfo=metainfo,
+        data_root=data_root,
+        ann_file='test_coco.json',
+        data_prefix=dict(img='test/'),
+        backend_args=backend_args))
+test_dataloader = val_dataloader
+
+val_evaluator = dict(
+    ann_file=data_root + 'test_coco.json',
+    metric='bbox',
+    backend_args=backend_args)
+test_evaluator = val_evaluator
+
+# Validate every 10 epochs
+
+# Save after validation, keep at most 5 checkpoints, save best
+default_hooks = dict(
+    checkpoint=dict(
+        type='CheckpointAfterValHook',
+        interval=1,
+        max_keep_ckpts=5,
+        save_best='coco/bbox_mAP',
+        rule='greater'))
+
+max_epochs = 72
+train_cfg = dict(
+    type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=10)
+param_scheduler = [
+    dict(
+        type='MultiStepLR',
+        begin=0,
+        end=max_epochs,
+        by_epoch=True,
+        milestones=[60],
+        gamma=0.1)
+]
+resume=True

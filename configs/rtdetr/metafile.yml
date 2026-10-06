@@ -1,0 +1,137 @@
+Collections:
+  - Name: RT-DETR
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - AdamW
+        - Weight Decay
+        - Multi Scale Train
+        - Gradient Clip
+      Training Resources: 8x A100 GPUs
+      Architecture:
+        - ResNet
+        - Transformer
+    Paper:
+      URL: https://arxiv.org/abs/2304.08069
+      Title: 'DETRs Beat YOLOs on Real-time Object Detection'
+    README: configs/rtdetr/README.md
+    Code:
+      URL: https://github.com/flytocc/rtdetr-mmdet/blob/8da6c68c4e5d4d8aae4438c7d59fd222cba871a5/mmdet/models/detectors/rtdetr.py#L18
+      Version: v3.3.0
+
+Models:
+  - Name: rtdetr_r18vd_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_r18vd_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 46.5
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_r18vd_8xb2-72e_coco_4415cbaf.pth
+
+  - Name: rtdetr_r34vd_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_r34vd_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 48.9
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_r34vd_8xb2-72e_coco_bb97061e.pth
+
+  - Name: rtdetr_r50vd_m_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_r50vd_m_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.3
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_r50vd_8xb2-72e_coco_cc2c61e8.pth
+
+  - Name: rtdetr_r50vd_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_r50vd_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 53.1
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_r50vd_8xb2-72e_coco_cc2c61e8.pth
+
+  - Name: rtdetr_r101vd_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_r101vd_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 54.3
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_r101vd_8xb2-72e_coco_41368c9e.pth
+
+  - Name: rtdetr_hgnetv2_l_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_hgnetv2_l_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 53.0
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_hgnetv2_l_8xb2-72e_coco_6469b8bc.pth
+
+  - Name: rtdetr_hgnetv2_x_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr_hgnetv2_x_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 54.8
+    Weights: https://github.com/flytocc/mmdetection/releases/download/model_zoo/rtdetr_hgnetv2_x_8xb2-72e_coco_032ec6fe.pth
+
+  - Name: mask_rtdetr_hgnetv2_l_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/mask_rtdetr_hgnetv2_l_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 51.4
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 45.8
+    Weights: https://github.com/flytocc/rtdetr-mmdet/releases/download/mask-rtdetr/mask_rtdetr_hgnetv2_l_8xb2-72e_coco-dfb2b9c7.pth
+
+  - Name: rtdetr-dy-ins_r50vd_8xb2-72e_coco
+    In Collection: RT-DETR
+    Config: configs/rtdetr/rtdetr-dy-ins_r50vd_8xb2-72e_coco.py
+    Metadata:
+      Epochs: 72
+    Results:
+      - Task: Object Detection
+        Dataset: COCO
+        Metrics:
+          box AP: 52.4
+      - Task: Instance Segmentation
+        Dataset: COCO
+        Metrics:
+          mask AP: 45.3
+    Weights: https://github.com/flytocc/rtdetr-mmdet/releases/download/mask-rtdetr/rtdetr-dy-ins_r50vd_8xb2-72e_coco-bdbb0edd.pth
