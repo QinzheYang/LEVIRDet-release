@@ -569,8 +569,8 @@ own image files.
 
 | Version | Image format | Hugging Face | ModelScope | Baidu Netdisk | Access code | Google Drive | Size |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Original-image release | Original image bytes; seven-digit filenames | — | — |  [Download Docker image](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
-| Lightweight release | JPEG quality 95; unchanged dimensions | — | — | [Download Docker image](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
+| Original-image release | Original image bytes; seven-digit filenames | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — |  [Download](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
+| Lightweight release | JPEG quality 95; unchanged dimensions | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — | [Download](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
 
 ## Model Training
 
