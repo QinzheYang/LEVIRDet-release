@@ -78,6 +78,14 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
 ## Update Log
 
+🌟 **2026.10.08** 
+
+We are uploading to ModelScope and will create some demos on GitHub as well as explore other application methods. This process will take some time.
+
+🌟 **2026.10.04-07** 
+
+We uploaded it to Hugging Face and wrote a quick installation script for the program.
+
 🌟 **2026.10.03** 
 
 We are currently updating the user manual. We have uploaded Docker and are now uploading the dataset.
