@@ -439,6 +439,7 @@ Download **`levir-train-cuda121-torch231.tar`** from either mirror:
 | --- | --- | --- |
 | Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1o34wKHJEy7mUhm6Gpnapag?pwd=pzic) | `pzic` |
 | Google Drive | [Download Docker image](https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=sharing) | — |
+| Huggingface | [Download Docker image](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
 
 The archive is **10,017,927,168 bytes** (about 9.33 GiB). Its expected SHA256 is:
 
