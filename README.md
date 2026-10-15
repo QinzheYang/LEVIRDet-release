@@ -78,6 +78,10 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
 ## Update Log
 
+🌟 **2026.10.15** 
+
+We have received feedback that there were issues with the downloads of Docker and others due to excessive users recently. Therefore, we have currently added new links for the North China University Cloud Disk and HuggingFace.
+
 🌟 **2026.10.08** 
 
 We are uploading to ModelScope and will create some demos on GitHub as well as explore other application methods. This process will take some time.
