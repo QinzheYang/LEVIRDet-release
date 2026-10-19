@@ -22,8 +22,8 @@ Download **model check point** from either mirror:
 
 | Mirror | Download | Access code |
 | --- | --- | --- |
-| Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1i6EOvclCBwuYEJxy2uFaKg?pwd=wf66) | `wf66` |
-| Google Drive | [Download Docker image(30 class)](https://drive.google.com/file/d/1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde/view?usp=drive_link)  [Download Docker image(159 class)](https://drive.google.com/file/d/1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG/view?usp=drive_link)| — |
+| Baidu Netdisk | [Download Trained Model](https://pan.baidu.com/s/1i6EOvclCBwuYEJxy2uFaKg?pwd=wf66) | `wf66` |
+| Google Drive | [Download Trained Model(30 class)](https://drive.google.com/file/d/1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde/view?usp=drive_link)  and  [Download Trained Model(159 class)](https://drive.google.com/file/d/1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG/view?usp=drive_link)| — |
 | Huggingface | [Download Trained Model(30 and 159 class)](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
 
 Download **LEVIRDet-159 Dataset** from either mirror:
