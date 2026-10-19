@@ -14,16 +14,34 @@
 ## Table of Contents
 
 - [Overview and Performance](#Overview-and-Performance)
-- [Demo](#Demo)
-- [Overview and Highlights](#TODO)
-- [Update Log](#Table-of-Contents)
-- [Dataset Scale](#Installation)
-- [LEVIRDetNet](#Dataset-Preparation)
-- [Target-Training-Free Benchmark Results](#Model-Training)
-- - [Installation](#Installation)
-- - [Dependencies](#Dependencies)
-- 
-
+  - [Demo](#Demo)
+  - [Overview and Highlights](#Overview-and-Highlights)
+  - [Update Log](#Update-Log)
+  - [Dataset Scale](#Dataset-Scale)
+  - [LEVIRDetNet](#LEVIRDetNet)
+  - [Target-Training-Free Benchmark Results](#Target-Training-Free-Benchmark-Results)
+- [Release Status](#Release-Status)
+- [Installation](#Installation)
+  - [Getting Started](#Getting-Started)
+  - [Dependencies](#Dependencies)
+  - [Environment Installation](#Environment-Installation)
+  - [Use Environment Docker Directly](#Use-Environment-Docker-Directly)
+- [Dataset Preparation](#Dataset-Preparation)
+  - [Download LEVIRDet-159](#Download-LEVIRDet-159)
+- [Model Training](#Model-Training)
+  - [LEVIRDetNet Model](#LEVIRDetNet-Model)
+    - [Config File and Main Parameter Parsing](#Config-File-and-Main-Parameter-Parsing)
+    - [Single Card Training](#Single-Card-Training)
+    - [Multi-card Training](#Multi-card-Training)
+  - [Other Detection Models](#Other-Detection-Models)
+- [Model Testing](#Model-Testing)
+  - [Single Card Testing](#Single-Card-Testing)
+  - [Multi-card Testing](#Multi-card-Testing)
+- [Image Prediction](#Image-Prediction)
+  - [Single Image Prediction](#Single-Image-Prediction)
+  - [Multi-image Prediction](#Multi-image-Prediction)
+- [Citation](#Citation)
+- [License](#License)
 
 ## Overview and Performance
 
@@ -41,7 +59,7 @@ average under each benchmark's primary metric. It also remains strongest in
 score-threshold comparisons with open-set and grounding models, maintaining
 stable precision and recall at practical confidence thresholds.
 
-## Demo
+### Demo
 
 Try the interactive web demo:
 
@@ -51,7 +69,7 @@ Try the interactive web demo:
 
 ![LEVIRDet demo gallery](assets/figures/demo-gallery.jpg)
 
-## Overview
+### Overview
 
 Remote sensing object detection has advanced rapidly with the development of
 large-scale benchmarks and modern detection architectures. However, existing
@@ -73,7 +91,7 @@ object detection. LEVIRDetNet couples online visual Ground Sampling Distance
 (GSD) prediction, GSD-conditioned query modulation and allocation, and a
 hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
-## Highlights
+### Highlights
 
 - **Million-scale remote sensing detection dataset.** LEVIRDet-159 contains
   ~2.56M bounding boxes across 159 categories.
@@ -89,7 +107,7 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
   fine-grained detection, and ultra-wide-area detection demos.
 
 
-## Update Log
+### Update Log
 
 🌟 **2026.10.15** 
 
@@ -116,7 +134,7 @@ These preparations include converting the dataset into a more storage-efficient 
 While completing all of these preparations will take some time, we can confirm that the dataset will be released within the next week. The pre-trained LEVIRDetNet weights and associated model resources may take slightly longer to finalize. We will share release updates and access instructions on our GitHub page as they become available.
 
 
-## Dataset Scale
+### Dataset Scale
 
 ![LEVIRDet remote sensing gallery](assets/figures/hero-backdrop.png)
 
@@ -126,7 +144,7 @@ LEVIRDet-159 covers 30 common parent categories and 159 category types across
 global regions, diverse imaging conditions, multiple sensors, and a broad range
 of object sizes.
 
-## LEVIRDetNet
+### LEVIRDetNet
 
 ![LEVIRDetNet method overview](assets/figures/levirdetnet-method.jpg)
 
@@ -141,7 +159,7 @@ remote sensing object detection. It combines three key components:
    category-system transfer.
 
 
-## Target-Training-Free Benchmark Results
+### Target-Training-Free Benchmark Results
 
 <div align="center">
 <table style="min-width: 80%; border: 2px solid #ddd; border-collapse: collapse">
@@ -226,29 +244,7 @@ AP<sub>bbox</sub>.
 Additional tables are available in [docs/results.md](docs/results.md).
 
 
-
-## Repository Layout
-
-```text
-LEVIRDet-release/
-|-- README.md
-|-- assets/
-|   |-- demo_samples/
-|   `-- figures/
-|-- docs/
-|   |-- dataset.md
-|   |-- model.md
-|   |-- release_plan.md
-|   `-- results.md
-|-- examples/
-|   `-- README.md
-|-- CITATION.cff
-|-- CONTRIBUTING.md
-|-- LICENSE.md
-`-- NOTICE.md
-```
-
-## Release Status
+### Release Status
 
 This repository is currently a project landing repository. The following
 artifacts are planned for release with the final paper:
@@ -265,7 +261,13 @@ The full image tiles, annotations, source-license manifest, code, and trained
 models will be released in a versioned project repository at
 <https://qinzheyang.github.io/LEVIRDet/>, accompanying the final paper.
 
-## Getting Started
+
+
+## Installation
+
+This is the alternative setup for users who prefer a local Conda environment.
+
+### Getting Started
 
 The installation and inference instructions will be added when the code release
 is ready. The planned workflow is:
@@ -277,10 +279,6 @@ cd LEVIRDet
 # Installation instructions will be added with the code release.
 # Dataset download and checkpoint download commands will be versioned.
 ```
-
-## Installation
-
-This is the alternative setup for users who prefer a local Conda environment.
 
 ### Dependencies
 
