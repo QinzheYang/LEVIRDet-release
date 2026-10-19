@@ -33,7 +33,9 @@ Download **LEVIRDet-159 Dataset** from either mirror:
 | Original-image release | Original image bytes; seven-digit filenames | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — |  [Download](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
 | Lightweight release | JPEG quality 95; unchanged dimensions | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — | [Download](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
 
-[**I have download. How to use?**](#Dataset-Preparation)
+[**I have download. How to use?**](#Installation)
+
+[**I don not like codes. I only what to use it like app?**](#Use-LEVIRDetNet-in-the-same-way-as-an-APP)
 
 ## Table of Contents
 
@@ -64,6 +66,10 @@ Download **LEVIRDet-159 Dataset** from either mirror:
 - [Image Prediction](#Image-Prediction)
   - [Single Image Prediction](#Single-Image-Prediction)
   - [Multi-image Prediction](#Multi-image-Prediction)
+- [More Interesting things](#More-Interesting-things)
+  - [Use LEVIRDetNet in the same way as an APP](#Use-LEVIRDetNet-in-the-same-way-as-an-APP)
+  - [Extract features using LEVIRDetNet](#Extract-features-using-LEVIRDetNet)
+  - [Use LEVIRDetNet as the pre-training parameters](#Use-LEVIRDetNet-as-the-pre-training-parameters)
 - [Citation](#Citation)
 - [License](#License)
 
@@ -700,6 +706,21 @@ python demo/image_demo.py ${IMAGE_FILE}  configs/levirdetnet/xxx.py --weights ${
 python demo/image_demo.py ${IMAGE_DIR}  configs/levirdetnet/xxx.py --weights ${CHECKPOINT_FILE} --out-dir ${OUTPUT_DIR}  # IMAGE_DIR is the image folder you want to predict, xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, OUTPUT_DIR is the output path of the prediction result
 ```
 
+## More Interesting things
+
+It's a bit late today. I'll do it tomorrow.
+
+### Use LEVIRDetNet in the same way as an APP
+
+It's a bit late today. I'll do it tomorrow.
+
+### Extract features using LEVIRDetNet
+
+It's a bit late today. I'll do it tomorrow.
+
+### Use LEVIRDetNet as the pre-training parameters
+
+It's a bit late today. I'll do it tomorrow.
 
 ## Citation
 
