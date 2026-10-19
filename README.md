@@ -8,7 +8,7 @@
 [![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Planned-orange)](#release-status)
 
 > **Release notice.**
-> 🌟🌟🌟 The LEVIRDet dataset, trained models and their weights, as well as the Docker, are now fully available.
+> 🌟🌟🌟 The LEVIRDet dataset, trained models and their weights, as well as the Docker, are now **fully available**.
 
 
 ## Table of Contents
@@ -246,8 +246,7 @@ Additional tables are available in [docs/results.md](docs/results.md).
 
 ### Release Status
 
-This repository is currently a project landing repository. The following
-artifacts are planned for release with the final paper:
+This repository is currently the final open-source repository for the project. The following artifacts have been released:
 
 - Full image tiles.
 - Tight horizontal bounding-box annotations.
@@ -258,9 +257,11 @@ artifacts are planned for release with the final paper:
 - Inference and demo scripts.
 
 The full image tiles, annotations, source-license manifest, code, and trained
-models will be released in a versioned project repository at
-<https://qinzheyang.github.io/LEVIRDet/>, accompanying the final paper.
+models have been released on Huggingface, baidu netdisk and modelscope. You can find download link at this github repository.
 
+- [Download Docker](#Use-Environment-Docker-Directly)
+- [Download LEVIRDet-159](#Download-LEVIRDet-159)
+- [Down Model](#LEVIRDetNet-Model)
 
 
 ## Installation
