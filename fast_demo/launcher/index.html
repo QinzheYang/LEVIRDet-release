@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>LEVIRDetNet Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true"><defs>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m9.5 3-.6 2.3-1.5.9-2.3-.6-2.5 4.3 1.8 1.7v1.8l-1.8 1.7 2.5 4.3 2.3-.6 1.5.9.6 2.3h5l.6-2.3 1.5-.9 2.3.6 2.5-4.3-1.8-1.7v-1.8l1.8-1.7-2.5-4.3-2.3.6-1.5-.9L14.5 3z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M7 3h10v9h6L12 23 1 12h6z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 3h9v12H3zM3 6V3h7l2 3h9v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6zM8 12l3 3 5-6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/></symbol>
+    <symbol id="i-shortcut" viewBox="0 0 24 24"><path d="M3 3h18v13H3zM8 21h8m-4-5v5M8 10h7m-3-3 3 3-3 3"/></symbol>
+    <symbol id="i-language" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m-4 1s0 7 8 11M12 6S12 13 3 17m12 4 4-12 4 12m-6-4h4"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v1"/></symbol>
+  </defs></svg>
+
+  <div id="launcherCanvas">
+  <aside class="rail" aria-label="LEVIRDetNet">
+    <button class="rail-logo" id="railHome" aria-label="LEVIRDetNet GitHub">
+      <img src="assets/logo.png" alt="LEVIR laboratory">
+    </button>
+  </aside>
+
+  <main class="surface">
+    <div class="scene" aria-hidden="true"></div><div class="scene-shade" aria-hidden="true"></div>
+    <div class="window-drag" aria-hidden="true"></div>
+    <header class="brand"><h1><img src="assets/wordmark.png" alt="LEVIRDetNet — Learning, Vision and Remote Sensing Laboratory"></h1></header>
+    <nav class="window-controls" aria-label="Window controls">
+      <button class="icon-button" id="settingsButton" data-title="settings" aria-label="Settings"><svg><use href="#i-settings"/></svg></button>
+      <button class="icon-button" id="minimizeButton" data-title="minimize" aria-label="Minimize"><svg><use href="#i-minus"/></svg></button>
+      <button class="icon-button close-button" id="closeButton" data-title="close" aria-label="Close"><svg><use href="#i-close"/></svg></button>
+    </nav>
+
+    <section class="greeting" id="greeting" hidden aria-label="Welcome">
+      <button class="greeting-close icon-button" id="dismissGreeting" aria-label="Dismiss"><svg><use href="#i-close"/></svg></button>
+      <p class="eyebrow" data-text="smallMoment">A SMALL MOMENT</p><time id="greetingTime"></time>
+      <h2 id="greetingTitle"></h2><p id="greetingWish"></p>
+      <button class="text-button" id="greetingGithub"><span data-text="visitGithub">Meet us on GitHub</span><svg><use href="#i-link"/></svg></button>
+    </section>
+
+    <div class="download-area">
+      <section class="progress-card" id="progressCard" hidden aria-label="Download progress">
+        <div class="progress-heading"><span class="status-dot" id="statusDot"></span><h2 id="progressItem"></h2></div>
+        <p class="phase-message" id="phaseMessage"></p>
+        <div class="progress-numbers"><strong id="progressPercent">—</strong><span id="progressBytes">—</span></div>
+        <div class="progress-track" id="progressTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100"><span id="progressFill"></span></div>
+        <div class="progress-stats"><span id="progressSpeed">—</span><span id="progressEta">ETA —</span></div>
+        <button class="text-button error-details" id="errorDetails" hidden><span data-text="showHelp">View download instructions</span><svg><use href="#i-link"/></svg></button>
+      </section>
+
+      <div class="quick-menu" id="quickMenu" hidden role="menu" aria-label="Download settings">
+        <button id="shortcutButton" role="menuitem"><svg><use href="#i-shortcut"/></svg><span data-text="shortcut">Add desktop shortcut</span></button>
+        <button id="integrityButton" role="menuitem"><svg><use href="#i-shield"/></svg><span data-text="integrity">Check resource integrity</span></button>
+        <button id="pathButton" role="menuitem"><svg><use href="#i-folder"/></svg><span data-text="changePath">Change download location</span></button>
+        <button id="languageButton" role="menuitem"><svg><use href="#i-language"/></svg><span data-text="changeLanguage">语言 · 中文</span></button>
+      </div>
+
+      <p class="action-hint" id="actionHint" aria-live="polite"></p>
+      <div class="action-pill">
+        <button id="primaryAction" class="primary-action"><span class="action-icon"><svg><use id="primaryIcon" href="#i-download"/></svg></span><span id="primaryLabel">Download</span></button>
+        <button id="quickSettings" class="action-settings" aria-label="Download settings" aria-expanded="false" aria-controls="quickMenu"><svg><use href="#i-settings"/></svg></button>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <dialog id="settingsDialog" class="settings-dialog" aria-labelledby="settingsTitle">
+    <div class="dialog-heading"><h2 id="settingsTitle" data-text="systemPrompt">System prompt</h2><button class="icon-button" id="closeSettings" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
+    <button id="resourceDetailsButton" class="path-field" aria-expanded="false" aria-controls="settingsDetails"><span id="installPath" class="selectable"></span><span class="details-arrow" aria-hidden="true">⌄</span></button>
+    <div class="settings-download-total"><span id="settingsReceived">—</span><span>/</span><span id="settingsTotal">—</span></div>
+    <div class="settings-progress-track"><span id="settingsProgressFill"></span></div>
+    <div class="required-summary"><span data-text="requiredShort">Required space:</span> <strong id="requiredSpace">—</strong></div>
+    <div id="settingsDetails" hidden>
+      <p class="free-space"><span data-text="free">Available disk space</span>: <strong id="freeSpace">—</strong></p>
+      <p class="field-note" data-text="pathNote">Resources and inference results are stored in this folder. Existing files stay in their current location when you change it.</p>
+      <p class="space-note" id="spaceNote" data-text="dockerSpace">Docker also needs space for its imported image in its own storage location.</p>
+      <div class="resource-heading"><h3 data-text="resources">Resources</h3><span id="resourceCount"></span></div><ul id="resourceList" class="resource-list"></ul>
+      <label class="language-select"><span data-text="language">Language</span><select id="languageSelect"><option value="en">English</option><option value="zh">简体中文</option></select></label>
+    </div>
+    <div class="dialog-footer"><button id="choosePathButton" data-text="changePathShort">Change path</button><button id="settingsDone" data-text="ok">OK</button></div>
+  </dialog>
+
+  <dialog id="errorDialog" class="error-dialog" aria-labelledby="errorTitle">
+    <div class="dialog-heading"><div><p class="eyebrow" data-text="letsFix">LET’S GET YOU STARTED</p><h2 id="errorTitle" data-text="manualHelp">Download help</h2></div><button class="icon-button" id="closeError" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
+    <p id="errorMessage" class="error-message selectable"></p>
+    <div id="errorLinkSection"><label class="field-label" data-text="downloadFrom">Download from</label><p id="errorUrl" class="help-value selectable"></p></div>
+    <div id="errorPathSection"><label class="field-label" data-text="saveTo">Save the file at</label><p id="errorPath" class="help-value selectable"></p></div>
+    <p class="field-note" data-text="retryNote">After placing the file here or resolving the issue, close this window and click Retry. Your completed downloads will be reused.</p>
+    <div class="dialog-footer"><button class="outline-button" id="openErrorFolder" data-text="openFolder">Open download folder</button><button class="solid-button" id="openErrorLink" data-text="openDownload">Open download page</button></div>
+  </dialog>
+  <div class="toast" id="toast" hidden role="status"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

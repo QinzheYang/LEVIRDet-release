@@ -712,7 +712,14 @@ It's a bit late today. I'll do it tomorrow.
 
 ### Use LEVIRDetNet in the same way as an APP
 
-It's a bit late today. I'll do it tomorrow.
+**No coding or manual Python/Conda setup is needed.** Use a Windows 10/11 or Linux desktop computer with an NVIDIA GPU and its driver installed.
+
+1. **Download and open the launcher:** [Windows (.cmd)](https://raw.githubusercontent.com/QinzheYang/LEVIRDet-release/main/launch_fast_demo.cmd) · [Linux (.sh)](https://raw.githubusercontent.com/QinzheYang/LEVIRDet-release/main/launch_fast_demo.sh). Save it in a folder of your choice. On Windows, double-click it; on Linux, allow execution in the file properties and choose **Run as a program**.
+2. **Click Download.** You can change the download folder in **Settings** first. The launcher downloads the environment, models and code automatically, and asks for your permission if system components need installing. Follow any installation or restart prompts.
+3. **Click Launch** when setup is complete. Choose an image or folder, select **30 classes** (default) or **159 classes**, then click **Confirm & run**.
+4. **View your results.** Use the arrows to compare input images and detections. Visualizations and JSON results are saved automatically in `fast_demo_outputs` inside your selected folder.
+
+First-time setup downloads about **14 GB**, with additional disk space needed for Docker. Slow or failed Google Drive resource downloads switch to Hugging Face automatically. [More help](fast_demo/README.md).
 
 ### Extract features using LEVIRDetNet
 
@@ -745,3 +752,4 @@ and will be updated with the camera-ready metadata.
 The code, dataset, annotations, and trained models are not yet released. Their
 licenses will be specified with the versioned release. See [LICENSE.md](LICENSE.md)
 and [NOTICE.md](NOTICE.md) for the current pre-release notice.
+

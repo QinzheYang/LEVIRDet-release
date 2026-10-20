@@ -1,5 +1,5 @@
 'use strict';
-const { app, BrowserWindow, dialog, ipcMain, nativeImage, shell, Menu, clipboard } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, nativeImage, shell, Menu, clipboard, screen } = require('electron');
 const fs = require('node:fs');
 const fsp = require('node:fs/promises');
 const path = require('node:path');
@@ -11,6 +11,23 @@ let win;
 let demoURL;
 let token;
 const outputRoot = process.env.LEVIR_DEMO_OUTPUT || process.env.LEVIR_DEMO_HOST_OUTPUT;
+const startupFile = process.env.LEVIR_DEMO_READY_FILE;
+const startupNonce = process.env.LEVIR_DEMO_READY_NONCE;
+async function startupStatus(status) {
+  if (!startupFile || !startupNonce || !outputRoot) return;
+  const relative = path.relative(path.join(outputRoot, '.runtime-home'), path.resolve(startupFile));
+  if (!relative || relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('Invalid desktop startup status path.');
+  await fsp.mkdir(path.dirname(startupFile), { recursive: true });
+  const temporary = startupFile + '.tmp';
+  await fsp.writeFile(temporary, JSON.stringify({ nonce: startupNonce, pid: process.pid, ...status }));
+  await fsp.rename(temporary, startupFile);
+}
+async function startupFailure(error) {
+  console.error(error.stack || error.message || error);
+  await startupStatus({ error: String(error.message || error) }).catch(() => {});
+  if (!startupFile) dialog.showErrorBox('LEVIRDetNet', String(error.message || error));
+  app.quit();
+}
 
 function trusted(event) {
   if (!win || event.sender !== win.webContents || !event.senderFrame ||
@@ -144,7 +161,7 @@ function registerIPC() {
 app.setName('LEVIRDetNet');
 // Keep preferences separate from other Electron apps; never use a shared root profile.
 if (outputRoot) app.setPath('userData', path.join(outputRoot, '.desktop-profile'));
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
   try {
     demoURL = new URL(process.env.LEVIR_DEMO_URL || '');
     token = new URLSearchParams(demoURL.hash.slice(1)).get('token');
@@ -152,13 +169,16 @@ app.whenReady().then(() => {
       throw new Error('Use launch_fast_demo.cmd or launch_fast_demo.sh to start LEVIRDetNet.');
     }
   } catch (error) {
-    dialog.showErrorBox('LEVIRDetNet', error.message);
-    app.quit();
+    await startupFailure(error);
     return;
   }
   Menu.setApplicationMenu(null);
-  win = new BrowserWindow({ title: 'LEVIRDetNet', width: 1440, height: 940,
-    minWidth: 960, minHeight: 640, backgroundColor: '#f3f4f2', show: false,
+  const area = screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).workArea;
+  const width = Math.floor(Math.min(1280, area.width * 0.9));
+  const height = Math.floor(Math.min(840, area.height * 0.9));
+  win = new BrowserWindow({ title: 'LEVIRDetNet', width, height,
+    x: area.x + Math.round((area.width - width) / 2), y: area.y + Math.round((area.height - height) / 2),
+    minWidth: Math.min(960, width), minHeight: Math.min(640, height), backgroundColor: '#f3f4f2', show: true,
     webPreferences: { preload: path.join(__dirname, 'preload.cjs'), contextIsolation: true,
       nodeIntegration: false, sandbox: true, webSecurity: true, devTools: false }
   });
@@ -169,12 +189,19 @@ app.whenReady().then(() => {
   win.webContents.session.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
   win.webContents.on('page-title-updated', event => event.preventDefault());
   win.webContents.on('did-fail-load', (_event, code, description) => {
-    if (code !== -3) dialog.showErrorBox('LEVIRDetNet', `The local inference service could not be reached. ${description}`);
+    if (code !== -3) console.error(`The local inference service could not be reached. ${description}`);
   });
   registerIPC();
-  win.once('ready-to-show', () => win.show());
-  win.loadURL(demoURL.href);
-});
+  await win.loadURL(demoURL.href);
+  // Confirm that the actual application and its native input bridge loaded.
+  const interfaceLoaded = await win.webContents.executeJavaScript("Boolean(document.getElementById('choose-images') && document.getElementById('choose-folder') && window.levirDesktop)");
+  if (!interfaceLoaded) throw new Error('The inference interface or native file picker did not load.');
+  win.show();
+  if (win.isMinimized()) win.restore();
+  win.moveTop(); win.focus();
+  if (!win.isVisible()) throw new Error('The inference window could not be made visible.');
+  await startupStatus({ visible: true, loaded: true, bounds: win.getBounds() });
+}).catch(startupFailure);
 app.on('window-all-closed', () => app.quit());
 
 // Export pure selection helpers for the repository's tests; no external modules needed.

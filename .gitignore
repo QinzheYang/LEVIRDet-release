@@ -11,7 +11,7 @@ env/
 
 # Local data and checkpoints
 data/
-datasets/
+/datasets/
 checkpoints/
 weights/
 outputs/
@@ -31,3 +31,21 @@ Thumbs.db
 .idea/
 .vscode/
 
+
+
+# LEVIRDetNet launcher caches, model downloads and inference outputs
+/.levir-launcher/
+/.levir-launcher-v3/
+/.fast_demo/
+/.fast_demo_cache/
+/.fast_demo_setup/
+/fast_demo_outputs/
+/work_dirs/
+/LEVIRDetNet-setup-help.txt
+/LEVIRDetNet-launcher-help.txt
+/docker/levir-train-cuda121-torch231.tar*
+*.pth
+*.pt
+*.pth.part*
+*.pth.cookies
+*.log
