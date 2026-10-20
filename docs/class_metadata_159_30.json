@@ -1,0 +1,5293 @@
+{
+  "schema_version": "1.0",
+  "title": "LEVIRDet 159-class and 30-class label glossary",
+  "description_zh": "发布类别的说明性词典",
+  "created_date": "2026-10-19",
+  "field_definitions": {
+    "label": "配置及发布类别表中的原始名称，保留大小写、空格和历史拼写。",
+    "abbreviation": "数据集实际使用的简写／短标签，与 label 相同",
+    "full_name_en": "可读英文全名",
+    "full_name_zh": "中文名称。",
+    "meaning_zh": "该类别在本数据集中的含义。",
+    "hierarchy_level": "从 1 开始的树深度：根类为 1；159 类最大为 4。30 类是平面类别表，全部为 1。",
+    "parent_label": "直接父类；根类为 null。",
+    "ancestor_labels": "从根类到直接父类，按层级升序排列。",
+    "hierarchy_path": "从根类到当前类的完整路径，包含当前类。",
+    "child_labels": "直接子类。",
+    "is_leaf": "在所处类别版本中没有子类",
+    "model_index": "配置 classes 元组中的零起始模型输出索引。",
+    "taxonomy_id": "仅用于 159 类词典，来自 taxonomy_159.json 的 1..159 类别编号",
+    "annotation_coarse_category_id": "159 类标注中此节点对应根类的 COCO category_id。细类由 fine_category_name 等字段表达。",
+    "annotation_category_id": "30 类标注中实际使用的 COCO category_id。",
+    "corresponding_30class_label": "159 类节点回退到 30 类时的粗类别名称；车辆分支映射至历史 car。",
+    "corresponding_159class_root": "30 类节点对应的 159 类根节点。",
+    },
+  },
+  "class_sets": {
+    "159": {
+      "class_count": 159,
+      "root_count": 30,
+      "max_hierarchy_level": 4,
+      "level_counts": {
+        "1": 30,
+        "2": 18,
+        "3": 84,
+        "4": 27
+      },
+      "classes": [
+        {
+          "model_index": 0,
+          "taxonomy_id": 1,
+          "label": "plane",
+          "abbreviation": "plane",
+          "full_name_en": "Airplane",
+          "full_name_zh": "固定翼飞机",
+          "meaning_zh": "固定翼飞机根类；包含客机、非客机和其他飞机。直升机在本数据集中属于独立根类。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "plane"
+          ],
+          "child_labels": [
+            "Airliner",
+            "notairliner",
+            "other-airplane"
+          ],
+          "is_leaf": false,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 1,
+          "taxonomy_id": 2,
+          "label": "storage_tank",
+          "abbreviation": "storage_tank",
+          "full_name_en": "Storage tank",
+          "full_name_zh": "储罐",
+          "meaning_zh": "用于储存液体或气体等物料的罐体设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "storage_tank"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "storage_tank",
+          "annotation_coarse_category_id": 2,
+          "corresponding_30class_label": "storage_tank"
+        },
+        {
+          "model_index": 2,
+          "taxonomy_id": 3,
+          "label": "tenniscourt",
+          "abbreviation": "tenniscourt",
+          "full_name_en": "Tennis court",
+          "full_name_zh": "网球场",
+          "meaning_zh": "用于网球运动的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "tenniscourt"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "tenniscourt",
+          "annotation_coarse_category_id": 3,
+          "corresponding_30class_label": "tenniscourt"
+        },
+        {
+          "model_index": 3,
+          "taxonomy_id": 4,
+          "label": "baseball_diamond",
+          "abbreviation": "baseball_diamond",
+          "full_name_en": "Baseball diamond",
+          "full_name_zh": "棒球场",
+          "meaning_zh": "用于棒球运动、具有内场与外场布局的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "baseball_diamond"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "baseball_diamond",
+          "annotation_coarse_category_id": 4,
+          "corresponding_30class_label": "baseball_diamond"
+        },
+        {
+          "model_index": 4,
+          "taxonomy_id": 5,
+          "label": "basketball_court",
+          "abbreviation": "basketball_court",
+          "full_name_en": "Basketball court",
+          "full_name_zh": "篮球场",
+          "meaning_zh": "用于篮球运动的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "basketball_court"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "basketball_court",
+          "annotation_coarse_category_id": 5,
+          "corresponding_30class_label": "basketball_court"
+        },
+        {
+          "model_index": 5,
+          "taxonomy_id": 6,
+          "label": "ground_track_field",
+          "abbreviation": "ground_track_field",
+          "full_name_en": "Athletics track and field",
+          "full_name_zh": "田径场",
+          "meaning_zh": "由跑道及其内部运动场地构成的田径运动区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "ground_track_field"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ground_track_field",
+          "annotation_coarse_category_id": 6,
+          "corresponding_30class_label": "ground_track_field"
+        },
+        {
+          "model_index": 6,
+          "taxonomy_id": 7,
+          "label": "vehicle",
+          "abbreviation": "vehicle",
+          "full_name_en": "Vehicle",
+          "full_name_zh": "车辆（父类）",
+          "meaning_zh": "159 类中的车辆根类，包含小汽车、公交车、卡车、工程车辆及其他车辆子类。",
+          "definition_status": "standard_term",
+          "notes": [
+            "不能与其细类 car 合并；对应历史 30 类的粗类 car。"
+          ],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "vehicle"
+          ],
+          "child_labels": [
+            "car",
+            "bus",
+            "camping_car",
+            "Cargo Truck",
+            "dump truck",
+            "Excavator",
+            "other",
+            "pickup",
+            "small-vehicle",
+            "tractor",
+            "Trailer",
+            "Truck Tractor",
+            "van"
+          ],
+          "is_leaf": false,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 7,
+          "taxonomy_id": 8,
+          "label": "bridge",
+          "abbreviation": "bridge",
+          "full_name_en": "Bridge",
+          "full_name_zh": "桥梁",
+          "meaning_zh": "跨越河流、沟谷或其他障碍的桥梁结构，注意跨越的必须是水体，如果跨越的是地面，则定义为overpass",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "bridge"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "bridge",
+          "annotation_coarse_category_id": 8,
+          "corresponding_30class_label": "bridge"
+        },
+        {
+          "model_index": 8,
+          "taxonomy_id": 9,
+          "label": "harbor",
+          "abbreviation": "harbor",
+          "full_name_en": "Harbor",
+          "full_name_zh": "港口",
+          "meaning_zh": "用于船舶停泊、装卸等活动的港区设施或区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "harbor"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "harbor",
+          "annotation_coarse_category_id": 9,
+          "corresponding_30class_label": "harbor"
+        },
+        {
+          "model_index": 9,
+          "taxonomy_id": 10,
+          "label": "ship",
+          "abbreviation": "ship",
+          "full_name_en": "Ship",
+          "full_name_zh": "船舶",
+          "meaning_zh": "船舶根类；按本数据集层级分为 civil_ship 与 war。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "ship"
+          ],
+          "child_labels": [
+            "civil_ship",
+            "war"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 10,
+          "taxonomy_id": 11,
+          "label": "parking_lot",
+          "abbreviation": "parking_lot",
+          "full_name_en": "Parking lot",
+          "full_name_zh": "停车场",
+          "meaning_zh": "集中停放车辆的场地，严格来讲是停车线，该类别的标注方式参考了HRRSD的标注规范",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "parking_lot"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "parking_lot",
+          "annotation_coarse_category_id": 11,
+          "corresponding_30class_label": "parking_lot"
+        },
+        {
+          "model_index": 11,
+          "taxonomy_id": 12,
+          "label": "overpass",
+          "abbreviation": "overpass",
+          "full_name_en": "Overpass",
+          "full_name_zh": "立交桥／跨线桥",
+          "meaning_zh": "使道路或交通线路在不同高度交叉通行的桥梁或立交设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "overpass"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "overpass",
+          "annotation_coarse_category_id": 12,
+          "corresponding_30class_label": "overpass"
+        },
+        {
+          "model_index": 12,
+          "taxonomy_id": 13,
+          "label": "swimming-pool",
+          "abbreviation": "swimming-pool",
+          "full_name_en": "Swimming pool",
+          "full_name_zh": "游泳池",
+          "meaning_zh": "用于游泳活动的人工水池，包括方形，圆形和不规则形状",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "swimming-pool"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "swimming-pool",
+          "annotation_coarse_category_id": 13,
+          "corresponding_30class_label": "swimming-pool"
+        },
+        {
+          "model_index": 13,
+          "taxonomy_id": 14,
+          "label": "roundabout",
+          "abbreviation": "roundabout",
+          "full_name_en": "Roundabout",
+          "full_name_zh": "环形交叉口",
+          "meaning_zh": "车辆围绕中央岛环行的道路交叉口，标注时需要标注圆形的道路",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "roundabout"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "roundabout",
+          "annotation_coarse_category_id": 14,
+          "corresponding_30class_label": "roundabout"
+        },
+        {
+          "model_index": 14,
+          "taxonomy_id": 15,
+          "label": "soccer-ball-field",
+          "abbreviation": "soccer-ball-field",
+          "full_name_en": "Soccer field",
+          "full_name_zh": "足球场",
+          "meaning_zh": "用于足球运动的场地，包含半场和全场",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "soccer-ball-field"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "soccer-ball-field",
+          "annotation_coarse_category_id": 15,
+          "corresponding_30class_label": "soccer-ball-field"
+        },
+        {
+          "model_index": 15,
+          "taxonomy_id": 16,
+          "label": "pylon",
+          "abbreviation": "pylon",
+          "full_name_en": "Electricity transmission pylon",
+          "full_name_zh": "输电塔",
+          "meaning_zh": "支撑架空输电线路的塔架。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "按遥感目标类别语境解释为电力输电塔。"
+          ],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "pylon"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "pylon",
+          "annotation_coarse_category_id": 16,
+          "corresponding_30class_label": "pylon"
+        },
+        {
+          "model_index": 16,
+          "taxonomy_id": 17,
+          "label": "stadium",
+          "abbreviation": "stadium",
+          "full_name_en": "Stadium",
+          "full_name_zh": "体育场",
+          "meaning_zh": "具有观众看台及比赛场地的体育设施；与仅表示运动场地的类别分开。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "stadium"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "stadium",
+          "annotation_coarse_category_id": 17,
+          "corresponding_30class_label": "stadium"
+        },
+        {
+          "model_index": 17,
+          "taxonomy_id": 18,
+          "label": "container",
+          "abbreviation": "container",
+          "full_name_en": "Shipping container",
+          "full_name_zh": "集装箱",
+          "meaning_zh": "用于货物运输或存储的标准化箱体堆簇。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "container"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "container",
+          "annotation_coarse_category_id": 18,
+          "corresponding_30class_label": "container"
+        },
+        {
+          "model_index": 18,
+          "taxonomy_id": 19,
+          "label": "container-crane",
+          "abbreviation": "container-crane",
+          "full_name_en": "Container crane",
+          "full_name_zh": "集装箱起重机",
+          "meaning_zh": "用于吊装、转运集装箱的起重设备。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "container-crane"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "container-crane",
+          "annotation_coarse_category_id": 19,
+          "corresponding_30class_label": "container-crane"
+        },
+        {
+          "model_index": 19,
+          "taxonomy_id": 20,
+          "label": "windmill",
+          "abbreviation": "windmill",
+          "full_name_en": "Wind turbine",
+          "full_name_zh": "风力发电机",
+          "meaning_zh": "利用风能驱动叶轮发电的装置。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "原标签为 windmill；这里按遥感数据集常见语境解释为风力发电机，并非改写标签。"
+          ],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "windmill"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "windmill",
+          "annotation_coarse_category_id": 20,
+          "corresponding_30class_label": "windmill"
+        },
+        {
+          "model_index": 20,
+          "taxonomy_id": 21,
+          "label": "helipad",
+          "abbreviation": "helipad",
+          "full_name_en": "Helicopter landing pad",
+          "full_name_zh": "直升机起降坪",
+          "meaning_zh": "供直升机起飞、降落或停放的指定场地，只可进行空降货物，不可停机的区域不归于此类，例如一些船上有H字的区域，但原则上该船类别在此处不可停放直升机，此时不会标注",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "helipad"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "helipad",
+          "annotation_coarse_category_id": 21,
+          "corresponding_30class_label": "helipad"
+        },
+        {
+          "model_index": 21,
+          "taxonomy_id": 22,
+          "label": "rugby-count",
+          "abbreviation": "rugby-count",
+          "full_name_en": "Rugby field",
+          "full_name_zh": "橄榄球场",
+          "meaning_zh": "用于橄榄球运动的场地。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "rugby-count"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "rugby-count",
+          "annotation_coarse_category_id": 22,
+          "corresponding_30class_label": "rugby-count"
+        },
+        {
+          "model_index": 22,
+          "taxonomy_id": 23,
+          "label": "helicoper",
+          "abbreviation": "helicoper",
+          "full_name_en": "Helicopter",
+          "full_name_zh": "直升机",
+          "meaning_zh": "依靠旋翼获得升力的航空器；在本数据集中与 plane 并列为根类。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "helicoper"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "helicoper",
+          "annotation_coarse_category_id": 23,
+          "corresponding_30class_label": "helicoper"
+        },
+        {
+          "model_index": 23,
+          "taxonomy_id": 24,
+          "label": "Expressway-toll-station",
+          "abbreviation": "Expressway-toll-station",
+          "full_name_en": "Expressway toll station",
+          "full_name_zh": "高速公路收费站",
+          "meaning_zh": "用于高速公路车辆收费及通行管理的设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "Expressway-toll-station"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "Expressway-toll-station",
+          "annotation_coarse_category_id": 24,
+          "corresponding_30class_label": "Expressway-toll-station"
+        },
+        {
+          "model_index": 24,
+          "taxonomy_id": 25,
+          "label": "chimney",
+          "abbreviation": "chimney",
+          "full_name_en": "Chimney",
+          "full_name_zh": "烟囱",
+          "meaning_zh": "将燃烧或工业过程产生的烟气排出的高耸管状构筑物，水蒸气冷凝塔也算到了此类（目前未见过数据集进行区分）",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "chimney"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "chimney",
+          "annotation_coarse_category_id": 25,
+          "corresponding_30class_label": "chimney"
+        },
+        {
+          "model_index": 25,
+          "taxonomy_id": 26,
+          "label": "dam",
+          "abbreviation": "dam",
+          "full_name_en": "Dam",
+          "full_name_zh": "水坝",
+          "meaning_zh": "用于拦截、调蓄水流的水工构筑物。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "dam"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "dam",
+          "annotation_coarse_category_id": 26,
+          "corresponding_30class_label": "dam"
+        },
+        {
+          "model_index": 26,
+          "taxonomy_id": 27,
+          "label": "golffield",
+          "abbreviation": "golffield",
+          "full_name_en": "Golf course",
+          "full_name_zh": "高尔夫球场",
+          "meaning_zh": "包含球道、果岭等设施的高尔夫运动场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "golffield"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "golffield",
+          "annotation_coarse_category_id": 27,
+          "corresponding_30class_label": "golffield"
+        },
+        {
+          "model_index": 27,
+          "taxonomy_id": 28,
+          "label": "trainstation",
+          "abbreviation": "trainstation",
+          "full_name_en": "Railway station",
+          "full_name_zh": "铁路车站",
+          "meaning_zh": "供铁路列车办理旅客或货物业务的车站设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "trainstation"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "trainstation",
+          "annotation_coarse_category_id": 28,
+          "corresponding_30class_label": "trainstation"
+        },
+        {
+          "model_index": 28,
+          "taxonomy_id": 29,
+          "label": "Expressway-Service-area",
+          "abbreviation": "Expressway-Service-area",
+          "full_name_en": "Expressway service area",
+          "full_name_zh": "高速公路服务区",
+          "meaning_zh": "为高速公路行车人员和车辆提供休息、补给等服务的区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "Expressway-Service-area"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "Expressway-Service-area",
+          "annotation_coarse_category_id": 29,
+          "corresponding_30class_label": "Expressway-Service-area"
+        },
+        {
+          "model_index": 29,
+          "taxonomy_id": 30,
+          "label": "airport",
+          "abbreviation": "airport",
+          "full_name_en": "Airport",
+          "full_name_zh": "机场",
+          "meaning_zh": "供航空器起降、停放和地面服务的综合设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "airport"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "airport",
+          "annotation_coarse_category_id": 30,
+          "corresponding_30class_label": "airport"
+        },
+        {
+          "model_index": 30,
+          "taxonomy_id": 31,
+          "label": "Airliner",
+          "abbreviation": "Airliner",
+          "full_name_en": "Airliner",
+          "full_name_zh": "民用客机",
+          "meaning_zh": "飞机分支中的客机上位类，包含本数据集列出的民用喷气客机型号。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "plane",
+          "ancestor_labels": [
+            "plane"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner"
+          ],
+          "child_labels": [
+            "A220",
+            "A321",
+            "A330",
+            "A350",
+            "ARJ21",
+            "Boeing737",
+            "Boeing747",
+            "Boeing777",
+            "Boeing787",
+            "C919"
+          ],
+          "is_leaf": false,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 31,
+          "taxonomy_id": 32,
+          "label": "A220",
+          "abbreviation": "A220",
+          "full_name_en": "Airbus A220",
+          "full_name_zh": "空中客车 A220 客机",
+          "meaning_zh": "空中客车 A220 系列单通道喷气客机。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a220-family"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "A220"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 32,
+          "taxonomy_id": 33,
+          "label": "A321",
+          "abbreviation": "A321",
+          "full_name_en": "Airbus A321",
+          "full_name_zh": "空中客车 A321 客机",
+          "meaning_zh": "空中客车 A320 家族中的 A321 型单通道喷气客机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标签未指定 ceo、neo 或其他改型。"
+          ],
+          "references": [
+            "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "A321"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 33,
+          "taxonomy_id": 34,
+          "label": "A330",
+          "abbreviation": "A330",
+          "full_name_en": "Airbus A330",
+          "full_name_zh": "空中客车 A330 客机",
+          "meaning_zh": "空中客车 A330 系列双通道宽体喷气飞机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "按数据集归入 Airliner；标签本身未指定具体子型号。"
+          ],
+          "references": [
+            "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a330-family"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "A330"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 34,
+          "taxonomy_id": 35,
+          "label": "A350",
+          "abbreviation": "A350",
+          "full_name_en": "Airbus A350",
+          "full_name_zh": "空中客车 A350 客机",
+          "meaning_zh": "空中客车 A350 系列双通道宽体喷气客机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "A350"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 35,
+          "taxonomy_id": 36,
+          "label": "ARJ21",
+          "abbreviation": "ARJ21",
+          "full_name_en": "COMAC ARJ21 (Advanced Regional Jet for the 21st Century)",
+          "full_name_zh": "中国商飞 ARJ21 支线客机",
+          "meaning_zh": "中国商飞研制的 ARJ21 系列支线喷气客机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "产品现称 C909，发布标签仍保留 ARJ21，未改写类别名称。"
+          ],
+          "references": [
+            "https://www.comac.cc/pdf/acap_en.pdf",
+            "https://www.comac.cc/fujian/c909acap_en.pdf"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "ARJ21"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 36,
+          "taxonomy_id": 37,
+          "label": "Boeing737",
+          "abbreviation": "Boeing737",
+          "full_name_en": "Boeing 737",
+          "full_name_zh": "波音 737 客机",
+          "meaning_zh": "波音 737 系列单通道喷气飞机。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.boeing.com/commercial.html"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "Boeing737"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 37,
+          "taxonomy_id": 38,
+          "label": "Boeing747",
+          "abbreviation": "Boeing747",
+          "full_name_en": "Boeing 747",
+          "full_name_zh": "波音 747 客机",
+          "meaning_zh": "波音 747 系列大型宽体喷气飞机。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.boeing.com/commercial.html"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "Boeing747"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 38,
+          "taxonomy_id": 39,
+          "label": "Boeing777",
+          "abbreviation": "Boeing777",
+          "full_name_en": "Boeing 777",
+          "full_name_zh": "波音 777 客机",
+          "meaning_zh": "波音 777 系列双通道宽体喷气飞机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标签未指定具体子型号。"
+          ],
+          "references": [
+            "https://www.boeing.com/commercial.html"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "Boeing777"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 39,
+          "taxonomy_id": 40,
+          "label": "Boeing787",
+          "abbreviation": "Boeing787",
+          "full_name_en": "Boeing 787 Dreamliner",
+          "full_name_zh": "波音 787 梦想客机",
+          "meaning_zh": "波音 787 系列双通道宽体喷气客机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://787dreamliner.boeing.com/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "Boeing787"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 40,
+          "taxonomy_id": 41,
+          "label": "C919",
+          "abbreviation": "C919",
+          "full_name_en": "COMAC C919",
+          "full_name_zh": "中国商飞 C919 客机",
+          "meaning_zh": "中国商飞研制的 C919 单通道喷气干线客机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.comac.cc/fujian/c919acap_en.pdf"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "Airliner",
+          "ancestor_labels": [
+            "plane",
+            "Airliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "Airliner",
+            "C919"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 41,
+          "taxonomy_id": 42,
+          "label": "notairliner",
+          "abbreviation": "notairliner",
+          "full_name_en": "Non-airliner aircraft",
+          "full_name_zh": "非客机飞机",
+          "meaning_zh": "飞机分支中的非客机上位类，包含本数据集列出的军用运输机、战斗机、轰炸机、教练机等型号。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "plane",
+          "ancestor_labels": [
+            "plane"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner"
+          ],
+          "child_labels": [
+            "A-10",
+            "A-26",
+            "B-1",
+            "B-1B",
+            "B-2",
+            "B-29",
+            "B-52",
+            "C-130",
+            "C-135",
+            "C-17",
+            "C-21",
+            "C-5",
+            "E-3",
+            "E-8",
+            "F-15",
+            "F-16",
+            "F-22",
+            "F-5",
+            "FA-18",
+            "KC-10",
+            "KC-135",
+            "P-3C",
+            "P-63",
+            "SU-24",
+            "SU-34",
+            "SU-35",
+            "T-43",
+            "T-6",
+            "TU-160",
+            "TU-22",
+            "TU-95",
+            "U-2"
+          ],
+          "is_leaf": false,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 42,
+          "taxonomy_id": 43,
+          "label": "A-10",
+          "abbreviation": "A-10",
+          "full_name_en": "Fairchild Republic A-10 Thunderbolt II",
+          "full_name_zh": "费尔柴尔德共和 A-10 雷电 II 攻击机",
+          "meaning_zh": "A-10 型攻击机类别。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "A-10"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 43,
+          "taxonomy_id": 44,
+          "label": "A-26",
+          "abbreviation": "A-26",
+          "full_name_en": "Douglas A-26 Invader",
+          "full_name_zh": "道格拉斯 A-26 入侵者攻击轰炸机",
+          "meaning_zh": "道格拉斯 A-26 型双发攻击轰炸机。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196114/douglas-b-26c-a-26c-invader/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "A-26"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 44,
+          "taxonomy_id": 45,
+          "label": "B-1",
+          "abbreviation": "B-1",
+          "full_name_en": "Rockwell B-1 bomber (variant unspecified)",
+          "full_name_zh": "罗克韦尔 B-1 轰炸机",
+          "meaning_zh": "数据集中单列为 B-1 的轰炸机类别；原标签没有明确具体改型。",
+          "definition_status": "needs_confirmation",
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "B-1"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 45,
+          "taxonomy_id": 46,
+          "label": "B-1B",
+          "abbreviation": "B-1B",
+          "full_name_en": "Rockwell B-1B Lancer",
+          "full_name_zh": "罗克韦尔 B-1B 枪骑兵轰炸机",
+          "meaning_zh": "B-1 系列中的 B-1B 型轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与数据集 B-1 标签并列保留。"
+          ],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "B-1B"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 46,
+          "taxonomy_id": 47,
+          "label": "B-2",
+          "abbreviation": "B-2",
+          "full_name_en": "Northrop B-2 Spirit",
+          "full_name_zh": "诺斯罗普 B-2 幽灵轰炸机",
+          "meaning_zh": "B-2 型飞翼布局轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "B-2"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 47,
+          "taxonomy_id": 48,
+          "label": "B-29",
+          "abbreviation": "B-29",
+          "full_name_en": "Boeing B-29 Superfortress",
+          "full_name_zh": "波音 B-29 超级空中堡垒轰炸机",
+          "meaning_zh": "波音 B-29 型四发螺旋桨轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.amc.af.mil/Portals/12/documents/AFD-141230-027.pdf"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "B-29"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 48,
+          "taxonomy_id": 49,
+          "label": "B-52",
+          "abbreviation": "B-52",
+          "full_name_en": "Boeing B-52 Stratofortress",
+          "full_name_zh": "波音 B-52 同温层堡垒轰炸机",
+          "meaning_zh": "波音 B-52 系列重型轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "原标签没有限定 B-52H 等具体改型。"
+          ],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "B-52"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 49,
+          "taxonomy_id": 50,
+          "label": "C-130",
+          "abbreviation": "C-130",
+          "full_name_en": "Lockheed C-130 Hercules",
+          "full_name_zh": "洛克希德 C-130 大力神运输机",
+          "meaning_zh": "C-130 系列四发涡轮螺旋桨运输机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "C-130"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 50,
+          "taxonomy_id": 51,
+          "label": "C-135",
+          "abbreviation": "C-135",
+          "full_name_en": "Boeing C-135 Stratolifter",
+          "full_name_zh": "波音 C-135 运输机",
+          "meaning_zh": "波音 C-135 型运输机类别。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.amc.af.mil/Portals/12/documents/AFD-131018-047.pdf"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "C-135"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 51,
+          "taxonomy_id": 52,
+          "label": "C-17",
+          "abbreviation": "C-17",
+          "full_name_en": "McDonnell Douglas / Boeing C-17 Globemaster III",
+          "full_name_zh": "麦道／波音 C-17 环球霸王 III 运输机",
+          "meaning_zh": "C-17 型大型喷气运输机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "C-17"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 52,
+          "taxonomy_id": 53,
+          "label": "C-21",
+          "abbreviation": "C-21",
+          "full_name_en": "Learjet C-21",
+          "full_name_zh": "里尔 C-21 运输机",
+          "meaning_zh": "基于 Learjet 35A 公务机的 C-21 客货运输机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Display/article/104522/c-21/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "C-21"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 53,
+          "taxonomy_id": 54,
+          "label": "C-5",
+          "abbreviation": "C-5",
+          "full_name_en": "Lockheed C-5 Galaxy",
+          "full_name_zh": "洛克希德 C-5 银河运输机",
+          "meaning_zh": "C-5 系列大型喷气运输机。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "C-5"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 54,
+          "taxonomy_id": 55,
+          "label": "E-3",
+          "abbreviation": "E-3",
+          "full_name_en": "Boeing E-3 Sentry",
+          "full_name_zh": "波音 E-3 望楼预警机",
+          "meaning_zh": "E-3 型空中预警与控制飞机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "E-3"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 55,
+          "taxonomy_id": 56,
+          "label": "E-8",
+          "abbreviation": "E-8",
+          "full_name_en": "E-8 Joint STARS (Joint Surveillance Target Attack Radar System)",
+          "full_name_zh": "E-8 联合监视目标攻击雷达系统飞机",
+          "meaning_zh": "E-8 型地面监视和指挥控制飞机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "常见产品名称为 E-8C Joint STARS；原始类别只标明 E-8。"
+          ],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "E-8"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 56,
+          "taxonomy_id": 57,
+          "label": "F-15",
+          "abbreviation": "F-15",
+          "full_name_en": "McDonnell Douglas / Boeing F-15 Eagle",
+          "full_name_zh": "麦道／波音 F-15 鹰战斗机",
+          "meaning_zh": "F-15 系列战斗机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标签未区分 F-15E 等改型。"
+          ],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "F-15"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 57,
+          "taxonomy_id": 58,
+          "label": "F-16",
+          "abbreviation": "F-16",
+          "full_name_en": "General Dynamics / Lockheed Martin F-16 Fighting Falcon",
+          "full_name_zh": "通用动力／洛克希德马丁 F-16 战隼战斗机",
+          "meaning_zh": "F-16 系列战斗机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "F-16"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 58,
+          "taxonomy_id": 59,
+          "label": "F-22",
+          "abbreviation": "F-22",
+          "full_name_en": "Lockheed Martin F-22 Raptor",
+          "full_name_zh": "洛克希德马丁 F-22 猛禽战斗机",
+          "meaning_zh": "F-22 型战斗机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "F-22"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 59,
+          "taxonomy_id": 60,
+          "label": "F-5",
+          "abbreviation": "F-5",
+          "full_name_en": "Northrop F-5 fighter (variant unspecified)",
+          "full_name_zh": "诺斯罗普 F-5 战斗机（改型未指定）",
+          "meaning_zh": "F-5 系列战斗机，标签没有指定具体改型。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196074/northrop-yf-5a-freedom-fighter/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "F-5"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 60,
+          "taxonomy_id": 61,
+          "label": "FA-18",
+          "abbreviation": "FA-18",
+          "full_name_en": "F/A-18 fighter/attack aircraft (variant unspecified)",
+          "full_name_zh": "F/A-18 战斗攻击机（改型未指定）",
+          "meaning_zh": "F/A-18 系列战斗攻击机类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "原始标签保留 FA-18；标准型号写法为 F/A-18。未指定 A-D Hornet 或 E/F Super Hornet。"
+          ],
+          "references": [
+            "https://www.navair.navy.mil/fixed-wing?page=1"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "FA-18"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 61,
+          "taxonomy_id": 62,
+          "label": "KC-10",
+          "abbreviation": "KC-10",
+          "full_name_en": "McDonnell Douglas KC-10 Extender",
+          "full_name_zh": "麦道 KC-10 延伸者加油机",
+          "meaning_zh": "KC-10 型空中加油与运输飞机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "KC-10"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 62,
+          "taxonomy_id": 63,
+          "label": "KC-135",
+          "abbreviation": "KC-135",
+          "full_name_en": "Boeing KC-135 Stratotanker",
+          "full_name_zh": "波音 KC-135 同温层加油机",
+          "meaning_zh": "KC-135 系列空中加油机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与 C-135 保持两个独立标签。"
+          ],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "KC-135"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 63,
+          "taxonomy_id": 64,
+          "label": "P-3C",
+          "abbreviation": "P-3C",
+          "full_name_en": "Lockheed P-3C Orion",
+          "full_name_zh": "洛克希德 P-3C 猎户座巡逻机",
+          "meaning_zh": "P-3 系列中的 P-3C 型海上巡逻机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.navair.navy.mil/fixed-wing?page=1"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "P-3C"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 64,
+          "taxonomy_id": 65,
+          "label": "P-63",
+          "abbreviation": "P-63",
+          "full_name_en": "Bell P-63 Kingcobra",
+          "full_name_zh": "贝尔 P-63 眼镜王蛇战斗机",
+          "meaning_zh": "贝尔 P-63 型螺旋桨战斗机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196305/bell-p-63e-kingcobra/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "P-63"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 65,
+          "taxonomy_id": 66,
+          "label": "SU-24",
+          "abbreviation": "SU-24",
+          "full_name_en": "Sukhoi Su-24",
+          "full_name_zh": "苏霍伊 苏-24 战术轰炸机",
+          "meaning_zh": "苏霍伊 Su-24 型战术轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标准型号写作 Su-24，原始标签大写 SU-24 保留。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "SU-24"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 66,
+          "taxonomy_id": 67,
+          "label": "SU-34",
+          "abbreviation": "SU-34",
+          "full_name_en": "Sukhoi Su-34",
+          "full_name_zh": "苏霍伊 苏-34 战斗轰炸机",
+          "meaning_zh": "苏霍伊 Su-34 型战斗轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标准型号写作 Su-34，原始标签大写 SU-34 保留。"
+          ],
+          "references": [
+            "https://uacrussia.ru/en/aircraft/lineup/military/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "SU-34"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 67,
+          "taxonomy_id": 68,
+          "label": "SU-35",
+          "abbreviation": "SU-35",
+          "full_name_en": "Sukhoi Su-35",
+          "full_name_zh": "苏霍伊 苏-35 战斗机",
+          "meaning_zh": "苏霍伊 Su-35 型战斗机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标准型号写作 Su-35，原始标签大写 SU-35 保留。"
+          ],
+          "references": [
+            "https://www.uacrussia.ru/ru/aircraft/lineup/lineup/su-35/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "SU-35"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 68,
+          "taxonomy_id": 69,
+          "label": "T-43",
+          "abbreviation": "T-43",
+          "full_name_en": "Boeing T-43 navigation trainer",
+          "full_name_zh": "波音 T-43 领航教练机",
+          "meaning_zh": "由波音 737 改装而来的 T-43 领航训练飞机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.aflcmc.af.mil/NEWS/Article/3357254/this-week-in-aflcmc-history-april-10-16-2023/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "T-43"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 69,
+          "taxonomy_id": 70,
+          "label": "T-6",
+          "abbreviation": "T-6",
+          "full_name_en": "T-6 trainer",
+          "full_name_zh": "T-6 教练机",
+          "meaning_zh": "数据集中标记为 T-6 的教练机类别。",
+          "definition_status": "needs_confirmation",
+          "references": [
+            "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196107/AFmuseum/north-american-t-6d-mosquito/",
+            "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2166435/t-6b-texan-ii-turboprop-trainer/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "T-6"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 70,
+          "taxonomy_id": 71,
+          "label": "TU-160",
+          "abbreviation": "TU-160",
+          "full_name_en": "Tupolev Tu-160",
+          "full_name_zh": "图波列夫 图-160 轰炸机",
+          "meaning_zh": "图波列夫 Tu-160 型大型轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标准型号写作 Tu-160，原始标签大写 TU-160 保留。"
+          ],
+          "references": [
+            "https://uacrussia.ru/ru/aircraft/lineup/military/Tu-160/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "TU-160"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 71,
+          "taxonomy_id": 72,
+          "label": "TU-22",
+          "abbreviation": "TU-22",
+          "full_name_en": "Tupolev Tu-22 (dataset label)",
+          "full_name_zh": "图波列夫 图-22（数据集标签）",
+          "meaning_zh": "数据集中标记为 TU-22 的轰炸机类别。",
+          "definition_status": "needs_confirmation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "TU-22"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 72,
+          "taxonomy_id": 73,
+          "label": "TU-95",
+          "abbreviation": "TU-95",
+          "full_name_en": "Tupolev Tu-95",
+          "full_name_zh": "图波列夫 图-95 轰炸机",
+          "meaning_zh": "图波列夫 Tu-95 系列涡轮螺旋桨轰炸机。",
+          "definition_status": "standard_term",
+          "notes": [
+            "标签未指定 Tu-95MS 等改型；标准型号写作 Tu-95。"
+          ],
+          "references": [
+            "https://uacrussia.ru/ru/aircraft/lineup/special/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "TU-95"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 73,
+          "taxonomy_id": 74,
+          "label": "U-2",
+          "abbreviation": "U-2",
+          "full_name_en": "Lockheed U-2 Dragon Lady",
+          "full_name_zh": "洛克希德 U-2 龙夫人侦察机",
+          "meaning_zh": "U-2 系列高空侦察机。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.af.mil/About-Us/Fact-Sheets/Aircraft-Factsheets/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "notairliner",
+          "ancestor_labels": [
+            "plane",
+            "notairliner"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "notairliner",
+            "U-2"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 74,
+          "taxonomy_id": 75,
+          "label": "other-airplane",
+          "abbreviation": "other-airplane",
+          "full_name_en": "Other airplane",
+          "full_name_zh": "其他飞机",
+          "meaning_zh": "飞机分支中未归入已列客机或非客机细类的其他飞机。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "具体标注排除规则应以数据集标注规范为准。"
+          ],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "plane",
+          "ancestor_labels": [
+            "plane"
+          ],
+          "hierarchy_path": [
+            "plane",
+            "other-airplane"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "annotation_coarse_category_id": 1,
+          "corresponding_30class_label": "plane"
+        },
+        {
+          "model_index": 75,
+          "taxonomy_id": 76,
+          "label": "car",
+          "abbreviation": "car",
+          "full_name_en": "Passenger car",
+          "full_name_zh": "小汽车（细类）",
+          "meaning_zh": "159 类车辆分支中的小汽车类别",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "car"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 76,
+          "taxonomy_id": 77,
+          "label": "bus",
+          "abbreviation": "bus",
+          "full_name_en": "Bus",
+          "full_name_zh": "公交车／客车",
+          "meaning_zh": "主要用于集体载客的道路车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "bus"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 77,
+          "taxonomy_id": 78,
+          "label": "camping_car",
+          "abbreviation": "camping_car",
+          "full_name_en": "Motorhome / recreational vehicle",
+          "full_name_zh": "房车",
+          "meaning_zh": "具备住宿、生活设施的露营用车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "camping_car"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 78,
+          "taxonomy_id": 79,
+          "label": "Cargo Truck",
+          "abbreviation": "Cargo Truck",
+          "full_name_en": "Cargo truck",
+          "full_name_zh": "载货卡车",
+          "meaning_zh": "以运输货物为主要用途的卡车。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "Cargo Truck"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 79,
+          "taxonomy_id": 80,
+          "label": "dump truck",
+          "abbreviation": "dump truck",
+          "full_name_en": "Dump truck",
+          "full_name_zh": "自卸卡车",
+          "meaning_zh": "货厢可倾斜卸料的载货车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "dump truck"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 80,
+          "taxonomy_id": 81,
+          "label": "Excavator",
+          "abbreviation": "Excavator",
+          "full_name_en": "Excavator",
+          "full_name_zh": "挖掘机",
+          "meaning_zh": "使用动臂、斗杆和铲斗等机构进行土方挖掘的工程机械。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "Excavator"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 81,
+          "taxonomy_id": 82,
+          "label": "other",
+          "abbreviation": "other",
+          "full_name_en": "Other vehicle",
+          "full_name_zh": "其他车辆",
+          "meaning_zh": "车辆分支中的其他类别",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "other"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 82,
+          "taxonomy_id": 83,
+          "label": "pickup",
+          "abbreviation": "pickup",
+          "full_name_en": "Pickup truck",
+          "full_name_zh": "皮卡",
+          "meaning_zh": "具有乘员舱和开放式货厢的轻型车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "pickup"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 83,
+          "taxonomy_id": 84,
+          "label": "small-vehicle",
+          "abbreviation": "small-vehicle",
+          "full_name_en": "Small vehicle",
+          "full_name_zh": "小型车辆",
+          "meaning_zh": "原始标注中使用 small-vehicle 的较宽泛小型车辆类别。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "与 car 在发布类别表中是两个独立节点；未找到统一的尺寸阈值或更精确的标注边界。"
+          ],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "small-vehicle"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 84,
+          "taxonomy_id": 85,
+          "label": "tractor",
+          "abbreviation": "tractor",
+          "full_name_en": "Tractor",
+          "full_name_zh": "拖拉机",
+          "meaning_zh": "用于牵引作业机具等任务的拖拉机类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "本类别与道路运输中的 Truck Tractor 分开。"
+          ],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "tractor"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 85,
+          "taxonomy_id": 86,
+          "label": "Trailer",
+          "abbreviation": "Trailer",
+          "full_name_en": "Trailer",
+          "full_name_zh": "挂车",
+          "meaning_zh": "由其他车辆牵引的载运车体，通常无独立驱动能力。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "Trailer"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 86,
+          "taxonomy_id": 87,
+          "label": "Truck Tractor",
+          "abbreviation": "Truck Tractor",
+          "full_name_en": "Truck tractor",
+          "full_name_zh": "牵引卡车／半挂牵引车",
+          "meaning_zh": "用于牵引半挂车等货运挂车的动力牵引车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "Truck Tractor"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 87,
+          "taxonomy_id": 88,
+          "label": "van",
+          "abbreviation": "van",
+          "full_name_en": "Van",
+          "full_name_zh": "厢式车",
+          "meaning_zh": "具有封闭式车厢、用于载人或载货的车辆。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "vehicle",
+          "ancestor_labels": [
+            "vehicle"
+          ],
+          "hierarchy_path": [
+            "vehicle",
+            "van"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "vehicle",
+          "annotation_coarse_category_id": 7,
+          "corresponding_30class_label": "car"
+        },
+        {
+          "model_index": 88,
+          "taxonomy_id": 89,
+          "label": "civil_ship",
+          "abbreviation": "civil_ship",
+          "full_name_en": "Civilian ship",
+          "full_name_zh": "民用船舶",
+          "meaning_zh": "本数据集民用船舶分支的父类，包含运输、作业、休闲等船舶及部分沿用的海事类别。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "ship",
+          "ancestor_labels": [
+            "ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship"
+          ],
+          "child_labels": [
+            "bargePontoon",
+            "bulkCarrier",
+            "Car_carrier",
+            "coastGuard",
+            "Container_Ship",
+            "Dock",
+            "dredgerReclamation",
+            "dredging",
+            "drill",
+            "Engineering_Ship",
+            "Fishing_Vessel",
+            "Hovercraft",
+            "Large_sail_ship",
+            "Liquid_Cargo_Ship",
+            "lpg",
+            "Merchant",
+            "offshore",
+            "oreCarrier",
+            "passenger",
+            "RoRo",
+            "serviceCraft",
+            "Small_leisure_craft",
+            "small_Ro-Ro_ferry",
+            "tiny_boat",
+            "tiny_ship",
+            "Tugboat",
+            "yacht"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 89,
+          "taxonomy_id": 90,
+          "label": "bargePontoon",
+          "abbreviation": "bargePontoon",
+          "full_name_en": "Barge or pontoon",
+          "full_name_zh": "驳船或浮台",
+          "meaning_zh": "用于运输、承载设备或水上作业的驳船、浮台等平台类目标。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "bargePontoon"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 90,
+          "taxonomy_id": 91,
+          "label": "bulkCarrier",
+          "abbreviation": "bulkCarrier",
+          "full_name_en": "Bulk carrier",
+          "full_name_zh": "散货船",
+          "meaning_zh": "运输煤炭、谷物等未包装固体散货的船舶。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "bulkCarrier"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 91,
+          "taxonomy_id": 92,
+          "label": "Car_carrier",
+          "abbreviation": "Car_carrier",
+          "full_name_en": "Car carrier",
+          "full_name_zh": "汽车运输船",
+          "meaning_zh": "主要运输汽车等车辆的专用船舶。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与通用滚装船 RoRo 分别保留为独立标签。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Car_carrier"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 92,
+          "taxonomy_id": 93,
+          "label": "coastGuard",
+          "abbreviation": "coastGuard",
+          "full_name_en": "Coast guard vessel",
+          "full_name_zh": "海岸警卫或海警船舶",
+          "meaning_zh": "执行海上执法、巡逻、搜救等海岸警卫任务的船舶。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "coastGuard"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 93,
+          "taxonomy_id": 94,
+          "label": "Container_Ship",
+          "abbreviation": "Container_Ship",
+          "full_name_en": "Container ship",
+          "full_name_zh": "集装箱船",
+          "meaning_zh": "主要装运标准集装箱的货运船舶。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Container_Ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 94,
+          "taxonomy_id": 95,
+          "label": "Dock",
+          "abbreviation": "Dock",
+          "full_name_en": "Dock (dataset label)",
+          "full_name_zh": "船坞或码头设施（数据集原标签）",
+          "definition_status": "needs_confirmation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Dock"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 95,
+          "taxonomy_id": 96,
+          "label": "dredgerReclamation",
+          "abbreviation": "dredgerReclamation",
+          "full_name_en": "Land-reclamation dredger",
+          "full_name_zh": "填海造地疏浚船",
+          "meaning_zh": "按标签字面理解，为挖取、输送或吹填泥沙以服务填海造地的疏浚船。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "与 dredging 的具体标注边界未在发布配置中定义。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "dredgerReclamation"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 96,
+          "taxonomy_id": 97,
+          "label": "dredging",
+          "abbreviation": "dredging",
+          "full_name_en": "Dredging vessel",
+          "full_name_zh": "疏浚船",
+          "meaning_zh": "进行水底泥沙挖掘、清淤或航道疏浚的作业船舶。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "dredging"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 97,
+          "taxonomy_id": 98,
+          "label": "drill",
+          "abbreviation": "drill",
+          "full_name_en": "Drilling vessel",
+          "full_name_zh": "钻井船",
+          "meaning_zh": "按船舶分支语境解释为用于海上钻探或钻井作业的船舶。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "原标签仅为 drill，未给出船型及作业用途的更细定义。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "drill"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 98,
+          "taxonomy_id": 99,
+          "label": "Engineering_Ship",
+          "abbreviation": "Engineering_Ship",
+          "full_name_en": "Engineering vessel",
+          "full_name_zh": "工程船",
+          "meaning_zh": "用于水上、水下或港口工程施工作业的船舶。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Engineering_Ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 99,
+          "taxonomy_id": 100,
+          "label": "Fishing_Vessel",
+          "abbreviation": "Fishing_Vessel",
+          "full_name_en": "Fishing vessel",
+          "full_name_zh": "渔船",
+          "meaning_zh": "主要用于捕捞或相关渔业生产活动的船舶。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Fishing_Vessel"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 100,
+          "taxonomy_id": 101,
+          "label": "Hovercraft",
+          "abbreviation": "Hovercraft",
+          "full_name_en": "Hovercraft",
+          "full_name_zh": "气垫船",
+          "meaning_zh": "依靠空气垫支撑船体、可在水面等表面航行的船艇。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Hovercraft"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 101,
+          "taxonomy_id": 102,
+          "label": "Large_sail_ship",
+          "abbreviation": "Large_sail_ship",
+          "full_name_en": "Large sailing ship",
+          "full_name_zh": "大型帆船",
+          "meaning_zh": "以帆具为主要特征的大型帆船类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "未给出“大型”的统一长度阈值。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Large_sail_ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 102,
+          "taxonomy_id": 103,
+          "label": "Liquid_Cargo_Ship",
+          "abbreviation": "Liquid_Cargo_Ship",
+          "full_name_en": "Liquid-cargo ship",
+          "full_name_zh": "液体货物运输船",
+          "meaning_zh": "主要运输液体散装货物的船舶。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与同层 lpg 标签分别保留，具体货种边界以数据集标注为准。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Liquid_Cargo_Ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 103,
+          "taxonomy_id": 104,
+          "label": "lpg",
+          "abbreviation": "lpg",
+          "full_name_en": "Liquefied petroleum gas carrier",
+          "full_name_zh": "液化石油气运输船",
+          "meaning_zh": "运输液化石油气的专用气体运输船；LPG 是 liquefied petroleum gas 的缩写。",
+          "definition_status": "standard_term",
+          "notes": [
+            "在船舶类别语境下表示运输船，而非液化石油气物质本身。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "lpg"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 104,
+          "taxonomy_id": 105,
+          "label": "Merchant",
+          "abbreviation": "Merchant",
+          "full_name_en": "Merchant ship",
+          "full_name_zh": "商船",
+          "meaning_zh": "从事商业运输的船舶类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "作为 civil_ship 下的独立标签保留；与专门货船、客船标签的边界需遵循原标注。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Merchant"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 105,
+          "taxonomy_id": 106,
+          "label": "offshore",
+          "abbreviation": "offshore",
+          "full_name_en": "Offshore support vessel",
+          "full_name_zh": "海工作业支持船",
+          "meaning_zh": "按船舶类别语境理解为服务海上工程、海上设施或海上生产活动的支持船。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "offshore"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 106,
+          "taxonomy_id": 107,
+          "label": "oreCarrier",
+          "abbreviation": "oreCarrier",
+          "full_name_en": "Ore carrier",
+          "full_name_zh": "矿砂船",
+          "meaning_zh": "主要运输矿石、矿砂等重质散货的船舶。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与 bulkCarrier 在现实概念上有关联，但数据集将两者作为同层独立类别。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "oreCarrier"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 107,
+          "taxonomy_id": 108,
+          "label": "passenger",
+          "abbreviation": "passenger",
+          "full_name_en": "Passenger ship",
+          "full_name_zh": "客船",
+          "meaning_zh": "以载客为主要用途的船舶。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "passenger"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 108,
+          "taxonomy_id": 109,
+          "label": "RoRo",
+          "abbreviation": "RoRo",
+          "full_name_en": "Roll-on/roll-off ship",
+          "full_name_zh": "滚装船",
+          "meaning_zh": "车辆或载货单元通过坡道自行或被牵引驶入驶出的船舶。",
+          "definition_status": "standard_term",
+          "notes": [
+            "RoRo 是 roll-on/roll-off 的缩写。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "RoRo"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 109,
+          "taxonomy_id": 110,
+          "label": "serviceCraft",
+          "abbreviation": "serviceCraft",
+          "full_name_en": "Service craft",
+          "full_name_zh": "服务作业艇",
+          "meaning_zh": "用于港口或水上服务、维护、辅助作业的小型船艇。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "serviceCraft"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 110,
+          "taxonomy_id": 111,
+          "label": "Small_leisure_craft",
+          "abbreviation": "Small_leisure_craft",
+          "full_name_en": "Small leisure craft",
+          "full_name_zh": "小型休闲船艇",
+          "meaning_zh": "主要用于休闲、娱乐等非商业运输活动的小型船艇。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Small_leisure_craft"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 111,
+          "taxonomy_id": 112,
+          "label": "small_Ro-Ro_ferry",
+          "abbreviation": "small_Ro-Ro_ferry",
+          "full_name_en": "Small roll-on/roll-off ferry",
+          "full_name_zh": "小型滚装渡船",
+          "meaning_zh": "供车辆等通过坡道上下船、承担较短航程摆渡运输的小型渡船。形状很独特",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "small_Ro-Ro_ferry"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 112,
+          "taxonomy_id": 113,
+          "label": "tiny_boat",
+          "abbreviation": "tiny_boat",
+          "full_name_en": "Tiny boat",
+          "full_name_zh": "微小型艇",
+          "meaning_zh": "原标注中称为 tiny_boat 的小艇类目标。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "tiny_boat"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 113,
+          "taxonomy_id": 114,
+          "label": "tiny_ship",
+          "abbreviation": "tiny_ship",
+          "full_name_en": "Tiny ship",
+          "full_name_zh": "微小型船",
+          "meaning_zh": "原标注中称为 tiny_ship 的小船类目标，与前者的区别是，一类指船本身很小，另一类指的是因为分辨率过低，例如16m分辨率，显得船很小",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "tiny_ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 114,
+          "taxonomy_id": 115,
+          "label": "Tugboat",
+          "abbreviation": "Tugboat",
+          "full_name_en": "Tugboat",
+          "full_name_zh": "拖船",
+          "meaning_zh": "用于拖带、顶推或协助其他船舶操纵的船舶。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "Tugboat"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 115,
+          "taxonomy_id": 116,
+          "label": "yacht",
+          "abbreviation": "yacht",
+          "full_name_en": "Yacht",
+          "full_name_zh": "游艇",
+          "meaning_zh": "主要用于休闲、游览或私人娱乐的船艇。",
+          "definition_status": "standard_term",
+          "notes": [
+            "与 Small_leisure_craft 分别保留为原标注中的独立类别。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "civil_ship",
+          "ancestor_labels": [
+            "ship",
+            "civil_ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "civil_ship",
+            "yacht"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 116,
+          "taxonomy_id": 117,
+          "label": "war",
+          "abbreviation": "war",
+          "full_name_en": "Warship or naval vessel",
+          "full_name_zh": "军用舰船",
+          "meaning_zh": "军用舰船分支的父类，包含作战舰艇、运输舰、补给舰、医疗船等军用或海军辅助船舶。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 2,
+          "parent_label": "ship",
+          "ancestor_labels": [
+            "ship"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war"
+          ],
+          "child_labels": [
+            "AOE",
+            "AS",
+            "C",
+            "commander",
+            "CV",
+            "DD",
+            "EPF",
+            "FF",
+            "Landing",
+            "LCS",
+            "Medical ship",
+            "other Warship",
+            "patrolForce",
+            "Submarine",
+            "Test ship"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 117,
+          "taxonomy_id": 118,
+          "label": "AOE",
+          "abbreviation": "AOE",
+          "full_name_en": "Fast combat support ship",
+          "full_name_zh": "快速战斗支援舰",
+          "meaning_zh": "为舰船提供燃料、物资等综合补给的快速支援舰类别。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2174658/fast-combat-support-ships-t-aoe/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "AOE"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 118,
+          "taxonomy_id": 119,
+          "label": "AS",
+          "abbreviation": "AS",
+          "full_name_en": "Auxiliary and support ship group (dataset usage)",
+          "full_name_zh": "辅助与支援舰船组",
+          "meaning_zh": "本数据集军用舰船下的辅助、支援类分组，其子类为 Auxiliary Ships、Masyuu AS 和 Sanantonio AS。",
+          "definition_status": "contextual_interpretation",
+          "references": [
+            "https://www.mod.go.jp/msdf/equipment/ships/aoe/masyuu/",
+            "https://www.navy.mil/DesktopModules/ArticleCS/Print.aspx?Article=2222713&ModuleId=724&PortalId=1"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "AS"
+          ],
+          "child_labels": [
+            "Auxiliary Ships",
+            "Masyuu AS",
+            "Sanantonio AS"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 119,
+          "taxonomy_id": 120,
+          "label": "Auxiliary Ships",
+          "abbreviation": "Auxiliary Ships",
+          "full_name_en": "Auxiliary naval ships",
+          "full_name_zh": "辅助舰船",
+          "meaning_zh": "承担保障、支援等辅助任务的舰船，在数据集中是 AS 下的独立叶子类别。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "AS",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "AS"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "AS",
+            "Auxiliary Ships"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 120,
+          "taxonomy_id": 121,
+          "label": "Masyuu AS",
+          "abbreviation": "Masyuu AS",
+          "full_name_en": "Mashu-class replenishment ship",
+          "full_name_zh": "摩周级补给舰",
+          "meaning_zh": "摩周级补给舰类别；原标签保留 Masyuu 这一转写形式。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.mod.go.jp/msdf/equipment/ships/aoe/masyuu/"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "AS",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "AS"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "AS",
+            "Masyuu AS"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 121,
+          "taxonomy_id": 122,
+          "label": "Sanantonio AS",
+          "abbreviation": "Sanantonio AS",
+          "full_name_en": "San Antonio-class amphibious transport dock",
+          "full_name_zh": "圣安东尼奥级两栖运输船坞舰",
+          "meaning_zh": "圣安东尼奥级两栖运输船坞舰类别。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.navy.mil/DesktopModules/ArticleCS/Print.aspx?Article=2222713&ModuleId=724&PortalId=1"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "AS",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "AS"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "AS",
+            "Sanantonio AS"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 122,
+          "taxonomy_id": 123,
+          "label": "C",
+          "abbreviation": "C",
+          "full_name_en": "Cruiser",
+          "full_name_zh": "巡洋舰",
+          "meaning_zh": "巡洋舰父类，包含 other cruiser 和 Ticonderoga。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "C"
+          ],
+          "child_labels": [
+            "other cruiser",
+            "Ticonderoga"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 123,
+          "taxonomy_id": 124,
+          "label": "other cruiser",
+          "abbreviation": "other cruiser",
+          "full_name_en": "Other cruiser",
+          "full_name_zh": "其他巡洋舰",
+          "meaning_zh": "归入巡洋舰分支、但未标注为该分支已单列具体舰级的巡洋舰。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "C",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "C"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "C",
+            "other cruiser"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 124,
+          "taxonomy_id": 125,
+          "label": "Ticonderoga",
+          "abbreviation": "Ticonderoga",
+          "full_name_en": "Ticonderoga-class cruiser",
+          "full_name_zh": "提康德罗加级巡洋舰",
+          "meaning_zh": "提康德罗加级巡洋舰类别。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "C",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "C"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "C",
+            "Ticonderoga"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 125,
+          "taxonomy_id": 126,
+          "label": "commander",
+          "abbreviation": "commander",
+          "full_name_en": "Command ship",
+          "full_name_zh": "指挥舰",
+          "meaning_zh": "用于舰队或部队指挥、通信和协调的舰船父类。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "commander"
+          ],
+          "child_labels": [
+            "other Commander",
+            "USS Blue Ridge (LCC-19)"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 126,
+          "taxonomy_id": 127,
+          "label": "other Commander",
+          "abbreviation": "other Commander",
+          "full_name_en": "Other command ship",
+          "full_name_zh": "其他指挥舰",
+          "meaning_zh": "指挥舰分支中未标注为已单列命名舰船的其他指挥舰。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "保留原标签大小写与 Commander 用词。"
+          ],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "commander",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "commander"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "commander",
+            "other Commander"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 127,
+          "taxonomy_id": 128,
+          "label": "USS Blue Ridge (LCC-19)",
+          "abbreviation": "USS Blue Ridge (LCC-19)",
+          "full_name_en": "USS Blue Ridge (LCC-19), amphibious command ship",
+          "full_name_zh": "蓝岭号两栖指挥舰（LCC-19）",
+          "meaning_zh": "以 USS Blue Ridge（LCC-19）命名的指挥舰类别。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "commander",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "commander"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "commander",
+            "USS Blue Ridge (LCC-19)"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 128,
+          "taxonomy_id": 129,
+          "label": "CV",
+          "abbreviation": "CV",
+          "full_name_en": "Aircraft carrier",
+          "full_name_zh": "航空母舰",
+          "meaning_zh": "航空母舰父类，包含数据集单列的命名航母类别和其他航母。",
+          "definition_status": "standard_term",
+          "notes": [
+            "CV 是本标签中的舰种代号，未按常规动力与核动力细分。"
+          ],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "CV"
+          ],
+          "child_labels": [
+            "Enterprise",
+            "Midway",
+            "Nimitz",
+            "other Aircraft carrier"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 129,
+          "taxonomy_id": 130,
+          "label": "Enterprise",
+          "abbreviation": "Enterprise",
+          "full_name_en": "Enterprise aircraft carrier",
+          "full_name_zh": "企业号航空母舰类别",
+          "meaning_zh": "原标签以 Enterprise 命名的航空母舰类别。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "CV",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "CV"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "CV",
+            "Enterprise"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 130,
+          "taxonomy_id": 131,
+          "label": "Midway",
+          "abbreviation": "Midway",
+          "full_name_en": "Midway-class aircraft carrier",
+          "full_name_zh": "中途岛级航空母舰",
+          "meaning_zh": "原标签以 Midway 命名的航空母舰类别，按通用舰级名称解释为中途岛级。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "CV",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "CV"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "CV",
+            "Midway"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 131,
+          "taxonomy_id": 132,
+          "label": "Nimitz",
+          "abbreviation": "Nimitz",
+          "full_name_en": "Nimitz-class aircraft carrier",
+          "full_name_zh": "尼米兹级航空母舰",
+          "meaning_zh": "原标签以 Nimitz 命名的航空母舰类别，按通用舰级名称解释为尼米兹级。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "CV",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "CV"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "CV",
+            "Nimitz"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 132,
+          "taxonomy_id": 133,
+          "label": "other Aircraft carrier",
+          "abbreviation": "other Aircraft carrier",
+          "full_name_en": "Other aircraft carrier",
+          "full_name_zh": "其他航空母舰",
+          "meaning_zh": "航空母舰分支中未标注为已单列命名类别的其他航空母舰。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "CV",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "CV"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "CV",
+            "other Aircraft carrier"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 133,
+          "taxonomy_id": 134,
+          "label": "DD",
+          "abbreviation": "DD",
+          "full_name_en": "Destroyer",
+          "full_name_zh": "驱逐舰",
+          "meaning_zh": "驱逐舰父类，包含常规驱逐舰、导弹驱逐舰和原分类树中的直升机驱逐舰子类。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "child_labels": [
+            "Arleigh Burke DD",
+            "Asagiri DD",
+            "Atago DD",
+            "Hatsuyuki DD",
+            "Hyuga DDH",
+            "other Destroyer"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 134,
+          "taxonomy_id": 135,
+          "label": "Arleigh Burke DD",
+          "abbreviation": "Arleigh Burke DD",
+          "full_name_en": "Arleigh Burke-class guided-missile destroyer",
+          "full_name_zh": "阿利·伯克级导弹驱逐舰",
+          "meaning_zh": "阿利·伯克级导弹驱逐舰类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "原标签后缀 DD 保留；标准舰种通常写作 DDG。"
+          ],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "Arleigh Burke DD"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 135,
+          "taxonomy_id": 136,
+          "label": "Asagiri DD",
+          "abbreviation": "Asagiri DD",
+          "full_name_en": "Asagiri-class destroyer",
+          "full_name_zh": "朝雾级驱逐舰",
+          "meaning_zh": "朝雾级驱逐舰类别。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.mod.go.jp/msdf/bukei/y0/nyuusatsu/K-02-1003-3700.pdf"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "Asagiri DD"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 136,
+          "taxonomy_id": 137,
+          "label": "Atago DD",
+          "abbreviation": "Atago DD",
+          "full_name_en": "Atago-class guided-missile destroyer",
+          "full_name_zh": "爱宕级导弹驱逐舰",
+          "meaning_zh": "爱宕级导弹驱逐舰类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "原标签后缀 DD 保留；官方舰种代号为 DDG。"
+          ],
+          "references": [
+            "https://www.mod.go.jp/msdf/bukei/y0/nyuusatsu/K-02-1003-3700.pdf"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "Atago DD"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 137,
+          "taxonomy_id": 138,
+          "label": "Hatsuyuki DD",
+          "abbreviation": "Hatsuyuki DD",
+          "full_name_en": "Hatsuyuki-class destroyer",
+          "full_name_zh": "初雪级驱逐舰",
+          "meaning_zh": "初雪级驱逐舰类别。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.mod.go.jp/msdf/bukei/y0/nyuusatsu/K-02-1003-3700.pdf"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "Hatsuyuki DD"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 138,
+          "taxonomy_id": 139,
+          "label": "Hyuga DDH",
+          "abbreviation": "Hyuga DDH",
+          "full_name_en": "Hyuga-class helicopter destroyer",
+          "full_name_zh": "日向级直升机驱逐舰",
+          "meaning_zh": "日向级直升机驱逐舰类别。",
+          "definition_status": "standard_term",
+          "references": [
+            "https://www.mod.go.jp/msdf/bukei/y0/nyuusatsu/K-02-1003-3700.pdf"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "Hyuga DDH"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 139,
+          "taxonomy_id": 140,
+          "label": "other Destroyer",
+          "abbreviation": "other Destroyer",
+          "full_name_en": "Other destroyer",
+          "full_name_zh": "其他驱逐舰",
+          "meaning_zh": "驱逐舰分支中未标注为已单列具体舰级的其他驱逐舰。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "DD",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "DD"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "DD",
+            "other Destroyer"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 140,
+          "taxonomy_id": 141,
+          "label": "EPF",
+          "abbreviation": "EPF",
+          "full_name_en": "Expeditionary fast transport",
+          "full_name_zh": "远征快速运输舰",
+          "meaning_zh": "用于快速运输人员、车辆或物资的远征运输舰类别。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.msc.usff.navy.mil/Ships/Expeditionary-Fast-Transport-PM8/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "EPF"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 141,
+          "taxonomy_id": 142,
+          "label": "FF",
+          "abbreviation": "FF",
+          "full_name_en": "Frigate",
+          "full_name_zh": "护卫舰",
+          "meaning_zh": "护卫舰父类，包含 Perry FF 和 Frigate 两个子类。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "FF"
+          ],
+          "child_labels": [
+            "Perry FF",
+            "Frigate"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 142,
+          "taxonomy_id": 143,
+          "label": "Perry FF",
+          "abbreviation": "Perry FF",
+          "full_name_en": "Oliver Hazard Perry-class frigate",
+          "full_name_zh": "奥利弗·哈泽德·佩里级护卫舰",
+          "meaning_zh": "佩里级护卫舰类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "Perry 是舰级名称的简写；原标签后缀 FF 保留。"
+          ],
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "FF",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "FF"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "FF",
+            "Perry FF"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 143,
+          "taxonomy_id": 144,
+          "label": "Frigate",
+          "abbreviation": "Frigate",
+          "full_name_en": "Frigate (leaf label)",
+          "full_name_zh": "护卫舰（叶子类别）",
+          "meaning_zh": "数据集中 FF 父类下单独保留的一般护卫舰叶子标签。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "FF",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "FF"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "FF",
+            "Frigate"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 144,
+          "taxonomy_id": 145,
+          "label": "Landing",
+          "abbreviation": "Landing",
+          "full_name_en": "Landing and amphibious ship",
+          "full_name_zh": "登陆与两栖舰船",
+          "meaning_zh": "用于登陆运输或两栖任务的舰船父类，覆盖原分类树中的船坞舰、两栖攻击舰和统一登陆舰标签等。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "child_labels": [
+            "Austin LL",
+            "LHA LL",
+            "LSD_41 LL",
+            "Osumi LL",
+            "Wasp LL",
+            "LL",
+            "other landing"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 145,
+          "taxonomy_id": 146,
+          "label": "Austin LL",
+          "abbreviation": "Austin LL",
+          "full_name_en": "Austin-class amphibious transport dock",
+          "full_name_zh": "奥斯汀级两栖运输船坞舰",
+          "meaning_zh": "奥斯汀级两栖运输船坞舰类别。",
+          "definition_status": "standard_term",
+          "notes": [
+            "LL 为数据集沿用的后缀，官方舰种为 LPD。"
+          ],
+          "references": [
+            "https://www.surflant.usff.navy.mil/Organization/Operational-Forces/Amphibious-Ships/Amphibious-Assault-Ship-LPD-LPD17-Info-Page/"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "Austin LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 146,
+          "taxonomy_id": 147,
+          "label": "LHA LL",
+          "abbreviation": "LHA LL",
+          "full_name_en": "Amphibious assault ship (LHA)",
+          "full_name_zh": "两栖攻击舰（LHA）",
+          "meaning_zh": "LHA 类两栖攻击舰的原数据集标签。",
+          "definition_status": "standard_term",
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "LHA LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 147,
+          "taxonomy_id": 148,
+          "label": "LSD_41 LL",
+          "abbreviation": "LSD_41 LL",
+          "full_name_en": "Whidbey Island-class dock landing ship (LSD-41 class)",
+          "full_name_zh": "惠德贝岛级船坞登陆舰（LSD-41级）",
+          "meaning_zh": "以 LSD-41 命名的惠德贝岛级船坞登陆舰类别。",
+          "definition_status": "standard_term",
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "LSD_41 LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 148,
+          "taxonomy_id": 149,
+          "label": "Osumi LL",
+          "abbreviation": "Osumi LL",
+          "full_name_en": "Osumi-class landing ship",
+          "full_name_zh": "大隅级登陆运输舰",
+          "meaning_zh": "大隅级登陆运输舰类别。",
+          "definition_status": "standard_term",
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "Osumi LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 149,
+          "taxonomy_id": 150,
+          "label": "Wasp LL",
+          "abbreviation": "Wasp LL",
+          "full_name_en": "Wasp-class amphibious assault ship",
+          "full_name_zh": "黄蜂级两栖攻击舰",
+          "meaning_zh": "黄蜂级两栖攻击舰类别。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "Wasp LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 150,
+          "taxonomy_id": 151,
+          "label": "LL",
+          "abbreviation": "LL",
+          "full_name_en": "Unified landing-vessel class (public release label)",
+          "full_name_zh": "统一登陆舰船类别（公开版标签）",
+          "meaning_zh": "公开发行版中合并保留的登陆舰船叶子类别。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "LL"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 151,
+          "taxonomy_id": 152,
+          "label": "other landing",
+          "abbreviation": "other landing",
+          "full_name_en": "Other landing or amphibious ship",
+          "full_name_zh": "其他登陆或两栖舰船",
+          "meaning_zh": "登陆舰船分支中未标注为其他单列叶子类别的舰船。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 4,
+          "parent_label": "Landing",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "Landing"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Landing",
+            "other landing"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 152,
+          "taxonomy_id": 153,
+          "label": "LCS",
+          "abbreviation": "LCS",
+          "full_name_en": "Littoral combat ship",
+          "full_name_zh": "濒海战斗舰",
+          "meaning_zh": "濒海战斗舰父类，在本分类树中包含 DULI 子类。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [
+            "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2171607/littoral-combat-ship-class-lcs/"
+          ],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "LCS"
+          ],
+          "child_labels": [
+            "DULI"
+          ],
+          "is_leaf": false,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 153,
+          "taxonomy_id": 154,
+          "label": "DULI",
+          "abbreviation": "DULI",
+          "full_name_en": "DULI littoral combat ship (expansion unconfirmed)",
+          "full_name_zh": "DULI 濒海战斗舰类别（全称待确认）",
+          "meaning_zh": "原分类树中 LCS 下名为 DULI 的具体类别",
+          "definition_status": "needs_confirmation",
+          "references": [
+            "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2171607/littoral-combat-ship-class-lcs/"
+          ],
+          "hierarchy_level": 4,
+          "parent_label": "LCS",
+          "ancestor_labels": [
+            "ship",
+            "war",
+            "LCS"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "LCS",
+            "DULI"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 154,
+          "taxonomy_id": 155,
+          "label": "Medical ship",
+          "abbreviation": "Medical ship",
+          "full_name_en": "Medical or hospital ship",
+          "full_name_zh": "医疗船或医院船",
+          "meaning_zh": "以提供医疗救治服务为主要功能的船舶。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Medical ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 155,
+          "taxonomy_id": 156,
+          "label": "other Warship",
+          "abbreviation": "other Warship",
+          "full_name_en": "Other warship or naval vessel",
+          "full_name_zh": "其他军用舰船",
+          "meaning_zh": "军用舰船分支中未归入其他单列类别的舰船。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "other Warship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 156,
+          "taxonomy_id": 157,
+          "label": "patrolForce",
+          "abbreviation": "patrolForce",
+          "full_name_en": "Naval patrol vessel",
+          "full_name_zh": "军用巡逻舰艇",
+          "meaning_zh": "执行海上巡逻等任务的军用舰艇类别。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "patrolForce"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 157,
+          "taxonomy_id": 158,
+          "label": "Submarine",
+          "abbreviation": "Submarine",
+          "full_name_en": "Submarine",
+          "full_name_zh": "潜艇",
+          "meaning_zh": "能够在水下航行的舰艇；本标签未继续区分动力或具体艇型。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Submarine"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        },
+        {
+          "model_index": 158,
+          "taxonomy_id": 159,
+          "label": "Test ship",
+          "abbreviation": "Test ship",
+          "full_name_en": "Test or experimental ship",
+          "full_name_zh": "试验舰船",
+          "meaning_zh": "用于海上试验、研究或设备验证的舰船类别。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 3,
+          "parent_label": "war",
+          "ancestor_labels": [
+            "ship",
+            "war"
+          ],
+          "hierarchy_path": [
+            "ship",
+            "war",
+            "Test ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "annotation_coarse_category_id": 10,
+          "corresponding_30class_label": "ship"
+        }
+      ]
+    },
+    "30": {
+      "class_count": 30,
+      "root_count": 30,
+      "max_hierarchy_level": 1,
+      "level_counts": {
+        "1": 30
+      },
+      "classes": [
+        {
+          "model_index": 0,
+          "annotation_category_id": 1,
+          "label": "plane",
+          "abbreviation": "plane",
+          "full_name_en": "Airplane",
+          "full_name_zh": "固定翼飞机",
+          "meaning_zh": "固定翼飞机根类；包含客机、非客机和其他飞机。直升机在本数据集中属于独立根类。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "plane"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "plane",
+          "corresponding_159class_root": "plane"
+        },
+        {
+          "model_index": 1,
+          "annotation_category_id": 2,
+          "label": "storage_tank",
+          "abbreviation": "storage_tank",
+          "full_name_en": "Storage tank",
+          "full_name_zh": "储罐",
+          "meaning_zh": "用于储存液体或气体等物料的罐体设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "storage_tank"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "storage_tank",
+          "corresponding_159class_root": "storage_tank"
+        },
+        {
+          "model_index": 2,
+          "annotation_category_id": 3,
+          "label": "tenniscourt",
+          "abbreviation": "tenniscourt",
+          "full_name_en": "Tennis court",
+          "full_name_zh": "网球场",
+          "meaning_zh": "用于网球运动的场地；保留原标签连写形式。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "tenniscourt"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "tenniscourt",
+          "corresponding_159class_root": "tenniscourt"
+        },
+        {
+          "model_index": 3,
+          "annotation_category_id": 4,
+          "label": "baseball_diamond",
+          "abbreviation": "baseball_diamond",
+          "full_name_en": "Baseball diamond",
+          "full_name_zh": "棒球场",
+          "meaning_zh": "用于棒球运动、具有内场与外场布局的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "baseball_diamond"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "baseball_diamond",
+          "corresponding_159class_root": "baseball_diamond"
+        },
+        {
+          "model_index": 4,
+          "annotation_category_id": 5,
+          "label": "basketball_court",
+          "abbreviation": "basketball_court",
+          "full_name_en": "Basketball court",
+          "full_name_zh": "篮球场",
+          "meaning_zh": "用于篮球运动的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "basketball_court"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "basketball_court",
+          "corresponding_159class_root": "basketball_court"
+        },
+        {
+          "model_index": 5,
+          "annotation_category_id": 6,
+          "label": "ground_track_field",
+          "abbreviation": "ground_track_field",
+          "full_name_en": "Athletics track and field",
+          "full_name_zh": "田径场",
+          "meaning_zh": "由跑道及其内部运动场地构成的田径运动区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "ground_track_field"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ground_track_field",
+          "corresponding_159class_root": "ground_track_field"
+        },
+        {
+          "model_index": 6,
+          "annotation_category_id": 7,
+          "label": "car",
+          "abbreviation": "car",
+          "full_name_en": "Vehicle (legacy coarse label: car)",
+          "full_name_zh": "车辆（历史粗类名 car）",
+          "meaning_zh": "30 类基准中的车辆粗类，按发布版类别对应关系连接到 159 类的根类 vehicle；不是只对应 159 类的细类 car。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "car"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "car",
+          "corresponding_159class_root": "vehicle"
+        },
+        {
+          "model_index": 7,
+          "annotation_category_id": 8,
+          "label": "bridge",
+          "abbreviation": "bridge",
+          "full_name_en": "Bridge",
+          "full_name_zh": "桥梁",
+          "meaning_zh": "跨越河流、沟谷或其他障碍的桥梁结构。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "bridge"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "bridge",
+          "corresponding_159class_root": "bridge"
+        },
+        {
+          "model_index": 8,
+          "annotation_category_id": 9,
+          "label": "harbor",
+          "abbreviation": "harbor",
+          "full_name_en": "Harbor",
+          "full_name_zh": "港口",
+          "meaning_zh": "用于船舶停泊、装卸等活动的港区设施或区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "harbor"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "harbor",
+          "corresponding_159class_root": "harbor"
+        },
+        {
+          "model_index": 9,
+          "annotation_category_id": 10,
+          "label": "ship",
+          "abbreviation": "ship",
+          "full_name_en": "Ship",
+          "full_name_zh": "船舶",
+          "meaning_zh": "船舶根类；按本数据集层级分为 civil_ship 与 war。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "ship"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "ship",
+          "corresponding_159class_root": "ship"
+        },
+        {
+          "model_index": 10,
+          "annotation_category_id": 11,
+          "label": "parking_lot",
+          "abbreviation": "parking_lot",
+          "full_name_en": "Parking lot",
+          "full_name_zh": "停车场",
+          "meaning_zh": "集中停放车辆的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "parking_lot"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "parking_lot",
+          "corresponding_159class_root": "parking_lot"
+        },
+        {
+          "model_index": 11,
+          "annotation_category_id": 12,
+          "label": "overpass",
+          "abbreviation": "overpass",
+          "full_name_en": "Overpass",
+          "full_name_zh": "立交桥／跨线桥",
+          "meaning_zh": "使道路或交通线路在不同高度交叉通行的桥梁或立交设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "overpass"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "overpass",
+          "corresponding_159class_root": "overpass"
+        },
+        {
+          "model_index": 12,
+          "annotation_category_id": 13,
+          "label": "swimming-pool",
+          "abbreviation": "swimming-pool",
+          "full_name_en": "Swimming pool",
+          "full_name_zh": "游泳池",
+          "meaning_zh": "用于游泳活动的人工水池。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "swimming-pool"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "swimming-pool",
+          "corresponding_159class_root": "swimming-pool"
+        },
+        {
+          "model_index": 13,
+          "annotation_category_id": 14,
+          "label": "roundabout",
+          "abbreviation": "roundabout",
+          "full_name_en": "Roundabout",
+          "full_name_zh": "环形交叉口",
+          "meaning_zh": "车辆围绕中央岛环行的道路交叉口。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "roundabout"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "roundabout",
+          "corresponding_159class_root": "roundabout"
+        },
+        {
+          "model_index": 14,
+          "annotation_category_id": 15,
+          "label": "soccer-ball-field",
+          "abbreviation": "soccer-ball-field",
+          "full_name_en": "Soccer field",
+          "full_name_zh": "足球场",
+          "meaning_zh": "用于足球运动的场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "soccer-ball-field"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "soccer-ball-field",
+          "corresponding_159class_root": "soccer-ball-field"
+        },
+        {
+          "model_index": 15,
+          "annotation_category_id": 16,
+          "label": "pylon",
+          "abbreviation": "pylon",
+          "full_name_en": "Electricity transmission pylon",
+          "full_name_zh": "输电塔",
+          "meaning_zh": "支撑架空输电线路的塔架。",
+          "definition_status": "contextual_interpretation",
+          "notes": [
+            "按遥感目标类别语境解释为电力输电塔。"
+          ],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "pylon"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "pylon",
+          "corresponding_159class_root": "pylon"
+        },
+        {
+          "model_index": 16,
+          "annotation_category_id": 17,
+          "label": "stadium",
+          "abbreviation": "stadium",
+          "full_name_en": "Stadium",
+          "full_name_zh": "体育场",
+          "meaning_zh": "具有观众看台及比赛场地的体育设施；与仅表示运动场地的类别分开。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "stadium"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "stadium",
+          "corresponding_159class_root": "stadium"
+        },
+        {
+          "model_index": 17,
+          "annotation_category_id": 18,
+          "label": "container",
+          "abbreviation": "container",
+          "full_name_en": "Shipping container",
+          "full_name_zh": "集装箱",
+          "meaning_zh": "用于货物运输或存储的标准化箱体。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "container"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "container",
+          "corresponding_159class_root": "container"
+        },
+        {
+          "model_index": 18,
+          "annotation_category_id": 19,
+          "label": "container-crane",
+          "abbreviation": "container-crane",
+          "full_name_en": "Container crane",
+          "full_name_zh": "集装箱起重机",
+          "meaning_zh": "用于吊装、转运集装箱的起重设备。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "container-crane"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "container-crane",
+          "corresponding_159class_root": "container-crane"
+        },
+        {
+          "model_index": 19,
+          "annotation_category_id": 20,
+          "label": "windmill",
+          "abbreviation": "windmill",
+          "full_name_en": "Wind turbine",
+          "full_name_zh": "风力发电机",
+          "meaning_zh": "利用风能驱动叶轮发电的装置。",
+          "definition_status": "contextual_interpretation",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "windmill"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "windmill",
+          "corresponding_159class_root": "windmill"
+        },
+        {
+          "model_index": 20,
+          "annotation_category_id": 21,
+          "label": "helipad",
+          "abbreviation": "helipad",
+          "full_name_en": "Helicopter landing pad",
+          "full_name_zh": "直升机起降坪",
+          "meaning_zh": "供直升机起飞、降落或停放的指定场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "helipad"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "helipad",
+          "corresponding_159class_root": "helipad"
+        },
+        {
+          "model_index": 21,
+          "annotation_category_id": 22,
+          "label": "rugby-count",
+          "abbreviation": "rugby-count",
+          "full_name_en": "Rugby field",
+          "full_name_zh": "橄榄球场",
+          "meaning_zh": "用于橄榄球运动的场地。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "rugby-count"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "rugby-count",
+          "corresponding_159class_root": "rugby-count"
+        },
+        {
+          "model_index": 22,
+          "annotation_category_id": 23,
+          "label": "helicoper",
+          "abbreviation": "helicoper",
+          "full_name_en": "Helicopter",
+          "full_name_zh": "直升机",
+          "meaning_zh": "依靠旋翼获得升力的航空器；在本数据集中与 plane 并列为根类。",
+          "definition_status": "standard_term",
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "helicoper"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "helicoper",
+          "corresponding_159class_root": "helicoper"
+        },
+        {
+          "model_index": 23,
+          "annotation_category_id": 24,
+          "label": "Expressway-toll-station",
+          "abbreviation": "Expressway-toll-station",
+          "full_name_en": "Expressway toll station",
+          "full_name_zh": "高速公路收费站",
+          "meaning_zh": "用于高速公路车辆收费及通行管理的设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "Expressway-toll-station"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "Expressway-toll-station",
+          "corresponding_159class_root": "Expressway-toll-station"
+        },
+        {
+          "model_index": 24,
+          "annotation_category_id": 25,
+          "label": "chimney",
+          "abbreviation": "chimney",
+          "full_name_en": "Chimney",
+          "full_name_zh": "烟囱",
+          "meaning_zh": "将燃烧或工业过程产生的烟气排出的高耸管状构筑物。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "chimney"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "chimney",
+          "corresponding_159class_root": "chimney"
+        },
+        {
+          "model_index": 25,
+          "annotation_category_id": 26,
+          "label": "dam",
+          "abbreviation": "dam",
+          "full_name_en": "Dam",
+          "full_name_zh": "水坝",
+          "meaning_zh": "用于拦截、调蓄水流的水工构筑物。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "dam"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "dam",
+          "corresponding_159class_root": "dam"
+        },
+        {
+          "model_index": 26,
+          "annotation_category_id": 27,
+          "label": "golffield",
+          "abbreviation": "golffield",
+          "full_name_en": "Golf course",
+          "full_name_zh": "高尔夫球场",
+          "meaning_zh": "包含球道、果岭等设施的高尔夫运动场地。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "golffield"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "golffield",
+          "corresponding_159class_root": "golffield"
+        },
+        {
+          "model_index": 27,
+          "annotation_category_id": 28,
+          "label": "trainstation",
+          "abbreviation": "trainstation",
+          "full_name_en": "Railway station",
+          "full_name_zh": "铁路车站",
+          "meaning_zh": "供铁路列车办理旅客或货物业务的车站设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "trainstation"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "trainstation",
+          "corresponding_159class_root": "trainstation"
+        },
+        {
+          "model_index": 28,
+          "annotation_category_id": 29,
+          "label": "Expressway-Service-area",
+          "abbreviation": "Expressway-Service-area",
+          "full_name_en": "Expressway service area",
+          "full_name_zh": "高速公路服务区",
+          "meaning_zh": "为高速公路行车人员和车辆提供休息、补给等服务的区域。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "Expressway-Service-area"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "Expressway-Service-area",
+          "corresponding_159class_root": "Expressway-Service-area"
+        },
+        {
+          "model_index": 29,
+          "annotation_category_id": 30,
+          "label": "airport",
+          "abbreviation": "airport",
+          "full_name_en": "Airport",
+          "full_name_zh": "机场",
+          "meaning_zh": "供航空器起降、停放和地面服务的综合设施。",
+          "definition_status": "standard_term",
+          "notes": [],
+          "references": [],
+          "hierarchy_level": 1,
+          "parent_label": null,
+          "ancestor_labels": [],
+          "hierarchy_path": [
+            "airport"
+          ],
+          "child_labels": [],
+          "is_leaf": true,
+          "root_label": "airport",
+          "corresponding_159class_root": "airport"
+        }
+      ]
+    }
+  }
+}
