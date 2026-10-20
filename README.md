@@ -5,7 +5,7 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-0b3d91)](https://qinzheyang.github.io/LEVIRDet/)
 [![Interactive Demo](https://img.shields.io/badge/Interactive-Demo-0b3d91)](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
 [![Paper](https://img.shields.io/badge/Arxiv%20Paper-red)](https://arxiv.org/abs/2606.25312)
-[![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Planned-orange)](#release-status)
+[![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Released-orange)](#release-status)
 
 > **Release notice.**
 > 🌟🌟🌟 The LEVIRDet dataset, trained models and their weights, as well as the Docker, are now **fully available**.
@@ -70,6 +70,7 @@ Download **LEVIRDet-159 Dataset** from either mirror:
   - [Use LEVIRDetNet in the same way as an APP](#Use-LEVIRDetNet-in-the-same-way-as-an-APP)
   - [Extract features using LEVIRDetNet](#Extract-features-using-LEVIRDetNet)
   - [Use LEVIRDetNet as the pre-training parameters](#Use-LEVIRDetNet-as-the-pre-training-parameters)
+- [Common Problems](#Common-Problems)
 - [Citation](#Citation)
 - [License](#License)
 
@@ -807,7 +808,7 @@ If you find that none of the above links allow you to download, please feel free
 We have provided detailed explanations and corresponding JSON files in the "docs" folder.
 
 
-### 4. I would like to know which dataset each picture corresponds to, as well as the original information of that tile.
+### 5. I would like to know which dataset each picture corresponds to, as well as the original information of that tile.
 
 We have provided these meta data in the coco format JSON of the dataset.
 
