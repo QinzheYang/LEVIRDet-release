@@ -70,6 +70,7 @@ Download **LEVIRDet-159 Dataset** from either mirror:
   - [Use LEVIRDetNet in the same way as an APP](#Use-LEVIRDetNet-in-the-same-way-as-an-APP)
   - [Extract features using LEVIRDetNet](#Extract-features-using-LEVIRDetNet)
   - [Use LEVIRDetNet as the pre-training parameters](#Use-LEVIRDetNet-as-the-pre-training-parameters)
+- [Common Problems](Common-Problems)
 - [Citation](#Citation)
 - [License](#License)
 
@@ -807,7 +808,7 @@ If you find that none of the above links allow you to download, please feel free
 We have provided detailed explanations and corresponding JSON files in the "docs" folder.
 
 
-### 4. I would like to know which dataset each picture corresponds to, as well as the original information of that tile.
+### 5. I would like to know which dataset each picture corresponds to, as well as the original information of that tile.
 
 We have provided these meta data in the coco format JSON of the dataset.
 
