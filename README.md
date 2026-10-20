@@ -17,6 +17,7 @@ Download **Docker Environment for model** from either mirror:
 | Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1o34wKHJEy7mUhm6Gpnapag?pwd=pzic) | `pzic` |
 | Google Drive | [Download Docker image](https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=sharing) | — |
 | Huggingface | [Download Docker image](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
+| ModelScope | [Download Trained Model(30 and 159 class)](https://www.modelscope.cn/models/yangqinzhe/LEVIRDetNet) | — |
 
 Download **model check point** from either mirror:
 
@@ -25,13 +26,14 @@ Download **model check point** from either mirror:
 | Baidu Netdisk | [Download Trained Model(30 and 159 class)](https://pan.baidu.com/s/1i6EOvclCBwuYEJxy2uFaKg?pwd=wf66) | `wf66` |
 | Google Drive | [Download Trained Model(30 class)](https://drive.google.com/file/d/1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde/view?usp=drive_link)  and  [Download Trained Model(159 class)](https://drive.google.com/file/d/1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG/view?usp=drive_link)| — |
 | Huggingface | [Download Trained Model(30 and 159 class)](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
+| ModelScope | [Download Trained Model(30 and 159 class)](https://www.modelscope.cn/models/yangqinzhe/LEVIRDetNet) | — |
 
 Download **LEVIRDet-159 Dataset** from either mirror:
 
 | Version | Image format | Hugging Face | ModelScope | Baidu Netdisk | Access code | Google Drive | Size |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Original-image release | Original image bytes; seven-digit filenames | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — |  [Download](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
-| Lightweight release | JPEG quality 95; unchanged dimensions | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — | [Download](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
+| Original-image release | Original image bytes; seven-digit filenames | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | [Download](https://www.modelscope.cn/datasets/yangqinzhe/LEVIRDet-159-Dataset) |  [Download](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
+| Lightweight release | JPEG quality 95; unchanged dimensions | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | [Download](https://www.modelscope.cn/datasets/yangqinzhe/LEVIRDet-159-Dataset) | [Download](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
 
 [**I have download. How to use?**](#Installation)
 
