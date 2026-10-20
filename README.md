@@ -720,6 +720,8 @@ Try the desktop launcher, extract image features, or fine-tune LEVIRDetNet on yo
 3. **Click Launch** when setup is complete. Choose an image or folder, select **30 classes** (default) or **159 classes**, then click **Confirm & run**.
 4. **View your results.** Use the arrows to compare input images and detections. Visualizations and JSON results are saved automatically in `fast_demo_outputs` inside your selected folder.
 
+![LEVIRDet remote sensing gallery](demo/APP.jpg)
+
 First-time setup downloads about **14 GB**, with additional disk space needed for Docker. Slow or failed Google Drive resource downloads switch to Hugging Face automatically. [More help](fast_demo/README.md).
 
 ### Extract features using LEVIRDetNet
