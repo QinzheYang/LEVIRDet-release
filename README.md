@@ -140,6 +140,10 @@ hierarchy-aware detection head for mixed-granularity remote sensing supervision.
 
 ### Update Log
 
+🌟 **2026.10.16-21** 
+
+We have improved the dataset and usage instructions of GitHub, provided an easy-to-download APP version, and added a directory index.
+
 🌟 **2026.10.15** 
 
 We have received feedback that there were issues with the downloads of Docker and others due to excessive users recently. Therefore, we have currently added new links for the North China University Cloud Disk and HuggingFace.
@@ -159,10 +163,6 @@ We are currently updating the user manual. We have uploaded Docker and are now u
 🌟 **2026.10.02** 
 
 We received reviewers' comments two days ago and are now actively preparing the release.
-
-These preparations include converting the dataset into a more storage-efficient format to reduce download size, creating a Docker image to make it easier to run the model, and organizing the pre-trained weights, usage instructions, and training logs. We are also preparing the baseline models and corresponding weights used in our paper, updating the project homepage, and adding more convenient download options.
-
-While completing all of these preparations will take some time, we can confirm that the dataset will be released within the next week. The pre-trained LEVIRDetNet weights and associated model resources may take slightly longer to finalize. We will share release updates and access instructions on our GitHub page as they become available.
 
 
 ### Dataset Scale
