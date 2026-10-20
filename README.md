@@ -301,15 +301,9 @@ This is the alternative setup for users who prefer a local Conda environment.
 
 ### Getting Started
 
-The installation and inference instructions will be added when the code release
-is ready. The planned workflow is:
-
 ```bash
 git clone https://github.com/QinzheYang/LEVIRDet.git
 cd LEVIRDet
-
-# Installation instructions will be added with the code release.
-# Dataset download and checkpoint download commands will be versioned.
 ```
 
 ### Dependencies
