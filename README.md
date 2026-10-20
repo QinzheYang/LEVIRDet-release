@@ -708,7 +708,7 @@ python demo/image_demo.py ${IMAGE_DIR}  configs/levirdetnet/xxx.py --weights ${C
 
 ## More Interesting things
 
-It's a bit late today. I'll do it tomorrow.
+Try the desktop launcher, extract image features, or fine-tune LEVIRDetNet on your own classes.
 
 ### Use LEVIRDetNet in the same way as an APP
 
@@ -723,11 +723,35 @@ First-time setup downloads about **14 GB**, with additional disk space needed fo
 
 ### Extract features using LEVIRDetNet
 
-It's a bit late today. I'll do it tomorrow.
+Use the trained **30-class backbone** as a feature extractor with a few lines of Python. Run this from the repository root in your LEVIRDetNet Docker or Conda environment, with `epoch_117.pth` downloaded:
+
+```python
+from levir_features import load_model, load_image, vis
+
+model = load_model("epoch_117.pth")
+img = load_image("path/to/your/image.jpg")
+feature = model(img)
+vis(feature, "work_dirs/feature_pca.png", size=(1024, 1024))
+```
+
+The image is resized and normalized automatically. By default, `feature` is a **`[1, 384, 64, 64]`** spatial feature map from the trained DINOv3 ViT-S+/16 trunk. `vis` saves a PCA color visualization; its colors are not category labels. No separate DINOv3 or GSD weights are needed.
+
+For a global image vector, use `model(img, output="cls")`; for the full backbone's three feature-pyramid levels, use `model(img, output="pyramid")`. [More examples and output details](docs/feature_extraction.md).
 
 ### Use LEVIRDetNet as the pre-training parameters
 
-It's a bit late today. I'll do it tomorrow.
+Fine-tune the **30-class model** on your own classes with two commands. In the existing Docker or Conda environment, run from the project root with `epoch_117.pth` downloaded.
+
+Prepare a COCO dataset with `train/images/`, `val/images/`, `annotations/train.json`, and `annotations/val.json`. Both JSON files must define your target class names, for example `plane` and `ship`.
+
+```bash
+python tools/transfer_ckpt.py --new-class plane,ship --data-root data/my_dataset
+python tools/train.py work_dirs/finetune/finetune.py
+```
+
+Replace the class names and data path with yours. The first command prepares the weights, a new config, and correctly ordered annotation copies; the second starts training. Same-name classes reuse their trained parameters, while new classes are initialized automatically. Your original files stay unchanged.
+
+For multiple GPUs, use `bash tools/dist_train.sh work_dirs/finetune/finetune.py 8`. The default is 48 epochs with batch size 2 per GPU. [More options and dataset details](docs/finetune_levirdetnet.md).
 
 ## Citation
 
