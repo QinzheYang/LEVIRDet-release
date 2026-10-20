@@ -5,7 +5,7 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-0b3d91)](https://qinzheyang.github.io/LEVIRDet/)
 [![Interactive Demo](https://img.shields.io/badge/Interactive-Demo-0b3d91)](https://qinzheyang.github.io/LEVIRDet/levir-demo/)
 [![Paper](https://img.shields.io/badge/Arxiv%20Paper-red)](https://arxiv.org/abs/2606.25312)
-[![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Full-Released-orange)](#release-status)
+[![Release](https://img.shields.io/badge/Code%20%7C%20Data%20%7C%20Models-Released-orange)](#release-status)
 
 > **Release notice.**
 > 🌟🌟🌟 The LEVIRDet dataset, trained models and their weights, as well as the Docker, are now **fully available**.
