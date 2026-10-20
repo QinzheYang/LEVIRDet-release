@@ -1,18 +1,14 @@
 # License Notice
 
-The code, dataset, annotations, source-license manifest, and trained models for
-LEVIRDet are not yet released.
+This repository is currently the final open-source repository for the project. The following artifacts have been released:
 
-No license is granted for unreleased artifacts through this pre-release
-repository. The final release will specify licenses for:
-
-- Code.
-- Dataset image tiles.
-- Annotations.
+- Full image tiles.
+- Tight horizontal bounding-box annotations.
+- Fine-grained multi-level taxonomy annotations.
 - Source-license manifest.
-- Trained model checkpoints.
-- Documentation and figures.
+- Training and evaluation code.
+- Trained LEVIRDetNet checkpoints.
+- Inference and demo scripts.
 
-Please check the versioned release accompanying the final paper for the
-authoritative license terms.
-
+The full image tiles, annotations, source-license manifest, code, and trained
+models have been released on Huggingface, baidu netdisk and modelscope. You can find download link at this github repository.
