@@ -753,6 +753,79 @@ Replace the class names and data path with yours. The first command prepares the
 
 For multiple GPUs, use `bash tools/dist_train.sh work_dirs/finetune/finetune.py 8`. The default is 48 epochs with batch size 2 per GPU. [More options and dataset details](docs/finetune_levirdetnet.md).
 
+## Common Problems
+
+<details open>
+
+We have listed some common problems and their corresponding solutions here. If you find that some problems are missing, please feel free to provide PR to enrich this list. If you cannot get help here, please use [issue](https://github.com/QinzheYang/LEVIRDet-release/issues) to seek help. Please fill in all the required information in the template, which will help us locate the problem faster.
+
+### 1. Do I need to install MMDetection?
+
+We recommend that you do not install MMDetection because we have made some modifications to the code of MMDetection, which may cause errors in the code if you install MMDetection. If you encounter an error that the module has not been registered, please check:
+
+- Whether MMDetection is installed, if so, uninstall it
+- Whether `@MODELS.register_module()` is added in front of the class name, if not, add it
+- Whether `from .xxx import xxx` is added in `__init__.py`, if not, add it
+- Whether `custom_imports = dict(imports=['mmdet.rsprompter'], allow_failed_imports=False)` is added in the Config file, if not, add it
+
+### 2. Solution to dist_train.sh: Bad substitution
+
+If you encounter the error `Bad substitution` when running `dist_train.sh`, please use `bash dist_train.sh` to run the script.
+
+
+### 3. Unable to access and download the model on Google Spaces
+
+If you are unable to access and download the model on Google Spaces, please use the other link:
+
+Download **Docker Environment for model** from either mirror:
+
+| Mirror | Download | Access code |
+| --- | --- | --- |
+| Baidu Netdisk | [Download Docker image](https://pan.baidu.com/s/1o34wKHJEy7mUhm6Gpnapag?pwd=pzic) | `pzic` |
+| Google Drive | [Download Docker image](https://drive.google.com/file/d/1h76qWD5WfomQUXoQWGxFZs6R_QCl64ei/view?usp=sharing) | — |
+| Huggingface | [Download Docker image](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
+
+Download **model check point** from either mirror:
+
+| Mirror | Download | Access code |
+| --- | --- | --- |
+| Baidu Netdisk | [Download Trained Model(30 and 159 class)](https://pan.baidu.com/s/1i6EOvclCBwuYEJxy2uFaKg?pwd=wf66) | `wf66` |
+| Google Drive | [Download Trained Model(30 class)](https://drive.google.com/file/d/1G-WIA44hUVPjEjEPOHcm3OP2qh7jUIde/view?usp=drive_link)  and  [Download Trained Model(159 class)](https://drive.google.com/file/d/1lLIrXkpyDi0gJHCvjHKffYupr2Eq8UGG/view?usp=drive_link)| — |
+| Huggingface | [Download Trained Model(30 and 159 class)](https://huggingface.co/yangqinzhe/LEVIRDetNet/tree/main) | — |
+
+Download **LEVIRDet-159 Dataset** from either mirror:
+
+| Version | Image format | Hugging Face | ModelScope | Baidu Netdisk | Access code | Google Drive | Size |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Original-image release | Original image bytes; seven-digit filenames | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — |  [Download](https://pan.baidu.com/s/1RJAQyswyPzbNF6w-67Eo8g?pwd=3fj4)  | 3fj4 | — | ~ 130G |
+| Lightweight release | JPEG quality 95; unchanged dimensions | [Download](https://huggingface.co/datasets/yangqinzhe/LEVIRDet-159-Dataset) | — | [Download](https://pan.baidu.com/s/1WC2GLhpx637uiq0FlFVL8A?pwd=t3yy) | t3yy | — | ~ 50G |
+
+If you find that none of the above links allow you to download, please feel free to contact us at any time(in github issues or email yangqinzhe@buaa.edu.cn). We will provide you with the download channels you need according to your requirements. 
+
+### 4. I would like the names and meanings of all categories.
+
+We have provided detailed explanations and corresponding JSON files in the "docs" folder.
+
+
+### 4. I would like to know which dataset each picture corresponds to, as well as the original information of that tile.
+
+We have provided these meta data in the coco format JSON of the dataset.
+
+For example，you can found below in coco json：
+
+```bash
+"label_source_crop": "F:\\dataset\\11VEDAI\\finishedv2-part1\\pickup\\14243__img1515__ann41871__x245_y474_w25_h21.jpg",
+      "label_source_part": "finishedv2-part1",
+      "label_quality_rank": 4,
+      "label_quality": "highest",
+```
+
+
+</details>
+
+
+
+
 ## Citation
 
 If you find this project useful, please cite the final paper once it is
